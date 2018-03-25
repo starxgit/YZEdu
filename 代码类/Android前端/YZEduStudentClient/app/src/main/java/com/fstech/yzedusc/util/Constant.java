@@ -20,5 +20,6 @@ public class Constant {
     public static final int PAGE_TWO = 1;
     public static final int PAGE_THREE = 2;
     public static final int PAGE_FOUR = 3;
+    public static final int PAGE_FIVE = 4;
 
 }

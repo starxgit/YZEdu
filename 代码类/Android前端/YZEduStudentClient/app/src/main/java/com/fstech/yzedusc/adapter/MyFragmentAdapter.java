@@ -9,6 +9,7 @@ import com.fstech.yzedusc.fragment.CourseFragment;
 import com.fstech.yzedusc.fragment.LearnFragment;
 import com.fstech.yzedusc.fragment.MainFragment;
 import com.fstech.yzedusc.fragment.PersonFragment;
+import com.fstech.yzedusc.fragment.SchoolFragment;
 import com.fstech.yzedusc.util.Constant;
 
 /**
@@ -18,16 +19,18 @@ import com.fstech.yzedusc.util.Constant;
 
 public class MyFragmentAdapter extends FragmentPagerAdapter {
 
-    private final int PAGER_COUNT = 4;
-    private MainFragment myFragment1 = null;
-    private CourseFragment myFragment2 = null;
+    private final int PAGER_COUNT = 5;
+    private MainFragment myFragment0 = null;
+    private CourseFragment myFragment1 = null;
+    private SchoolFragment myFragment2 = null;
     private LearnFragment myFragment3 = null;
     private PersonFragment myFragment4 = null;
 
     public MyFragmentAdapter(FragmentManager fm) {
         super(fm);
-        myFragment1 = new MainFragment();
-        myFragment2 = new CourseFragment();
+        myFragment0 = new MainFragment();
+        myFragment1 = new CourseFragment();
+        myFragment2 = new SchoolFragment();
         myFragment3 = new LearnFragment();
         myFragment4 = new PersonFragment();
     }
@@ -54,15 +57,18 @@ public class MyFragmentAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case Constant.PAGE_ONE:
-                fragment = myFragment1;
+                fragment = myFragment0;
                 break;
             case Constant.PAGE_TWO:
-                fragment = myFragment2;
+                fragment = myFragment1;
                 break;
             case Constant.PAGE_THREE:
-                fragment = myFragment3;
+                fragment = myFragment2;
                 break;
             case Constant.PAGE_FOUR:
+                fragment = myFragment3;
+                break;
+            case Constant.PAGE_FIVE:
                 fragment = myFragment4;
                 break;
         }

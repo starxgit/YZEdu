@@ -31,7 +31,7 @@ public class MainFragment extends Fragment {
     private List<View> viewList;
     private ListView lv_information;
     private InformationListAdapter adapter;
-    private List<Map<String,Object>> listItems_information;
+    private List<Map<String, Object>> listItems_information;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,9 +55,9 @@ public class MainFragment extends Fragment {
     private void initView() {
         vp_banner = (BannerView) getActivity().findViewById(R.id.vp_banner);
         viewList = new ArrayList<View>();
-        lv_information=(ListView)getActivity().findViewById(R.id.lv_information);
-        listItems_information=new ArrayList<Map<String,Object>>();
-        adapter = new InformationListAdapter(getActivity(),listItems_information);
+        lv_information = (ListView) getActivity().findViewById(R.id.lv_information);
+        listItems_information = new ArrayList<Map<String, Object>>();
+        adapter = new InformationListAdapter(getActivity(), listItems_information);
         lv_information.setAdapter(adapter);
     }
 
@@ -66,21 +66,21 @@ public class MainFragment extends Fragment {
     * 无参数
     * 无返回
     * */
-    private void initData(){
+    private void initData() {
         // TODO 初始化banner 及咨询相关的数据
-        imgs= new int[]{R.drawable.makalong, R.drawable.springmvc, R.drawable.androidkaifa, R.drawable.html5};
-        for(int i=1;i<15;i++){
-            int a=(int)(Math.random()*3);
-            String img="0";
-            if(a>1) img="a";
-            Map<String, Object>listItem=new HashMap<String,Object>();
-            listItem.put("information_image",img);
-            listItem.put("information_title","咨询标题"+i);
-            listItem.put("information_date","2018-03-"+i);
+        imgs = new int[]{R.drawable.makalong, R.drawable.springmvc, R.drawable.androidkaifa, R.drawable.html5};
+        for (int i = 1; i < 15; i++) {
+            int a = (int) (Math.random() * 3);
+            String img = "0";
+            if (a > 1) img = "a";
+            Map<String, Object> listItem = new HashMap<String, Object>();
+            listItem.put("information_image", img);
+            listItem.put("information_title", "咨询标题" + i);
+            listItem.put("information_date", "2018-03-" + i);
             listItems_information.add(listItem);
         }
         adapter.notifyDataSetChanged();
-        ListViewHeight.setListViewHeightBasedOnChildren(adapter,lv_information);
+        ListViewHeight.setListViewHeightBasedOnChildren(adapter, lv_information);
     }
 
     /*
@@ -88,10 +88,10 @@ public class MainFragment extends Fragment {
     * 无参数
     * 无返回
     * */
-    private void setBanner(){
+    private void setBanner() {
         for (int i = 0; i < imgs.length; i++) {
             ImageView image = new ImageView(getActivity());
-            final String z=i+"";
+            final String z = i + "";
             image.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
             //设置显示格式
             image.setScaleType(ImageView.ScaleType.CENTER_CROP);

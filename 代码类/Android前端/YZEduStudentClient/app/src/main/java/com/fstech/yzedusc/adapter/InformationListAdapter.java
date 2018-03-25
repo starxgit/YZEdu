@@ -73,9 +73,9 @@ public class InformationListAdapter extends BaseAdapter {
 
         vh.tv_infomation_title.setText(information_title);
         vh.getTv_infomation_date.setText(information_date);
-        if(information_image.equals("0")){
+        if (information_image.equals("0")) {
             vh.iv_information_image.setVisibility(View.GONE);
-        }else{
+        } else {
             vh.iv_information_image.setVisibility(View.VISIBLE);
         }
 
