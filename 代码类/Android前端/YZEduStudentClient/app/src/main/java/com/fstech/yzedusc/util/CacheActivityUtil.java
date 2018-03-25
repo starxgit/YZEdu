@@ -1,6 +1,7 @@
 package com.fstech.yzedusc.util;
 
 import android.app.Activity;
+import android.content.Context;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -58,6 +59,17 @@ public class CacheActivityUtil {
         }
 
         finishSingleActivity(tempActivity);
+    }
+
+    /*
+    * 把当前活动加入活动栈
+    * 参数context
+    * 无返回
+    * */
+    private static void addActivity(Context context){
+        if (!CacheActivityUtil.activityList.contains(context)) {
+            CacheActivityUtil.addActivity(context);
+        }
     }
 
 }

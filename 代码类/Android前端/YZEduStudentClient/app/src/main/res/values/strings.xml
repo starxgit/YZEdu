@@ -8,4 +8,11 @@
     <string name="click2quit">再按一次退出程序</string>
     <string name="show_more">查看更多</string>
     <string name="school">院校</string>
+    <string name="setting">系统设置</string>
+    <string name="wallet">我的钱包</string>
+    <string name="ability">能力档案</string>
+    <string name="use_help">使用帮助</string>
+    <string name="advice">问题反馈</string>
+    <string name="input_search_content">输入搜索内容</string>
+    
 </resources>

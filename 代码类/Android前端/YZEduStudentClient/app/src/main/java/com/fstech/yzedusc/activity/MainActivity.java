@@ -1,6 +1,7 @@
 package com.fstech.yzedusc.activity;
 
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.fstech.yzedusc.R;
 import com.fstech.yzedusc.adapter.MyFragmentAdapter;
+import com.fstech.yzedusc.util.CacheActivityUtil;
 import com.fstech.yzedusc.util.Constant;
 import com.fstech.yzedusc.util.PixelUtil;
 
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     初始化，用于获取控件实例
     */
     private void initView() {
+        CacheActivityUtil.addActivity(MainActivity.this);
         rg_tab_bar = (RadioGroup) findViewById(R.id.rg_tab_bar);
         rb_main = (RadioButton) findViewById(R.id.rb_main);
         rb_course = (RadioButton) findViewById(R.id.rb_course);
@@ -162,4 +165,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             finish();
         }
     }
+
+
 }

@@ -18,4 +18,40 @@
             />
     </FrameLayout>
 
+    <SearchView
+        android:id="@+id/searchView"
+        android:background="#F0F0F0"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:backgroundTint="#F2F2F2"
+        android:clickable="true"
+        android:searchIcon="@mipmap/left_search"
+        android:iconifiedByDefault="false"
+        android:queryHint="@string/input_search_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F2F2F2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="#FFFFFF"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

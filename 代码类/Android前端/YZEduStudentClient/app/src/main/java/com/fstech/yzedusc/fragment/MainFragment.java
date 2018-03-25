@@ -75,7 +75,7 @@ public class MainFragment extends Fragment {
             if (a > 1) img = "a";
             Map<String, Object> listItem = new HashMap<String, Object>();
             listItem.put("information_image", img);
-            listItem.put("information_title", "咨询标题" + i);
+            listItem.put("information_title", "资讯标题" + i);
             listItem.put("information_date", "2018-03-" + i);
             listItems_information.add(listItem);
         }
