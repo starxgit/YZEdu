@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-03-25 22:56:04
+Date: 2018-03-25 23:20:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -748,7 +748,7 @@ CREATE TABLE `school` (
   `school_type` tinyint(2) unsigned NOT NULL,
   `gmt_create` datetime NOT NULL,
   `gmt_modified` datetime NOT NULL,
-  PRIMARY KEY (`school_id`,`school_code`) USING BTREE
+  PRIMARY KEY (`school_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
@@ -809,7 +809,7 @@ CREATE TABLE `student` (
   `user_id` int(11) unsigned NOT NULL,
   `gmt_create` datetime NOT NULL,
   `gmt_modified` datetime NOT NULL,
-  PRIMARY KEY (`student_id`,`student_number`) USING BTREE
+  PRIMARY KEY (`student_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
@@ -869,7 +869,7 @@ CREATE TABLE `teacher` (
   `user_id` int(11) unsigned NOT NULL,
   `gmt_create` datetime NOT NULL,
   `gmt_modified` datetime NOT NULL,
-  PRIMARY KEY (`teacher_id`,`teacher_number`) USING BTREE
+  PRIMARY KEY (`teacher_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
@@ -890,7 +890,7 @@ CREATE TABLE `user` (
   `user_avatar` varchar(255) NOT NULL DEFAULT '0.png',
   `gmt_create` datetime NOT NULL,
   `gmt_modified` datetime NOT NULL,
-  PRIMARY KEY (`user_id`,`user_account`) USING BTREE
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
