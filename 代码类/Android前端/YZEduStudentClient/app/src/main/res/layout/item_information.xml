@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_information_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/aixinbanmaxian" />
+
+    <TextView
+        android:id="@+id/tv_information_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:lineSpacingExtra="5dp"
+        android:singleLine="true"
+        android:text="关于新课Android上线通知" />
+
+    <TextView
+        android:id="@+id/tv_information_date"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:textColor="#666666"
+        android:text="2018-03-25" />
+</LinearLayout>
