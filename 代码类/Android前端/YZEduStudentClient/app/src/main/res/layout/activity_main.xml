@@ -1,18 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fstech.yzedusc.MainActivity">
+    tools:context="com.fstech.yzedusc.activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RadioGroup
+        android:id="@+id/rg_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+        <RadioButton
+            android:id="@+id/rb_main"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/menu_main"
+            android:text="@string/index" />
+
+        <RadioButton
+            android:id="@+id/rb_course"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/menu_course"
+            android:text="@string/course" />
+
+        <RadioButton
+            android:id="@+id/rb_learn"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/menu_mycourse"
+            android:text="@string/learn" />
+
+        <RadioButton
+            android:id="@+id/rb_person"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/menu_personal"
+            android:text="@string/person" />
+
+    </RadioGroup>
+
+    <View
+        android:id="@+id/div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_above="@id/rg_tab_bar"
+        android:background="#d2d2d2" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/div_tab_bar" />
+
+
+</RelativeLayout>
