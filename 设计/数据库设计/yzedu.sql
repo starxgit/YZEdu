@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2018-03-26 21:07:03
+Date: 2018-03-26 22:54:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -720,6 +720,7 @@ CREATE TABLE `live_room` (
   `teacher_id` int(11) unsigned NOT NULL,
   `live_room_name` varchar(255) NOT NULL,
   `live_room_state` tinyint(1) unsigned NOT NULL DEFAULT '1',
+  `live_room_image` varchar(255) NOT NULL,
   `gmt_create` datetime NOT NULL,
   `gmt_modified` datetime NOT NULL,
   PRIMARY KEY (`live_room_id`) USING BTREE
