@@ -77,6 +77,8 @@ public class MainFragment extends Fragment {
             listItem.put("information_image", img);
             listItem.put("information_title", "资讯标题" + i);
             listItem.put("information_date", "2018-03-" + i);
+            listItem.put("information_content","这是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容" +
+                    "是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容");
             listItems_information.add(listItem);
         }
         adapter.notifyDataSetChanged();

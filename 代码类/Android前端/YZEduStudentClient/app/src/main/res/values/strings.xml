@@ -13,6 +13,11 @@
     <string name="ability">能力档案</string>
     <string name="use_help">使用帮助</string>
     <string name="advice">问题反馈</string>
+    <string name="is_living">智享·直播</string>
     <string name="input_search_content">输入搜索内容</string>
-    
+    <string name="showmore">查看更多</string>
+    <string name="course_new">新课·速递</string>
+    <string name="course_top">热门·精选</string>
+    <string name="live_room_id">房间号：</string>
+
 </resources>
