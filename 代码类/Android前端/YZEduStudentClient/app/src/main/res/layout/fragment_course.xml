@@ -30,8 +30,7 @@
         android:backgroundTint="#F2F2F2"
         android:clickable="true"
         android:searchIcon="@mipmap/left_search"
-        android:iconifiedByDefault="false"
-        android:queryHint="@string/input_search_content" />
+        android:iconifiedByDefault="false" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -66,8 +65,9 @@
                     android:layout_height="2dp"
                     android:background="#d6d6d6" />
 
-                <ListView
+                <com.fstech.yzedusc.view.MyListView
                     android:id="@+id/lv_live"
+                    android:divider="#FFFFFF"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
                 <View
@@ -109,6 +109,7 @@
 
             <LinearLayout
                 android:id="@+id/ll_new"
+                android:layout_marginTop="20dp"
                 android:paddingTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -130,8 +131,9 @@
                     android:layout_height="2dp"
                     android:background="#d6d6d6" />
 
-                <ListView
+                <com.fstech.yzedusc.view.MyListView
                     android:id="@+id/lv_new"
+                    android:divider="#FFFFFF"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
                 <View
@@ -174,6 +176,7 @@
             <LinearLayout
                 android:id="@+id/ll_top"
                 android:paddingTop="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/round_card_write"
@@ -194,8 +197,9 @@
                     android:layout_height="2dp"
                     android:background="#d6d6d6" />
 
-                <ListView
+                <com.fstech.yzedusc.view.MyListView
                     android:id="@+id/lv_top"
+                    android:divider="#FFFFFF"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
                 <View

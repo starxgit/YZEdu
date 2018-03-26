@@ -18,4 +18,9 @@
             />
     </FrameLayout>
 
+    <com.qmuiteam.qmui.widget.QMUICollapsingTopBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"></com.qmuiteam.qmui.widget.QMUICollapsingTopBarLayout>
+
 </LinearLayout>

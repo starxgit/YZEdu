@@ -23,12 +23,16 @@ public class ListViewHeight {
         }
 
         int totalHeight = 0;
+
         for (int i = 0; i < adapter.getCount(); i++) {
             View listItem = adapter.getView(i, null, listView);
-            listItem.measure(0, 0);
-            //计算总高度
+             listItem.measure(0, 0);
+            listItem.measure(
+                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
             totalHeight += listItem.getMeasuredHeight();
         }
+
 
         ViewGroup.LayoutParams params = listView.getLayoutParams();
         //计算分割线高度

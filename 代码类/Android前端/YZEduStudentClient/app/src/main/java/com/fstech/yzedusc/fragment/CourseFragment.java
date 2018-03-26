@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.fstech.yzedusc.R;
 import com.fstech.yzedusc.adapter.LiveRoomListAdapter;
 import com.fstech.yzedusc.bean.LiveRoomBean;
+import com.fstech.yzedusc.view.MyListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +22,11 @@ import java.util.List;
 
 public class CourseFragment extends Fragment {
     // 定义UI对象
-    private ListView lv_live;
-    private ListView lv_new;
-    private ListView lv_top;
+    private MyListView lv_live;
+    private MyListView lv_new;
+    private MyListView lv_top;
     private List<LiveRoomBean> list_live;
-    private LiveRoomListAdapter adapter;
+    private LiveRoomListAdapter adapter_live;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,6 +38,7 @@ public class CourseFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initView();
+        initData();
     }
 
     /*
@@ -45,10 +47,30 @@ public class CourseFragment extends Fragment {
     * 无返回
     * */
     private void initView(){
-        lv_live=(ListView)getActivity().findViewById(R.id.lv_live);
-        lv_new=(ListView)getActivity().findViewById(R.id.lv_new);
-        lv_top=(ListView)getActivity().findViewById(R.id.lv_top);
-        list_live=new ArrayList<>();
+        lv_live=(MyListView)getActivity().findViewById(R.id.lv_live);
+        lv_new=(MyListView)getActivity().findViewById(R.id.lv_new);
+        lv_top=(MyListView)getActivity().findViewById(R.id.lv_top);
+        list_live=new ArrayList<LiveRoomBean>();
+        adapter_live=new LiveRoomListAdapter(getActivity(),list_live);
+        lv_live.setAdapter(adapter_live);
+        lv_new.setAdapter(adapter_live);
+        lv_top.setAdapter(adapter_live);
+        lv_live.measure(0,0);
+        lv_new.measure(0,0);
+        lv_top.measure(0,0);
+    }
+
+    /*
+    * 初始化数据
+    * 无参数
+    * 无返回
+    * */
+    private void initData(){
+        for(int i=0;i<4;i++){
+            LiveRoomBean l=new LiveRoomBean();
+            list_live.add(l);
+        }
+        adapter_live.notifyDataSetChanged();
     }
 
 }

@@ -42,7 +42,7 @@
                 android:layout_marginBottom="20dp">
             </com.oragee.banners.BannerView>
 
-            <ListView
+            <com.fstech.yzedusc.view.MyListView
                 android:id="@+id/lv_information"
                 android:divider="#FFFFFF"
                 android:dividerHeight="0dp"

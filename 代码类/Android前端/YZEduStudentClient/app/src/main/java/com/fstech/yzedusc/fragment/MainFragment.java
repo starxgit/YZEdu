@@ -12,6 +12,7 @@ import android.widget.ListView;
 import com.fstech.yzedusc.R;
 import com.fstech.yzedusc.adapter.InformationListAdapter;
 import com.fstech.yzedusc.util.ListViewHeight;
+import com.fstech.yzedusc.view.MyListView;
 import com.oragee.banners.BannerView;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class MainFragment extends Fragment {
     private BannerView vp_banner;
     private int[] imgs;
     private List<View> viewList;
-    private ListView lv_information;
+    private MyListView lv_information;
     private InformationListAdapter adapter;
     private List<Map<String, Object>> listItems_information;
 
@@ -55,7 +56,7 @@ public class MainFragment extends Fragment {
     private void initView() {
         vp_banner = (BannerView) getActivity().findViewById(R.id.vp_banner);
         viewList = new ArrayList<View>();
-        lv_information = (ListView) getActivity().findViewById(R.id.lv_information);
+        lv_information = (MyListView) getActivity().findViewById(R.id.lv_information);
         listItems_information = new ArrayList<Map<String, Object>>();
         adapter = new InformationListAdapter(getActivity(), listItems_information);
         lv_information.setAdapter(adapter);
@@ -82,7 +83,7 @@ public class MainFragment extends Fragment {
             listItems_information.add(listItem);
         }
         adapter.notifyDataSetChanged();
-        ListViewHeight.setListViewHeightBasedOnChildren(adapter, lv_information);
+        lv_information.measure(0,0);
     }
 
     /*
