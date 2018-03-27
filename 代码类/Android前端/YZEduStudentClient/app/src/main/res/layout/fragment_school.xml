@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -17,10 +18,131 @@
             android:textColor="#FFFFFF"
             />
     </FrameLayout>
-
-    <com.qmuiteam.qmui.widget.QMUICollapsingTopBarLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"></com.qmuiteam.qmui.widget.QMUICollapsingTopBarLayout>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/m_top_img">
+
+                <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+                    android:id="@+id/iv_school_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="35dp"
+                    android:layout_marginStart="35dp"
+                    app:qmui_border_width="0dp"
+                    app:qmui_is_circle="true"
+                    app:srcCompat="@drawable/newmsg01" />
+
+                <TextView
+                    android:id="@+id/tv_school_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/iv_school_image"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="83dp"
+                    android:text="XX测试大学"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <TabHost
+                android:id="@+id/main_school_tab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <TabWidget
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@android:id/tabs"
+                        ></TabWidget>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:id="@android:id/tabcontent"
+                        >
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/widget_layout_red"
+                            android:padding="15dp"
+                            android:orientation="vertical"
+                            >
+
+                            <TextView
+                                android:id="@+id/tv_teacher"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="主讲老师："
+                                />
+                            <TextView
+                                android:layout_marginTop="10dp"
+                                android:id="@+id/tv_incroduce"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="这是课程简介的内容"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/widget_layout_yellow"
+                            android:orientation="vertical"
+                            android:padding="15dp"
+                            >
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="课程目录"
+                                />
+                            <ListView
+                                android:id="@+id/mululist"
+                                android:divider="#FFFFFF"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+                            </ListView>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:padding="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/widget_layout_blue"
+                            android:orientation="vertical"
+                            >
+                            <ListView
+                                android:id="@+id/cmtlist"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" >
+                            </ListView>
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+                </LinearLayout>
+            </TabHost>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
