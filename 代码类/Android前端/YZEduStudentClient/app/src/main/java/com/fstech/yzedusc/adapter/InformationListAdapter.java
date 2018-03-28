@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fstech.yzedusc.R;
+import com.fstech.yzedusc.bean.InformationBean;
 
 import java.util.List;
 import java.util.Map;
@@ -21,7 +22,7 @@ import java.util.Map;
 public class InformationListAdapter extends BaseAdapter {
 
     private Context context;
-    private List<Map<String, Object>> listItems;
+    private List<InformationBean> listItems;
     private LayoutInflater listContainer;
 
     public final class ViewHolder {
@@ -31,7 +32,7 @@ public class InformationListAdapter extends BaseAdapter {
         public TextView getTv_infomation_content;
     }
 
-    public InformationListAdapter(Context context, List<Map<String, Object>> listItems) {
+    public InformationListAdapter(Context context, List<InformationBean> listItems) {
         this.context = context;
         listContainer = LayoutInflater.from(context);
         this.listItems = listItems;
@@ -69,15 +70,17 @@ public class InformationListAdapter extends BaseAdapter {
             vh = (ViewHolder) convertView.getTag();
         }
 
-        String information_image = listItems.get(position).get("information_image").toString();
-        String information_title = listItems.get(position).get("information_title").toString();
-        String information_date = listItems.get(position).get("information_date").toString();
-        String information_content = listItems.get(position).get("information_content").toString();
+        InformationBean info = listItems.get(position);
+
+        String information_image = info.getInformation_image();
+        String information_title = info.getInformation_title();
+        String information_date = info.getInformation_date();
+        String information_content = info.getInformation_content();
 
         vh.tv_infomation_title.setText(information_title);
         vh.getTv_infomation_date.setText(information_date);
         vh.getTv_infomation_content.setText(information_content);
-        if (information_image.equals("0")) {
+        if (information_image==null) {
             vh.iv_information_image.setVisibility(View.GONE);
         } else {
             vh.iv_information_image.setVisibility(View.VISIBLE);

@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 import com.fstech.yzedusc.R;
 import com.fstech.yzedusc.adapter.InformationListAdapter;
-import com.fstech.yzedusc.util.ListViewHeight;
+import com.fstech.yzedusc.bean.InformationBean;
 import com.fstech.yzedusc.view.MyListView;
 import com.oragee.banners.BannerView;
 
@@ -28,11 +28,11 @@ import java.util.Map;
 public class MainFragment extends Fragment {
     // 定义UI对象
     private BannerView vp_banner;
-    private int[] imgs;
+    private int[] imgs;     //存放banner图片
     private List<View> viewList;
     private MyListView lv_information;
     private InformationListAdapter adapter;
-    private List<Map<String, Object>> listItems_information;
+    private List<InformationBean> listItems_information;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,7 +57,7 @@ public class MainFragment extends Fragment {
         vp_banner = (BannerView) getActivity().findViewById(R.id.vp_banner);
         viewList = new ArrayList<View>();
         lv_information = (MyListView) getActivity().findViewById(R.id.lv_information);
-        listItems_information = new ArrayList<Map<String, Object>>();
+        listItems_information = new ArrayList<InformationBean>();
         adapter = new InformationListAdapter(getActivity(), listItems_information);
         lv_information.setAdapter(adapter);
     }
@@ -72,15 +72,11 @@ public class MainFragment extends Fragment {
         imgs = new int[]{R.drawable.makalong, R.drawable.springmvc, R.drawable.androidkaifa, R.drawable.html5};
         for (int i = 1; i < 15; i++) {
             int a = (int) (Math.random() * 3);
-            String img = "0";
+            String img = null;
             if (a > 1) img = "a";
-            Map<String, Object> listItem = new HashMap<String, Object>();
-            listItem.put("information_image", img);
-            listItem.put("information_title", "资讯标题" + i);
-            listItem.put("information_date", "2018-03-" + i);
-            listItem.put("information_content","这是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容" +
-                    "是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容");
-            listItems_information.add(listItem);
+            InformationBean ib=new InformationBean(0,"资讯标题" + i,"这是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容" +
+                    "是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容","2018-03-"+i,img);
+            listItems_information.add(ib);
         }
         adapter.notifyDataSetChanged();
         lv_information.measure(0,0);

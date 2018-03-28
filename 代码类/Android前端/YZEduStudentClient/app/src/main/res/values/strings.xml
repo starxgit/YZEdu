@@ -19,5 +19,8 @@
     <string name="course_new">新课·速递</string>
     <string name="course_top">热门·精选</string>
     <string name="live_room_id">房间号：</string>
+    <string name="school_information">资讯</string>
+    <string name="school_announcement">公告</string>
+    <string name="school_circle">学友圈</string>
 
 </resources>
