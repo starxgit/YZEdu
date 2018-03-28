@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/qmui_config_color_blue" >
+
+        <ImageView
+            android:id="@+id/ImageView01"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:onClick="back"
+            android:src="@mipmap/back2" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp" >
+
+        <com.qmuiteam.qmui.widget.QMUIRadiusImageView
+            app:qmui_is_circle="false"
+            app:qmui_corner_radius="@dimen/dimen_9dp"
+            app:qmui_border_width="0dp"
+            android:layout_margin="20dp"
+            android:id="@+id/iv_course_image"
+            android:layout_width="160dp"
+            android:layout_height="110dp"
+            android:src="@drawable/aixinbanmaxian"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_course_name"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WEB应用程序设计" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tv_learn_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="150人学习"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:textColor="#666666"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_sum_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="共14科室"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:textColor="#666666"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+
+            <Button
+                android:id="@+id/bn_option"
+                android:layout_marginTop="20dp"
+                android:background="@color/qmui_config_color_50_blue"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:textColor="#FFFFFF"
+                android:text="报名选课" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

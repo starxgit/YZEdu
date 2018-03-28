@@ -103,8 +103,8 @@ public class SchoolFragment extends Fragment {
                     "2018-03-"+i);
             listItems_announcement.add(ab);
         }
-        information_adapter.notifyDataSetChanged();
-        announcement_adapter.notifyDataSetChanged();
+//        information_adapter.notifyDataSetChanged();
+//        announcement_adapter.notifyDataSetChanged();
     }
 
 }

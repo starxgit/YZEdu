@@ -87,9 +87,9 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent">
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/m_top_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/learn_mycourse"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
                     <TextView
@@ -112,9 +112,9 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent">
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/m_top_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/learn_myexercise"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
                     <TextView
@@ -147,9 +147,9 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent">
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/m_top_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/learn_mytask"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
                     <TextView
@@ -172,9 +172,9 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent">
                     <ImageView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:src="@drawable/m_top_img"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@mipmap/learn_mygrade"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"/>
                     <TextView
