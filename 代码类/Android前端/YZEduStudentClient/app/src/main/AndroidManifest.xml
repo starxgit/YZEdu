@@ -23,8 +23,11 @@
         <activity android:name=".activity.CourseClassificationActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing"></activity>
-        <activity android:name=".activity.CourseIntroduce"
+        <activity android:name=".activity.CourseIntroduceActivity"
             android:screenOrientation="portrait"></activity>
+        <activity android:name=".activity.CourseSearchResultActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing"></activity>
     </application>
 
 </manifest>

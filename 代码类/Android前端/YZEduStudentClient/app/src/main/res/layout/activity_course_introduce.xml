@@ -58,7 +58,7 @@
                     android:id="@+id/tv_learn_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="150人学习"
+                    android:text="150 / 300人"
                     android:gravity="center_vertical"
                     android:layout_weight="1"
                     android:textColor="#666666"
@@ -76,15 +76,32 @@
             </LinearLayout>
 
 
-
-            <Button
-                android:id="@+id/bn_option"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@color/qmui_config_color_50_blue"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:textColor="#FFFFFF"
-                android:text="报名选课" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="left"
+                    android:textColor="#666666"
+                    android:text="免费" />
+
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/bn_option"
+                    android:alpha="0.8"
+                    app:qmui_radius="@dimen/dimen_9dp"
+                    app:qmui_backgroundColor="@color/qmui_config_color_blue"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#FFFFFF"
+                    android:text="报名选课" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

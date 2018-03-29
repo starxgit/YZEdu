@@ -3,25 +3,21 @@ package com.fstech.yzedusc.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.ScrollView;
 
 import com.fstech.yzedusc.R;
-import com.fstech.yzedusc.activity.CourseIntroduce;
+import com.fstech.yzedusc.activity.CourseIntroduceActivity;
 import com.fstech.yzedusc.adapter.InformationListAdapter;
 import com.fstech.yzedusc.bean.InformationBean;
 import com.fstech.yzedusc.view.MyListView;
 import com.oragee.banners.BannerView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by shaoxin on 18-3-25.
@@ -104,7 +100,7 @@ public class MainFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     // TODO 点击banner后的事件
-                    Intent intent0 = new Intent(getActivity(), CourseIntroduce.class);
+                    Intent intent0 = new Intent(getActivity(), CourseIntroduceActivity.class);
                     startActivity(intent0);
                 }
             });

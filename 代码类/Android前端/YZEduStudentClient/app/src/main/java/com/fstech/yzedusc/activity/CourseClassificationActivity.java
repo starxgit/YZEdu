@@ -1,5 +1,7 @@
 package com.fstech.yzedusc.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +12,7 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -31,7 +34,7 @@ import java.util.Map;
  * 课程分类的主界面
  */
 
-public class CourseClassificationActivity extends AppCompatActivity {
+public class CourseClassificationActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tv_search;
     private ClearEditText et_search;
     private ListView lv_cfa;
@@ -55,6 +58,7 @@ public class CourseClassificationActivity extends AppCompatActivity {
     private void initView() {
         CacheActivityUtil.addActivity(CourseClassificationActivity.this);
         tv_search = (TextView) findViewById(R.id.tv_search);
+        tv_search.setOnClickListener(this);
         et_search = (ClearEditText) findViewById(R.id.et_search);
         lv_cfa = (ListView) findViewById(R.id.lv_classification_own);
         fl_content = (QMUIFloatLayout) findViewById(R.id.fl_content);
@@ -107,4 +111,40 @@ public class CourseClassificationActivity extends AppCompatActivity {
     public void back(View view) {
         finish();
     }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.tv_search:
+                doSearch();
+                hideKeyBoard();
+                break;
+            default:
+                break;
+        }
+    }
+
+    /*
+    * 开始搜索课程的方法
+    * */
+    private void doSearch() {
+        String keyword = et_search.getText().toString();
+        if (!keyword.equals("")) {
+            Intent intent = new Intent(CourseClassificationActivity.this, CourseSearchResultActivity.class);
+            intent.putExtra("keyword", keyword);
+            startActivity(intent);
+        }
+    }
+
+    /*
+    * 隐藏键盘的方法
+    * */
+    private void hideKeyBoard() {
+        View view = getWindow().peekDecorView();
+        if (view != null) {
+            InputMethodManager inputmanger = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputmanger.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
+
 }
