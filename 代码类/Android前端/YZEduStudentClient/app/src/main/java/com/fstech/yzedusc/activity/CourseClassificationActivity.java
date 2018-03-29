@@ -84,6 +84,15 @@ public class CourseClassificationActivity extends AppCompatActivity implements V
                     ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(textViewSize, textViewSize);
                     fl_content.addView(textView, layoutParams);//将textview添加到floatLayout布局中
                     fl_content.setGravity(Gravity.LEFT);//floatLayout中子节点左对齐
+
+                    textView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent itent_tem=new Intent(CourseClassificationActivity.this,CourseCfaResultActivity.class);
+                            itent_tem.putExtra("cfa_id","1");
+                            startActivity(itent_tem);
+                        }
+                    });
                 }
             }
         });
