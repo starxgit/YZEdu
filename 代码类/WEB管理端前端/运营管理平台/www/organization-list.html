@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -14,49 +14,42 @@
 	id="skin" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
 
-<style type="text/css">  
-#mytable {  
-    table-layout: fixed;  
-    width: 98% border:0px;  
-    margin: 0px;  
-}  
 
-#mytable tr td {  
-    text-overflow: ellipsis; /* for IE */  
-    -moz-text-overflow: ellipsis; /* for Firefox,mozilla */  
-    overflow: hidden;  
-    white-space: nowrap;  
-    text-align: center;  
-}  
-</style>
 
-<title>品牌管理</title>
+<title></title>
 </head>
 <body>
-<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 门户管理 <span class="c-gray en">&gt;</span> 轮播图管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 系统管理 <span class="c-gray en">&gt;</span> 院校管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="page-container">
 	
 	<div class="mt-20">
-		<table id="mytable" class="table table-border table-bordered table-bg table-sort">
+		<table class="table table-border table-bordered table-bg table-sort">
 			<thead>
 				<tr class="text-c">
 					<th width="25"><input type="checkbox" name="" value=""></th>
-					<th width="80">院校代码</th>
-					<th width="80">图片</th>
-					<th width="80">广告类别</th>
-					<th width="80">链接</th>
+					<th width="80">机构代码</th>
+					<th width="80">机构名称</th>
+					<th width="80">机构logo</th>
+					<th width="80">机构介绍</th>
+					<th width="80">所在城市</th>
+					<th width="80">所在省份</th>
+					<th width="80">类型</th>
 					<th width="80">操作</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody >
 				<tr class="text-c">
 					<td><input name="" type="checkbox" value=""></td>
-					<td>1</td>
-					<td><img src="temp/brand/dongpeng.jpeg"></td>
-					<td>广告</td>
-					<td><a href="www.baidu.com"><h3>百度</h3></a></td>
-					<td class="f-14 product-brand-manage"><a style="text-decoration:none"  href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;
-					</i></a> <a style="text-decoration:none" class="ml-5" onClick="active_del(this,'10001')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+					<td>50005</td>
+					<td>培训中心</td>
+					<td>
+					<img width="210" class="picture-thumb" src="temp/200x150.jpg">
+					</td>
+					<td>我们培训中心师资力量十分强大，可以帮助学生很好地提升自己的学习水平。</td>
+					<td>杭州</td>
+					<td>浙江</td>
+					<td>培训机构</td>
+					<td class="f-14 product-brand-manage"><a style="text-decoration:none" class="ml-5"  href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
 				</tr>
 			</tbody>
 		</table>
@@ -77,7 +70,7 @@ $('.table-sort').dataTable({
 	"bStateSave": true,//状态保存
 	"aoColumnDefs": [
 	  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
-	  {"orderable":false,"aTargets":[0,5]}// 制定列不参与排序
+	  {"orderable":false,"aTargets":[0,8]}// 制定列不参与排序
 	]
 });
 </script>
