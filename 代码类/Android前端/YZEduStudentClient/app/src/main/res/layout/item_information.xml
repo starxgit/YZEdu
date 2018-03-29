@@ -17,9 +17,6 @@
         <ImageView
             android:id="@+id/iv_information_image"
             android:layout_width="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
             android:layout_height="180dp"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/aixinbanmaxian" />

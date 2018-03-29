@@ -23,6 +23,7 @@
         android:layout_height="0.1dp"
         android:background="#d6d6d6" />
     <ScrollView
+        android:id="@+id/sv_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#F0F0F0"
@@ -44,21 +45,35 @@
 
             <com.fstech.yzedusc.view.MyListView
                 android:id="@+id/lv_information"
-                android:divider="#FFFFFF"
+                android:divider="#F9F9F9"
                 android:dividerHeight="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-            <LinearLayout
+            <RelativeLayout
+                android:id="@+id/re_more_top"
                 android:layout_width="match_parent"
-                android:layout_height="40dp">
+                android:layout_height="50dp"
+                android:background="#F9F9F9">
                 <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:textColor="#666666"
-                    android:text="@string/show_more"/>
-            </LinearLayout>
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:fontFamily="华文黑体"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/showmore"
+                    android:textColor="#666666" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toEndOf="@id/textView4"
+                    android:layout_centerVertical="true"
+                    android:alpha="0.2"
+                    android:src="@mipmap/cd1" />
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 

@@ -28,6 +28,7 @@
             android:orientation="vertical">
 
             <RelativeLayout
+                android:id="@+id/re_school_background"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@drawable/m_top_img">
@@ -36,24 +37,28 @@
                     android:id="@+id/iv_school_image"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_above="@+id/tv_school_name"
                     android:layout_alignParentStart="true"
-                    android:layout_marginBottom="35dp"
-                    android:layout_marginStart="35dp"
                     app:qmui_border_width="0dp"
                     app:qmui_is_circle="true"
                     app:srcCompat="@drawable/newmsg01" />
 
                 <TextView
                     android:id="@+id/tv_school_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:background="#50000000"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/iv_school_image"
+                    android:layout_alignParentBottom="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="83dp"
-                    android:text="XX测试大学"
+                    android:gravity="right"
+                    android:text="XX测试院校"
                     android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
+                    android:textSize="20sp" />
 
             </RelativeLayout>
 
@@ -71,6 +76,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@android:id/tabs"
+                        android:background="#FFFFFF"
                         ></TabWidget>
 
                     <FrameLayout
@@ -82,58 +88,95 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/widget_layout_red"
-                            android:padding="15dp"
-                            android:orientation="vertical"
-                            >
+                            android:id="@+id/ll_school_information"
+                            android:background="#F9F9F9"
+                            android:orientation="vertical">
 
-                            <TextView
-                                android:id="@+id/tv_teacher"
+                            <com.fstech.yzedusc.view.MyListView
+                                android:id="@+id/lv_school_information"
+                                android:divider="#FFFFFF"
+                                android:dividerHeight="0dp"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="主讲老师："
-                                />
-                            <TextView
-                                android:layout_marginTop="10dp"
-                                android:id="@+id/tv_incroduce"
+                                android:layout_height="wrap_content" >
+                            </com.fstech.yzedusc.view.MyListView>
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="这是课程简介的内容"
-                                />
+                                android:layout_height="40dp">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:textColor="#666666"
+                                    android:text="@string/show_more"/>
+                            </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/widget_layout_yellow"
+                            android:id="@+id/ll_school_announcement"
                             android:orientation="vertical"
-                            android:padding="15dp"
-                            >
-                            <TextView
+                            android:background="#F9F9F9">
+
+                            <com.fstech.yzedusc.view.MyListView
+                                android:id="@+id/lv_school_announcement"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="课程目录"
-                                />
-                            <ListView
-                                android:id="@+id/mululist"
+                                android:divider="#FFFFFF"
+                                android:dividerHeight="0dp"
+                                android:layout_height="match_parent" >
+                            </com.fstech.yzedusc.view.MyListView>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:layout_gravity="center"
+                                    android:textColor="#666666"
+                                    android:text="@string/show_more"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:padding="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/ll_school_circle"
+                            android:orientation="vertical"
+                            android:background="#F9F9F9">
+                            <com.fstech.yzedusc.view.MyListView
+                                android:id="@+id/lv_school_circle"
                                 android:divider="#FFFFFF"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent" >
-                            </ListView>
-
-                        </LinearLayout>
-                        <LinearLayout
-                            android:padding="15dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:id="@+id/widget_layout_blue"
-                            android:orientation="vertical"
-                            >
-                            <ListView
-                                android:id="@+id/cmtlist"
+                            </com.fstech.yzedusc.view.MyListView>
+                            <RelativeLayout
+                                android:id="@+id/re_more_top"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
-                            </ListView>
+                                android:layout_height="50dp"
+                                android:background="#F9F9F9">
+                                <TextView
+                                    android:id="@+id/textView4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="20dp"
+                                    android:fontFamily="华文黑体"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="@string/showmore"
+                                    android:textColor="#666666" />
+
+                                <ImageView
+                                    android:id="@+id/imageView4"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_toEndOf="@id/textView4"
+                                    android:layout_centerVertical="true"
+                                    android:alpha="0.2"
+                                    android:src="@mipmap/cd1" />
+                            </RelativeLayout>
 
                         </LinearLayout>
 

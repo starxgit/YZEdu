@@ -35,11 +35,23 @@
             android:id="@+id/iv_message"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="5dp"
             android:layout_marginTop="20dp"
+            android:layout_toStartOf="@+id/tv_message_count"
             app:srcCompat="@mipmap/message_grey_write" />
+
+        <TextView
+            android:id="@+id/tv_message_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="21dp"
+            android:textColor="#FFFFFF"
+            android:text="2" />
     </RelativeLayout>
 
     <View

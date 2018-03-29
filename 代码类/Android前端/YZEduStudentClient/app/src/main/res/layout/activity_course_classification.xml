@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/qmui_config_color_blue"
+        android:layout_height="50dp" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:onClick="back"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/back2" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+        <com.fstech.yzedusc.view.ClearEditText
+            android:id="@+id/et_search"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="#333333"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:hint="@string/input_search_content"
+            android:background="#F0F0F0"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="50dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/search" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <com.fstech.yzedusc.view.MyListView
+                android:id="@+id/lv_classification_own"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="#F2F2F2" />
+
+            <com.qmuiteam.qmui.widget.QMUIFloatLayout
+                android:paddingTop="15dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/fl_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                app:qmui_childHorizontalSpacing="20dp"
+                app:qmui_childVerticalSpacing="10dp"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:orientation="vertical">
+
+            </com.qmuiteam.qmui.widget.QMUIFloatLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
