@@ -24,18 +24,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="140dp" >
+        android:layout_height="140dp"
+        android:orientation="horizontal">
 
         <com.qmuiteam.qmui.widget.QMUIRadiusImageView
             app:qmui_is_circle="false"
-            app:qmui_corner_radius="@dimen/dimen_9dp"
+            app:qmui_corner_radius="5dp"
             app:qmui_border_width="0dp"
             android:layout_margin="20dp"
             android:id="@+id/iv_course_image"
             android:layout_width="160dp"
             android:layout_height="110dp"
-            android:src="@drawable/aixinbanmaxian"
-            />
+            android:src="@drawable/aixinbanmaxian"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,7 +68,7 @@
                     android:id="@+id/tv_sum_hour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="共14科室"
+                    android:text="共14课时"
                     android:gravity="center_vertical"
                     android:layout_weight="1"
                     android:textColor="#666666"
@@ -90,12 +90,78 @@
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_marginTop="20dp"
+    <TabHost
+        android:id="@+id/tab_course_introduce"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+
+            <TabWidget
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@android:id/tabs"
+                android:background="#FFFFFF"
+                ></TabWidget>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@android:id/tabcontent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/ll_course_introduce"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_course_teacher"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center_vertical"
+                        android:textColor="#666666"
+                        android:text="授课教师：张三"/>
+                    <TextView
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:id="@+id/tv_course_introduce"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="#666666"
+                        android:text="这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/ll_course_catalog"
+                    android:orientation="vertical"
+                    android:background="#F9F9F9">
+                    <com.fstech.yzedusc.view.MyListView
+                        android:id="@+id/lv_course_catalog"
+                        android:divider="#F0F0F0"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+                    </com.fstech.yzedusc.view.MyListView>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+    </TabHost>
 
 
 

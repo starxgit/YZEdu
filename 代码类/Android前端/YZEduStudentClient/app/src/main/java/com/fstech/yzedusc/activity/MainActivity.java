@@ -133,7 +133,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     *这是设置底部图标大小的方法
     */
     private void changeImageSize() {
-        // 定义图标的长宽，在本例中图标是正方形,设置变成为20dp
         final int len = PixelUtil.dip2px(MainActivity.this, 28);
         //定义底部标签图片大小
         Drawable drawable1 = getResources().getDrawable(R.drawable.menu_main);

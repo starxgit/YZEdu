@@ -60,13 +60,13 @@ public class SchoolFragment extends Fragment {
     * 无返回
     * */
     private void initView() {
-        iv_school_image=(QMUIRadiusImageView)getActivity().findViewById(R.id.iv_school_image);
-        tv_school_name=(TextView)getActivity().findViewById(R.id.tv_school_name);
+        iv_school_image = (QMUIRadiusImageView) getActivity().findViewById(R.id.iv_school_image);
+        tv_school_name = (TextView) getActivity().findViewById(R.id.tv_school_name);
         tabhost = (TabHost) getActivity().findViewById(R.id.main_school_tab);
-        lv_information=(MyListView)getActivity().findViewById(R.id.lv_school_information);
-        lv_announcement=(MyListView)getActivity().findViewById(R.id.lv_school_announcement);
-        lv_circle=(MyListView)getActivity().findViewById(R.id.lv_school_circle);
-        re_school_background=(RelativeLayout)getActivity().findViewById(R.id.re_school_background);
+        lv_information = (MyListView) getActivity().findViewById(R.id.lv_school_information);
+        lv_announcement = (MyListView) getActivity().findViewById(R.id.lv_school_announcement);
+        lv_circle = (MyListView) getActivity().findViewById(R.id.lv_school_circle);
+        re_school_background = (RelativeLayout) getActivity().findViewById(R.id.re_school_background);
         //调用 TabHost.setup()
         tabhost.setup();
         //创建Tab标签
@@ -79,7 +79,7 @@ public class SchoolFragment extends Fragment {
         lv_information.setAdapter(information_adapter);
 
         listItems_announcement = new ArrayList<AnnouncementBean>();
-        announcement_adapter=new AnnouncementListAdapter(getActivity(),listItems_announcement);
+        announcement_adapter = new AnnouncementListAdapter(getActivity(), listItems_announcement);
         lv_announcement.setAdapter(announcement_adapter);
     }
 
@@ -95,12 +95,12 @@ public class SchoolFragment extends Fragment {
             int a = (int) (Math.random() * 3);
             String img = null;
             if (a > 1) img = "a";
-            InformationBean ib=new InformationBean(i,"资讯标题" + i,"这是院校咨询内容这是咨询内容这是院校咨询内容这是咨询内容这是咨询内容" +
-                    "是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容","2018-03-"+i,img);
+            InformationBean ib = new InformationBean(i, "资讯标题" + i, "这是院校咨询内容这是咨询内容这是院校咨询内容这是咨询内容这是咨询内容" +
+                    "是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容", "2018-03-" + i, img);
             listItems_information.add(ib);
 
-            AnnouncementBean ab = new AnnouncementBean(i,"公告标题"+i,"公告内容公告内容公告内容公告内容公告内容公告内容"+i,"0",
-                    "2018-03-"+i);
+            AnnouncementBean ab = new AnnouncementBean(i, "公告标题" + i, "公告内容公告内容公告内容公告内容公告内容公告内容" + i, "0",
+                    "2018-03-" + i);
             listItems_announcement.add(ab);
         }
 //        information_adapter.notifyDataSetChanged();

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -67,9 +68,14 @@
                 android:background="#F2F2F2" />
 
             <com.qmuiteam.qmui.widget.QMUIFloatLayout
+                android:paddingTop="15dp"
+                android:layout_marginLeft="20dp"
                 android:id="@+id/fl_content"
                 android:layout_width="wrap_content"
                 android:layout_weight="1"
+                android:gravity="left"
+                app:qmui_childHorizontalSpacing="20dp"
+                app:qmui_childVerticalSpacing="10dp"
                 android:layout_height="match_parent"
                 android:background="#FFFFFF"
                 android:orientation="vertical">
