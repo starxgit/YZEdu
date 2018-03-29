@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
 <link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
 
-<title>H-ui.admin v3.0</title>
+<title>运营管理端</title>
 <meta name="keywords">
 <meta name="description">
 </head>
@@ -32,8 +32,11 @@
 			<ul class="cl">
 				<li>超级管理员</li>
 				<li class="dropDown dropDown_hover">
-					<a href="#" class="dropDown_A">admin</a>
-					
+					<a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
+					<ul class="dropDown-menu menu radius box-shadow">
+						<li><a href="article-edt.html">修改密码</a></li>
+						<li><a href="login.html">退出</a></li>
+				</ul>
 			</li>
 				
 				<li id="Hui-skin" class="dropDown right dropDown_hover"> <a href="javascript:;" class="dropDown_A" title="换肤"><i class="Hui-iconfont" style="font-size:18px">&#xe62a;</i></a>
@@ -52,40 +55,25 @@
 </header>
 <aside class="Hui-aside">
 	<div class="menu_dropdown bk_2">
-		<dl id="menu-article">
-			<dt><i class="Hui-iconfont">&#xe60d;</i> 个人信息
-				<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
-			</dt>
+
+		<dl id="menu-comments">
+			<dt><i class="Hui-iconfont">&#xe61d;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li>
-					<a data-href="article-list.html" data-title="查看信息"
-					 href="javascript:void(0)">
-					 查看个人信息
-					</a>
-					</li>
-					<li>
-					<a data-href="article-edt.html" data-title="修改密码"
-					 href="javascript:void(0)">
-					 修改密码
-					</a>
-					</li>
-					<li>
-					<a href="login.html" data-title="退出系统">
-					 退出系统
-					</a>
-					</li>
-			    </ul>
-		</dd>
-	</dl>
-		<dl id="menu-picture">
-			<dt><i class="Hui-iconfont">&#xe62d;<span id="xe727"></span></i> 用户信息<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-			<dd>
-				<ul>
-					<li><a data-href="picture-list.html" data-title="查看用户" href="javascript:void(0)">查看用户</a></li>
+					<li><a data-href="school_list.html" data-title="院校管理" 
+					href="javascript:;">院校管理</a></li>
+					<li><a data-href="organization-list.html" data-title="机构管理" 
+					href="javascript:;">
+						机构管理
+					</a></li>
+					<li><a data-href="pmanager-list.html" data-title="管理员管理" 
+					href="javascript:;">
+						管理员管理
+					</a></li>
 				</ul>
 			</dd>
 		</dl>
+
 		<dl id="menu-product">
 			<dt><i class="Hui-iconfont">&#xe67f;</i> 门户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
@@ -96,14 +84,6 @@
 				</ul>
 			</dd>
 		</dl>
-		<dl id="menu-comments">
-			<dt><i class="Hui-iconfont">&#xe61d;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-			<dd>
-				<ul>
-					<li><a data-href="school_list.html" data-title="院校管理" href="javascript:;">院校管理</a></li>
-				</ul>
-			</dd>
-		</dl>
 		
 		<dl id="menu-admin">
 			<dt><i class="Hui-iconfont">&#xe62e;</i> 交流监管<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
@@ -111,25 +91,17 @@
 				<ul>
 					<li><a data-href="admin-role.html" data-title="敏感词管理" href="javascript:void(0)">敏感词管理</a></li>
 					<li><a data-href="admin-role.html" data-title="全文搜索" href="javascript:void(0)">全文搜索</a></li>
-					<li><a data-href="admin-role.html" data-title="图片监管" href="javascript:void(0)">图片监管</a></li>
 				</ul>
 			</dd>
 		</dl>
+
 
 		<dl id="menu-admin">
 			<dt><i class="Hui-iconfont">&#xe6df;</i> 实时数据统计<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="admin-role.html" data-title="统计" href="javascript:void(0)">统计列表</a></li>
-				</ul>
-			</dd>
-		</dl>
-
-		<dl id="menu-admin">
-			<dt><i class="Hui-iconfont">&#xe639;</i> 财务管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-			<dd>
-				<ul>
-					<li><a data-href="admin-role.html" data-title="财务管理" href="javascript:void(0)">财务管理</a></li>
+					<li><a data-href="admin-role.html" data-title="统计" href="javascript:void(0)">实时在线人数统计</a></li>
+					<li><a data-href="admin-role.html" data-title="统计" href="javascript:void(0)">实时服务器负载状况</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -138,10 +110,23 @@
 			<dt><i class="Hui-iconfont">&#xe643;</i> 入驻管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a data-href="admin-role.html" data-title="入驻管理" href="javascript:void(0)">入驻管理</a></li>
+					<li><a data-href="admin-role.html" data-title="入驻管理" href="javascript:void(0)">申请列表</a></li>
+					<li><a data-href="admin-role.html" data-title="入驻管理" href="javascript:void(0)">已处理申请</a></li>
 				</ul>
 			</dd>
 		</dl>
+
+		<dl id="menu-admin">
+			<dt><i class="Hui-iconfont">&#xe639;</i> 财务管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="admin-role.html" data-title="财务管理" href="javascript:void(0)">平台资金总额</a></li>
+					<li><a data-href="admin-role.html" data-title="财务管理" href="javascript:void(0)">账单查询</a></li>
+				</ul>
+			</dd>
+		</dl>
+
+		
 
 
 </div>
@@ -178,55 +163,9 @@
 <script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script>
 <script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script>
 
-<script type="text/javascript" src="lib/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
-<script type="text/javascript">
-
-function myselfinfo(){
-	layer.open({
-		type: 1,
-		area: ['300px','200px'],
-		fix: false, //不固定
-		maxmin: true,
-		shade:0.4,
-		title: '查看信息',
-		content: '<div>管理员信息</div>'
-	});
-}
-
-/*资讯-添加*/
-function article_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
-/*图片-添加*/
-function picture_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
-/*产品-添加*/
-function product_add(title,url){
-	var index = layer.open({
-		type: 2,
-		title: title,
-		content: url
-	});
-	layer.full(index);
-}
-/*用户-添加*/
-function member_add(title,url,w,h){
-	layer_show(title,url,w,h);
-}
-
-
-</script> 
+<script type="text/javascript" src="lib/jquery.contextmenu/jquery.contextmenu.r2.js">
+	
+</script>
 
 
 </body>
