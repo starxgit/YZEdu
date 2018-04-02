@@ -6,8 +6,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/qmui_config_color_blue">
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="30dp"

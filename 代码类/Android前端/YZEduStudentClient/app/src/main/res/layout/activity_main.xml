@@ -7,7 +7,7 @@
     <RadioGroup
         android:id="@+id/rg_tab_bar"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="43dp"
         android:layout_alignParentBottom="true"
         android:background="#FFFFFF"
         android:orientation="horizontal">
@@ -15,31 +15,27 @@
         <RadioButton
             android:id="@+id/rb_main"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/menu_main"
-            android:text="@string/index" />
+            android:drawableTop="@drawable/menu_main" />
 
         <RadioButton
             android:id="@+id/rb_course"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/menu_course"
-            android:text="@string/course" />
-        <RadioButton
-            android:id="@+id/rb_school"
-            style="@style/tab_menu_item"
-            android:drawableTop="@drawable/menu_school"
-            android:text="@string/school" />
+            android:drawableTop="@drawable/menu_course" />
 
         <RadioButton
             android:id="@+id/rb_learn"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/menu_mycourse"
-            android:text="@string/learn" />
+            android:drawableTop="@drawable/menu_school" />
+
+        <RadioButton
+            android:id="@+id/rb_school"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/menu_mycourse" />
 
         <RadioButton
             android:id="@+id/rb_person"
             style="@style/tab_menu_item"
-            android:drawableTop="@drawable/menu_personal"
-            android:text="@string/person" />
+            android:drawableTop="@drawable/menu_personal" />
 
     </RadioGroup>
 

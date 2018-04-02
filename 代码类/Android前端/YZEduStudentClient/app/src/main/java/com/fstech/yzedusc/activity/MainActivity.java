@@ -83,11 +83,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 break;
             case R.id.rb_course:
                 vpager.setCurrentItem(Constant.PAGE_TWO);
-                break;
-            case R.id.rb_school:
+            break;
+            case R.id.rb_learn:
                 vpager.setCurrentItem(Constant.PAGE_THREE);
                 break;
-            case R.id.rb_learn:
+            case R.id.rb_school:
                 vpager.setCurrentItem(Constant.PAGE_FOUR);
                 break;
             case R.id.rb_person:
@@ -117,10 +117,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                     rb_course.setChecked(true);
                     break;
                 case Constant.PAGE_THREE:
-                    rb_school.setChecked(true);
+                    rb_learn.setChecked(true);
                     break;
                 case Constant.PAGE_FOUR:
-                    rb_learn.setChecked(true);
+                    rb_school.setChecked(true);
                     break;
                 case Constant.PAGE_FIVE:
                     rb_person.setChecked(true);

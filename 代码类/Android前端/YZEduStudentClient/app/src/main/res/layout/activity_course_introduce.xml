@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:background="@color/qmui_config_color_blue" >
+        android:background="@color/colorPrimary" >
 
         <ImageView
             android:id="@+id/ImageView01"
@@ -97,6 +97,7 @@
                     app:qmui_backgroundColor="@color/qmui_config_color_blue"
                     android:layout_width="100dp"
                     android:layout_height="30dp"
+                    android:gravity="center"
                     android:layout_marginLeft="20dp"
                     android:textColor="#FFFFFF"
                     android:text="报名选课" />

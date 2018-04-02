@@ -5,8 +5,8 @@
     android:orientation="vertical" >
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/qmui_config_color_blue">
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
@@ -26,26 +26,27 @@
         android:id="@+id/sv_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#F0F0F0"
+        android:background="@color/mainBackground"
         >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#F9F9F9"
+            android:background="@color/mainBackground"
             >
             <com.oragee.banners.BannerView
                 android:id="@+id/vp_banner"
+                android:layout_marginTop="5dp"
                 android:background="#F0F0F0"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="10dp">
             </com.oragee.banners.BannerView>
 
             <com.fstech.yzedusc.view.MyListView
                 android:id="@+id/lv_information"
-                android:divider="#F9F9F9"
+                android:divider="@color/mainBackground"
                 android:dividerHeight="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -53,7 +54,7 @@
                 android:id="@+id/re_more_top"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#F9F9F9">
+                android:background="@color/mainBackground">
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"

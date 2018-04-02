@@ -6,8 +6,8 @@
     android:orientation="vertical" >
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/qmui_config_color_blue">
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"

@@ -22,16 +22,16 @@ public class MyFragmentAdapter extends FragmentPagerAdapter {
     private final int PAGER_COUNT = 5;
     private MainFragment myFragment0 = null;
     private CourseFragment myFragment1 = null;
-    private SchoolFragment myFragment2 = null;
-    private LearnFragment myFragment3 = null;
+    private LearnFragment myFragment2 = null;
+    private SchoolFragment myFragment3 = null;
     private PersonFragment myFragment4 = null;
 
     public MyFragmentAdapter(FragmentManager fm) {
         super(fm);
         myFragment0 = new MainFragment();
         myFragment1 = new CourseFragment();
-        myFragment2 = new SchoolFragment();
-        myFragment3 = new LearnFragment();
+        myFragment2 = new LearnFragment();
+        myFragment3 = new SchoolFragment();
         myFragment4 = new PersonFragment();
     }
 

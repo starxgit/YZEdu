@@ -5,8 +5,8 @@
     android:orientation="vertical" >
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/qmui_config_color_blue">
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
@@ -49,7 +49,6 @@
                 android:paddingTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F9F9F9"
                 android:orientation="vertical">
 
                 <TextView
@@ -75,8 +74,7 @@
                 <RelativeLayout
                     android:id="@+id/re_more_live"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="#F9F9F9">
+                    android:layout_height="50dp">
 
                     <TextView
                         android:id="@+id/textView2"
@@ -110,7 +108,6 @@
                 android:paddingTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F9F9F9"
                 android:orientation="vertical">
 
                 <TextView
@@ -140,8 +137,7 @@
                 <RelativeLayout
                     android:id="@+id/re_more_new"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="#F9F9F9">
+                    android:layout_height="50dp">
 
                     <TextView
                         android:id="@+id/textView3"
@@ -175,7 +171,6 @@
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#F9F9F9"
                 android:orientation="vertical">
 
                 <TextView
@@ -205,8 +200,7 @@
                 <RelativeLayout
                     android:id="@+id/re_more_top"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="#F9F9F9">
+                    android:layout_height="50dp">
 
                     <TextView
                         android:id="@+id/textView4"
