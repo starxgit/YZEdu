@@ -96,7 +96,7 @@
                     android:background="#d6d6d6" />
 
                 <RelativeLayout
-                    android:id="@+id/main_re_temperature"
+                    android:id="@+id/main_re_mycourse"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
@@ -115,7 +115,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="80dp"
-                        android:text="我的课程"
+                        android:text="@string/mycourse"
                         android:textSize="13dp" />
                 </RelativeLayout>
 
@@ -125,7 +125,7 @@
                     android:background="#d6d6d6" />
 
                 <RelativeLayout
-                    android:id="@+id/main_re_oxygen"
+                    android:id="@+id/main_re_practical"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
@@ -144,7 +144,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="80dp"
-                        android:text="综合实训"
+                        android:text="@string/practical_training"
                         android:textSize="13dp" />
                 </RelativeLayout>
 
@@ -176,7 +176,7 @@
                     android:background="#d6d6d6" />
 
                 <RelativeLayout
-                    android:id="@+id/main_re_production_back"
+                    android:id="@+id/main_re_task"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
@@ -195,7 +195,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="80dp"
-                        android:text="我的任务"
+                        android:text="@string/mytask"
                         android:textSize="13dp" />
                 </RelativeLayout>
 
@@ -205,7 +205,7 @@
                     android:background="#d6d6d6" />
 
                 <RelativeLayout
-                    android:id="@+id/main_re_qulity"
+                    android:id="@+id/main_re_grade"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1">
@@ -224,7 +224,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="80dp"
-                        android:text="成绩查询"
+                        android:text="@string/grade_query"
                         android:textSize="13dp" />
                 </RelativeLayout>
 

@@ -23,5 +23,9 @@
     <string name="school_announcement">公告</string>
     <string name="school_circle">学友圈</string>
     <string name="search">搜索</string>
+    <string name="mycourse">我的课程</string>
+    <string name="practical_training">综合实训</string>
+    <string name="mytask">我的任务</string>
+    <string name="grade_query">成绩查询</string>
 
 </resources>

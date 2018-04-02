@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.WelcomeActivity"
+        <activity
+            android:name=".activity.WelcomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,18 +18,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity"
+        <activity
+            android:name=".activity.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing"></activity>
-        <activity android:name=".activity.CourseClassificationActivity"
+        <activity
+            android:name=".activity.CourseClassificationActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing"></activity>
-        <activity android:name=".activity.CourseIntroduceActivity"
+        <activity
+            android:name=".activity.CourseIntroduceActivity"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".activity.CourseSearchResultActivity"
+        <activity
+            android:name=".activity.CourseSearchResultActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustNothing"></activity>
-        <activity android:name=".activity.CourseCfaResultActivity"
+        <activity
+            android:name=".activity.CourseCfaResultActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.MyCourseActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.MyPracticalActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.MyTaskActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.GradeQueryActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 
