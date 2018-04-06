@@ -14,6 +14,17 @@ public class Constant {
     // 设置服务器端口
     public static final String SERVER_PORT = "8080";
 
+    // 基础数据请求地址
+    public static final String BASE_DB_URL=SERVER_IP+":"+SERVER_PORT+"/YZEduDBServer/";
+
+    // 基础图片请求路径
+    public static final String BASE_IMG_URL=SERVER_IP+":"+SERVER_PORT+"/YZEduFileServer/showImg";
+
+    // 基础文件请求路径
+    public static final String BASE_FILE_URL=SERVER_IP+":"+SERVER_PORT+"/YZEduFileServer/download";
+
+    // 基础视频请求路径
+    public static final String BASE_VIDEO_URL=SERVER_IP+":"+SERVER_PORT+"/YZEduFileServer/play";
 
     //几个代表页面的常量，代表第几个Fragment
     public static final int PAGE_ONE = 0;
