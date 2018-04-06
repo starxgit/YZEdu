@@ -3,5 +3,12 @@
     <color name="colorPrimary">#8ebefe</color>
     <color name="colorPrimaryDark">#8ebefe</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="mainBackground">#e9f1fe</color>
+    <color name="mainBackground">#eaf1fd</color>
+    <color name="Write">#FFFFFF</color>
+    <color name="grey0">#F0F0F0</color>
+    <color name="grey2">#F2F2F2</color>
+    <color name="grey9">#F9F9F9</color>
+    <color name="text_black3">#333333</color>
+    <color name="text_black6">#666666</color>
+    <color name="text_black9">#999999</color>
 </resources>

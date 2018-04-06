@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.WindowManager;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -61,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     初始化，用于获取控件实例
     */
     private void initView() {
+        // 透明状态栏
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         CacheActivityUtil.addActivity(MainActivity.this);
         rg_tab_bar = (RadioGroup) findViewById(R.id.rg_tab_bar);
         rb_main = (RadioButton) findViewById(R.id.rb_main);

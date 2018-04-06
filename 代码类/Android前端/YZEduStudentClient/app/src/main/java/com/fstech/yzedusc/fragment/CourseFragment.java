@@ -73,7 +73,7 @@ public class CourseFragment extends Fragment implements View.OnClickListener{
     * 无返回
     * */
     private void initData(){
-        for(int i=0;i<4;i++){
+        for(int i=0;i<3;i++){
             LiveRoomBean l=new LiveRoomBean();
             list_live.add(l);
         }
