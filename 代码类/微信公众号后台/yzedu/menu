@@ -22,7 +22,7 @@
 		  },
 		  
 			{
-			   "name":"新闻咨询",
+			   "name":"新闻资讯",
 			   "sub_button":[
 				{
 				   "type":"view",
@@ -31,7 +31,7 @@
 				},
 				{
 				   "type":"view",
-				   "name":"合作企业咨询",
+				   "name":"合作企业资讯",
 				   "url":"http://www.fstechnology.cn/yzedu/app/infomation/company_info.html"
 				}]
 		   },
@@ -46,7 +46,7 @@
 				{
 				   "type":"view",
 				   "name":"使用帮助",
-				   "url":"http://http://mp.weixin.qq.com/s/G42hL_BRJ7Cz8-Wu_HMM0g"
+				   "url":"http://mp.weixin.qq.com/s/G42hL_BRJ7Cz8-Wu_HMM0g"
 				},
 				{
 				   "type":"view",
