@@ -6,34 +6,37 @@ import java.io.Serializable;
  * Created by shaoxin on 18-3-29.
  */
 
-public class CourseBean implements Serializable{
+public class CourseBean implements Serializable {
     private int course_id;
     private String course_code;
     private String course_name;
-    private String coruse_introduce;
+    private String course_introduce;
     private String course_teacher;
     private int course_sum_student;
     private int course_learn_student;
     private String course_cover;
     private int course_sum;
+    private int course_type;
     private double course_price;
+    private int course_finish;
 
     public CourseBean() {
     }
 
-    public CourseBean(int course_id, String course_code, String course_name, String coruse_introduce,
-                      String course_teacher, int course_sum_student, int course_learn_student,
-                      String course_cover, int course_sum, double course_price) {
+    public CourseBean(int course_id, String course_code, String course_name, String course_introduce, String course_teacher,
+                      int course_sum_student, int course_learn_student, String course_cover, int course_sum, int course_type, double course_price, int course_finish) {
         this.course_id = course_id;
         this.course_code = course_code;
         this.course_name = course_name;
-        this.coruse_introduce = coruse_introduce;
+        this.course_introduce = course_introduce;
         this.course_teacher = course_teacher;
         this.course_sum_student = course_sum_student;
         this.course_learn_student = course_learn_student;
         this.course_cover = course_cover;
         this.course_sum = course_sum;
+        this.course_type = course_type;
         this.course_price = course_price;
+        this.course_finish = course_finish;
     }
 
     public int getCourse_id() {
@@ -60,12 +63,12 @@ public class CourseBean implements Serializable{
         this.course_name = course_name;
     }
 
-    public String getCoruse_introduce() {
-        return coruse_introduce;
+    public String getCourse_introduce() {
+        return course_introduce;
     }
 
-    public void setCoruse_introduce(String coruse_introduce) {
-        this.coruse_introduce = coruse_introduce;
+    public void setCourse_introduce(String course_introduce) {
+        this.course_introduce = course_introduce;
     }
 
     public String getCourse_teacher() {
@@ -108,6 +111,14 @@ public class CourseBean implements Serializable{
         this.course_sum = course_sum;
     }
 
+    public int getCourse_type() {
+        return course_type;
+    }
+
+    public void setCourse_type(int course_type) {
+        this.course_type = course_type;
+    }
+
     public double getCourse_price() {
         return course_price;
     }
@@ -116,19 +127,29 @@ public class CourseBean implements Serializable{
         this.course_price = course_price;
     }
 
+    public int getCourse_finish() {
+        return course_finish;
+    }
+
+    public void setCourse_finish(int course_finish) {
+        this.course_finish = course_finish;
+    }
+
     @Override
     public String toString() {
         return "CourseBean{" +
                 "course_id=" + course_id +
                 ", course_code='" + course_code + '\'' +
                 ", course_name='" + course_name + '\'' +
-                ", coruse_introduce='" + coruse_introduce + '\'' +
+                ", course_introduce='" + course_introduce + '\'' +
                 ", course_teacher='" + course_teacher + '\'' +
                 ", course_sum_student=" + course_sum_student +
                 ", course_learn_student=" + course_learn_student +
                 ", course_cover='" + course_cover + '\'' +
                 ", course_sum=" + course_sum +
+                ", course_type=" + course_type +
                 ", course_price=" + course_price +
+                ", course_finish=" + course_finish +
                 '}';
     }
 }

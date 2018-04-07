@@ -1,24 +1,44 @@
 package com.fstech.yzedusc.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fstech.yzedusc.R;
 import com.fstech.yzedusc.adapter.LessonListAdapter;
+import com.fstech.yzedusc.bean.CourseBean;
+import com.fstech.yzedusc.bean.InformationBean;
 import com.fstech.yzedusc.bean.LessonBean;
 import com.fstech.yzedusc.util.CacheActivityUtil;
+import com.fstech.yzedusc.util.CallBackUtil;
+import com.fstech.yzedusc.util.Constant;
+import com.fstech.yzedusc.util.OkhttpUtil;
 import com.fstech.yzedusc.view.MyListView;
 import com.qmuiteam.qmui.widget.QMUIRadiusImageView;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import okhttp3.Call;
 
 /**
  * Created by shaoxin on 18-3-28.
@@ -39,6 +59,8 @@ public class CourseIntroduceActivity extends AppCompatActivity {
     private TextView tv_course_introduce;
     private List<LessonBean> listItems;
     private LessonListAdapter adapter_lesson;
+    private String course_id;
+    private String user_id;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,6 +76,10 @@ public class CourseIntroduceActivity extends AppCompatActivity {
     * 无返回
     * */
     private void initView() {
+        Intent intent = getIntent();
+        course_id = intent.getStringExtra("course_id");
+        Log.e("course_id", course_id);
+        user_id = "1";
         CacheActivityUtil.addActivity(CourseIntroduceActivity.this);
         iv_course_image = (QMUIRadiusImageView) findViewById(R.id.iv_course_image);
         tv_course_name = (TextView) findViewById(R.id.tv_course_name);
@@ -82,6 +108,53 @@ public class CourseIntroduceActivity extends AppCompatActivity {
     * 无返回
     * */
     private void initData() {
+        String url = Constant.BASE_DB_URL + "CourseDetail";
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("user_id", user_id);
+        map.put("course_id", course_id);
+        OkhttpUtil.okHttpGet(url, map, new CallBackUtil.CallBackString() {
+            @Override
+            public void onFailure(Call call, Exception e) {
+                Log.e("fail", "okhttp请求失败");
+            }
+
+            @Override
+            public void onResponse(String response) {
+                Log.e("response", response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    int result_code = jsonObject.getInt("result_code");
+                    if (result_code == 0) {
+                        JSONObject jobj = jsonObject.getJSONObject("return_data");
+                        ObjectMapper objectMapper = new ObjectMapper();
+                        CourseBean courseBean = objectMapper.readValue(jobj.toString(), CourseBean.class);
+                        tv_course_name.setText(courseBean.getCourse_name());
+                        tv_course_introduce.setText(courseBean.getCourse_introduce());
+                        tv_course_teacher.setText("授课教师:" + courseBean.getCourse_teacher());
+                        String sum_student = " / " + courseBean.getCourse_sum_student();
+                        if (courseBean.getCourse_sum_student() == -1) sum_student = "";
+                        tv_learn_num.setText(courseBean.getCourse_learn_student() + sum_student);
+                        tv_sumhour.setText("共 " + courseBean.getCourse_sum() + " 人学习");
+
+                    } else {
+                        String message = jsonObject.getString("message");
+                        Toast.makeText(CourseIntroduceActivity.this, message, Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.e("json创建出错", e.getLocalizedMessage());
+                } catch (JsonParseException e) {
+                    Log.e("json转换出错", e.getLocalizedMessage());
+                    e.printStackTrace();
+                } catch (JsonMappingException e) {
+                    Log.e("Mapping出错", e.getLocalizedMessage());
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    Log.e("IO出错", e.getLocalizedMessage());
+                    e.printStackTrace();
+                }
+            }
+        });
         for (int i = 1; i < 15; i++) {
             LessonBean lb = new LessonBean();
             lb.setLesson_title("第" + i + "节  课程标题" + i);

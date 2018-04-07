@@ -27,5 +27,6 @@
     <string name="practical_training">综合实训</string>
     <string name="mytask">我的任务</string>
     <string name="grade_query">成绩查询</string>
+    <string name="live_room">直播间</string>
 
 </resources>

@@ -37,7 +37,9 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.Call;
 
@@ -155,7 +157,7 @@ public class MainFragment extends Fragment {
                     if (type == 2) {
                         // 课程广告
                         Intent intent = new Intent(getActivity(), CourseIntroduceActivity.class);
-                        intent.putExtra("link", link);
+                        intent.putExtra("course_id", link);
                         startActivity(intent);
                     } else if (type == 1) {
                         // 网页广告
@@ -182,8 +184,10 @@ public class MainFragment extends Fragment {
     * 无返回
     * */
     private void getBanners() {
-        String url = Constant.BASE_DB_URL + "PlatformInformations?page=1";
-        OkhttpUtil.okHttpGet(url, new CallBackUtil.CallBackString() {
+        String url = Constant.BASE_DB_URL + "PlatformInformations";
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("page", "1");
+        OkhttpUtil.okHttpGet(url, map, new CallBackUtil.CallBackString() {
             @Override
             public void onFailure(Call call, Exception e) {
                 Log.e("fail", "okhttp请求失败");
@@ -200,7 +204,7 @@ public class MainFragment extends Fragment {
                         JSONArray jsonArray = jsonObject.getJSONArray("return_data");
                         ObjectMapper objectMapper = new ObjectMapper();
                         for (int i = 0; i < jsonArray.length(); i++) {
-                            Log.e("informationsize",listItems_information.size()+","+i+","+jsonArray.length());
+                            Log.e("informationsize", listItems_information.size() + "," + i + "," + jsonArray.length());
                             JSONObject jobj = jsonArray.getJSONObject(i);
                             InformationBean ib = objectMapper.readValue(jobj.toString(), InformationBean.class);
 //                            listItems_information.add(ib);
@@ -214,14 +218,14 @@ public class MainFragment extends Fragment {
                     Log.e("Json", "创建Json对象失败");
                     e.printStackTrace();
                 } catch (JsonParseException e) {
-                    Log.e("error","包装异常");
+                    Log.e("error", "包装异常");
                     e.printStackTrace();
                 } catch (JsonMappingException e) {
                     e.printStackTrace();
-                    Log.e("error","Mapping异常");
+                    Log.e("error", "PlatFormMapping异常");
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Log.e("error","IO异常");
+                    Log.e("error", "IO异常");
                 }
             }
         });

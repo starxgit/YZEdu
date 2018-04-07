@@ -33,4 +33,7 @@ public class Constant {
     public static final int PAGE_FOUR = 3;
     public static final int PAGE_FIVE = 4;
 
+    // GridView放视频的数量
+    public static final int GRID_SIZE = 4;
+
 }

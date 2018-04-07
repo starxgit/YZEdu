@@ -62,7 +62,7 @@ public class LiveRoomListAdapter extends BaseAdapter {
             vh.iv_image = (ImageView) convertView.findViewById(R.id.item_live_iv_image);
             vh.tv_title = (TextView) convertView.findViewById(R.id.item_live_tv_title);
             vh.tv_state = (TextView) convertView.findViewById(R.id.item_live_tv_state);
-            vh.tv_room_num= (TextView) convertView.findViewById(R.id.item_live_tv_room_id);
+            vh.tv_room_num = (TextView) convertView.findViewById(R.id.item_live_tv_room_id);
             //设置空间集到convertView
             convertView.setTag(vh);
         } else {
@@ -70,9 +70,15 @@ public class LiveRoomListAdapter extends BaseAdapter {
         }
 
         LiveRoomBean lb = listItems.get(position);
-//        vh.tv_title.setText(lb.getLive_room_name());
-//        vh.tv_state.setText(lb.getLive_room_state());
-//        vh.tv_room_num.setText(lb.getLive_room_number());
+        vh.tv_title.setText(lb.getLive_room_name());
+        vh.tv_room_num.setText(lb.getLive_room_number());
+        if (lb.getLive_room_state().equals(2)) {
+            vh.tv_state.setText("直播中");
+        } else if (lb.getLive_room_state().equals("1")) {
+            vh.tv_state.setText("已关闭");
+        } else if (lb.getLive_room_state().equals("3")) {
+            vh.tv_state.setText("已锁定");
+        }
 
         // 设置图片
 

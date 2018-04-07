@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -16,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/course"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/Write"
             android:textSize="22sp" />
     </FrameLayout>
 
@@ -28,8 +29,8 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="5dp"
-        android:background="#F0F0F0"
-        android:backgroundTint="#F2F2F2"
+        android:background="@color/grey0"
+        android:backgroundTint="@color/grey2"
         android:clickable="true"
         android:editable="false"
         android:gravity="center"
@@ -73,7 +74,7 @@
                     android:id="@+id/lv_live"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:divider="#FFFFFF" />
+                    android:divider="@color/Write" />
 
                 <RelativeLayout
                     android:id="@+id/re_more_live"
@@ -88,7 +89,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="20dp"
                         android:fontFamily="华文黑体"
-                        android:text="@string/showmore"
+                        android:text="@string/live_room"
                         android:textColor="#666666" />
 
                     <ImageView
@@ -101,147 +102,167 @@
                         android:src="@mipmap/cd1" />
                 </RelativeLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.1dp"
-                    android:background="#d6d6d6" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/ll_new"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical"
-                android:paddingTop="15dp">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Write"
+                app:cardCornerRadius="@dimen/dimen_9dp">
 
-                <TextView
-                    android:id="@+id/tv_new"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/course_new"
-                    android:textColor="#333333"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="20dp"
-                    android:layout_height="2dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:background="#d6d6d6" />
-
-                <GridView
-                    android:id="@+id/gv_new"
+                <LinearLayout
+                    android:id="@+id/ll_new"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:divider="#FFFFFF"
-                    android:numColumns="2" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.1dp"
-                    android:background="#d6d6d6" />
-
-                <RelativeLayout
-                    android:id="@+id/re_more_new"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp">
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:paddingTop="15dp">
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/tv_new"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="20dp"
-                        android:fontFamily="华文黑体"
-                        android:text="@string/showmore"
-                        android:textColor="#666666" />
+                        android:layout_gravity="center"
+                        android:text="@string/course_new"
+                        android:textColor="#333333"
+                        android:textSize="18sp" />
 
-                    <ImageView
-                        android:id="@+id/imageView3"
+                    <View
                         android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/textView3"
-                        android:alpha="0.2"
-                        android:src="@mipmap/cd1" />
-                </RelativeLayout>
+                        android:layout_height="2dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="#d6d6d6" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.1dp"
-                    android:background="#d6d6d6" />
-            </LinearLayout>
+                    <com.fstech.yzedusc.view.MyGridView
+                        android:id="@+id/gv_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@color/Write"
+                        android:listSelector="@android:color/transparent"
+                        android:numColumns="2" />
 
-            <LinearLayout
-                android:id="@+id/ll_top"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:background="#d6d6d6" />
+
+                    <RelativeLayout
+                        android:id="@+id/re_more_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:fontFamily="华文黑体"
+                            android:text="@string/showmore"
+                            android:textColor="#666666" />
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/textView3"
+                            android:alpha="0.2"
+                            android:src="@mipmap/cd1" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:background="#d6d6d6" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical"
-                android:paddingTop="15dp">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Write"
+                app:cardCornerRadius="@dimen/dimen_9dp">
 
-                <TextView
-                    android:id="@+id/tv_top"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="@string/course_top"
-                    android:textColor="#333333"
-                    android:textSize="18sp" />
-
-                <View
-                    android:layout_width="20dp"
-                    android:layout_height="2dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:background="#d6d6d6" />
-
-                <GridView
-                    android:id="@+id/gv_top"
-                    android:numColumns="2"
+                <LinearLayout
+                    android:id="@+id/ll_top"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:divider="#FFFFFF" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.1dp"
-                    android:background="#d6d6d6" />
-
-                <RelativeLayout
-                    android:id="@+id/re_more_top"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp">
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:paddingTop="15dp">
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tv_top"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="20dp"
-                        android:fontFamily="华文黑体"
-                        android:text="@string/showmore"
-                        android:textColor="#666666" />
+                        android:layout_gravity="center"
+                        android:text="@string/course_top"
+                        android:textColor="#333333"
+                        android:textSize="18sp" />
 
-                    <ImageView
-                        android:id="@+id/imageView4"
+                    <View
                         android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/textView4"
-                        android:alpha="0.2"
-                        android:src="@mipmap/cd1" />
-                </RelativeLayout>
+                        android:layout_height="2dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="#d6d6d6" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.1dp"
-                    android:background="#d6d6d6" />
-            </LinearLayout>
+                    <com.fstech.yzedusc.view.MyGridView
+                        android:id="@+id/gv_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@color/Write"
+                        android:listSelector="@android:color/transparent"
+                        android:numColumns="2" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:background="#d6d6d6" />
+
+                    <RelativeLayout
+                        android:id="@+id/re_more_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:fontFamily="华文黑体"
+                            android:text="@string/showmore"
+                            android:textColor="#666666" />
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/textView4"
+                            android:alpha="0.2"
+                            android:src="@mipmap/cd1" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.1dp"
+                        android:background="#d6d6d6" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
     </ScrollView>
