@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>平台资讯</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<style type="text/css">
@@ -35,124 +35,63 @@
 	<body>
 
 		<div>
-			<ul class="mui-table-view" onclick="platform_info_detail()">
-				<div class="mui-card">
-					<div class="mui-card-header">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
-								<img class="mui-media-object mui-pull-left" src="../../images/53fed63700018a9306000338-240-135.jpg">
-								<div class="mui-media-body">
-									Linux图形库Mesa发布
-									<p class='mui-ellipsis'>基于Linux操作系统的主要Mesa 18开源图形库已于本周早些时候发布，以进一步推进Linux图形驱动程序，并已开始出现在各主要发行版的存储库中。</p>
-								</div>
+			<ul class="mui-table-view" id="ul_informations">
 
-							</a>
-						</li>
-					</div>
-					<div class="info_bottom">
-						<span id="right_info">作者</span><br />
-						<span id="right_time">更新于 2018-03-31 18:18</span>
-					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-header">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
-								<img class="mui-media-object mui-pull-left" src="../../images/5460558c0001f92506000338-240-135.jpg">
-								<div class="mui-media-body">
-									云计算
-									<p class='mui-ellipsis'>带你发现云计算之美第三期——云计算在电商时代的技术支撑，领略五年沉淀下的技术盛宴。</p>
-								</div>
-
-							</a>
-						</li>
-					</div>
-					<div class="info_bottom">
-						<span id="right_info">作者</span><br />
-						<span id="right_time">更新于 2018-03-31 18:18</span>
-					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-header">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
-								<img class="mui-media-object mui-pull-left" src="../../images/5704aa88000104f106000338-240-135.jpg">
-								<div class="mui-media-body">
-									大数据
-									<p class='mui-ellipsis'>贵阳市交管局发布清明出行预测及交通安全提示。大数据分析预测今年清明节期间，贵阳市周边公墓车都将迎来较大车流，花溪公园、湿地公园、森林公园、黔灵山公园、青岩古镇等近郊旅游景区将会成为旅游热点，提醒广大市民部分公墓和景区存在停车位不足，请错峰出行或选择公交出行、步行等绿色方式文明出游。</p>
-								</div>
-
-							</a>
-						</li>
-					</div>
-					<div class="info_bottom">
-						<span id="right_info">作者</span><br />
-						<span id="right_time">更新于 2018-03-31 18:18</span>
-					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-header">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
-								<img class="mui-media-object mui-pull-left" src="../../images/5873534e0001ecb106000338-240-135.jpg">
-								<div class="mui-media-body">
-									人工智能
-									<p class='mui-ellipsis'>2018年4月1日，国际比赛日后五大联赛相继回归，红彩众专家也已经就周末的比赛做出了分析。昨日已经结束的比赛中，有的比分令人信服，有的场次令人费解，足球很奇妙，看完比分真是几家欢喜几家愁。昨天晚上意甲结束一场争夺，尤文图斯主场3-1击败AC米兰，巩固了自己的榜首位置，网易红彩推出的人工智能-澳彩五星指数单选准确命中本场比赛，昨日的澳彩五星指数已经完成了10场连中。</p>
-								</div>
-
-							</a>
-						</li>
-					</div>
-					<div class="info_bottom">
-						<span id="right_info">作者</span><br />
-						<span id="right_time">更新于 2018-03-31 18:18</span>
-					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-header">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
-								<img class="mui-media-object mui-pull-left" src="../../images/563b13700001ebf906000338-240-135.jpg">
-								<div class="mui-media-body">
-									Linux云计算
-									<p class='mui-ellipsis'>如何在 Linux 上安装应用程序?因为有许多操作系统，这个问题不止有一个答案。应用程序可以可以来自许多来源 —— 几乎不可能数的清，并且每个开发团队都可以以他们认为最好的方式提供软件。知道如何安装你所得到的软件是成为操作系统高级用户的一部分。</p>
-								</div>
-
-							</a>
-						</li>
-					</div>
-					<div class="info_bottom">
-						<span id="right_info">作者</span><br />
-						<span id="right_time">更新于 2018-03-31 18:18</span>
-					</div>
-				</div>
-				<div class="mui-card">
-					<div class="mui-card-header">
-						<li class="mui-table-view-cell mui-media">
-							<a href="javascript:;">
-								<img class="mui-media-object mui-pull-left" src="../../images/55063ec30001774b06000338-240-135.jpg">
-								<div class="mui-media-body">
-									Shell
-									<p class='mui-ellipsis'>GNOME Shell 被发现存在内存泄露的问题，现在官方开发团队已确认导致这个问题的原因 —— 忘记进行垃圾回收……GNOME 称目前正在修复该问题。“触发垃圾回收能够将 GNOME Shell 使用的内存量减少到正常水平”GNOME 开发者花了大约一周的时间来定位问题的根源，不过谢天谢地，内存泄漏的原因（看起来）已经确定。</p>
-								</div>
-
-							</a>
-						</li>
-					</div>
-					<div class="info_bottom">
-						<span id="right_info">作者</span><br />
-						<span id="right_time">更新于 2018-03-31 18:18</span>
-					</div>
-				</div>
 			</ul>
 		</div>
+
 		<link rel="stylesheet" href="../../css/mui.css" />
 		<script src="../../js/mui.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript">
 			mui.init()
 			function platform_info_detail(){
 				window.location.href = "platform_info_detail.html";
 			}
+
+	$(document).ready(function() {
+      // alert("loading");
+      $.ajax({
+      url:"http://www.fstechnology.cn:8080/YZEduDBServer/PlatformInformations?page=1",//请求地址
+      dataType:"json",//数据格式 
+      type:"get",//请求方式
+      async : false,//是否异步请求
+      success : function(data) {   //如何发送成功
+      if(data.result_code!=0){
+      	alert(data.message);
+      }else{
+      	var n=eval(data.return_data).length;
+      	for(var i=0;i<n;i++){
+      		var showImg="";
+      		if(data.return_data[i].information_cover!=null)
+      			showImg="<img class='mui-media-object mui-pull-left' src='http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile="+data.return_data[i].information_cover+"'>";
+      		$("#ul_informations").append(
+      			"<div class='mui-card'>"+
+					"<div class='mui-card-header'>"+
+						"<li class='mui-table-view-cell mui-media'>"+
+							showImg+
+								"<div class='mui-media-body'>"+
+									data.return_data[i].information_title+
+									"<p class='mui-ellipsis'>"+
+										data.return_data[i].information_content+
+									"</p>"+
+								"</div>"+
+						"</li>"+
+					"</div>"+
+					"<div class='info_bottom'>"+
+						"<span id='right_time'>更新于"+ data.return_data[i].information_date.substring(0,10) +
+						"</span>"+
+					"</div>"+
+				"</div>");
+      	}
+
+      }
+     },
+ })
+ });
+
+		
+
 		</script>
 	</body>
 

@@ -1,23 +1,45 @@
 package com.fstech.yzedusc.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import com.fstech.yzedusc.R;
 import com.fstech.yzedusc.activity.CourseIntroduceActivity;
 import com.fstech.yzedusc.adapter.InformationListAdapter;
+import com.fstech.yzedusc.bean.BannerBean;
 import com.fstech.yzedusc.bean.InformationBean;
+import com.fstech.yzedusc.util.CallBackUtil;
+import com.fstech.yzedusc.util.Constant;
+import com.fstech.yzedusc.util.DownloadTools;
+import com.fstech.yzedusc.util.ImageUitl;
+import com.fstech.yzedusc.util.OkhttpUtil;
+import com.fstech.yzedusc.util.ThreadUtil;
 import com.fstech.yzedusc.view.MyListView;
 import com.oragee.banners.BannerView;
 
+import org.codehaus.jackson.JsonParseException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
 
 /**
  * Created by shaoxin on 18-3-25.
@@ -27,12 +49,13 @@ import java.util.List;
 public class MainFragment extends Fragment {
     // 定义UI对象
     private BannerView vp_banner;
-    private int[] imgs;     //存放banner图片
+    private List<BannerBean> listItems_banner;
     private List<View> viewList;
     private MyListView lv_information;
     private InformationListAdapter adapter;
     private List<InformationBean> listItems_information;
     private ScrollView sv_main;
+    private Handler handler;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,12 +63,30 @@ public class MainFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
+    @SuppressLint("HandlerLeak")
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initView();
         initData();
-        setBanner();
+        handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    // banner 数据加载完成
+                    case 0:
+                        setBanner();
+                        break;
+                    // 资讯数据加载完成
+                    case 1:
+                        Log.e("informationsize", listItems_information.size() + "");
+                        adapter.notifyDataSetChanged();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        };
     }
 
     /*
@@ -61,6 +102,7 @@ public class MainFragment extends Fragment {
         listItems_information = new ArrayList<InformationBean>();
         adapter = new InformationListAdapter(getActivity(), listItems_information);
         lv_information.setAdapter(adapter);
+        listItems_banner = new ArrayList<BannerBean>();
     }
 
     /*
@@ -69,17 +111,8 @@ public class MainFragment extends Fragment {
     * 无返回
     * */
     private void initData() {
-        // TODO 初始化banner 及咨询相关的数据
-        imgs = new int[]{R.drawable.makalong, R.drawable.springmvc, R.drawable.androidkaifa, R.drawable.html5};
-        for (int i = 1; i < 10; i++) {
-            int a = (int) (Math.random() * 3);
-            String img = null;
-            if (a > 1) img = "a";
-            InformationBean ib = new InformationBean(0, "资讯标题" + i, "这是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容" +
-                    "是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容", "2018-03-" + i, img);
-            listItems_information.add(ib);
-        }
-//        adapter.notifyDataSetChanged();   // 好像不加这句也能完成数据加载
+        getBanners();
+        getInformations();
         lv_information.measure(0, 0);
     }
 
@@ -89,19 +122,52 @@ public class MainFragment extends Fragment {
     * 无返回
     * */
     private void setBanner() {
-        for (int i = 0; i < imgs.length; i++) {
-            ImageView image = new ImageView(getActivity());
-            final String z = i + "";
+
+        for (int i = 0; i < listItems_banner.size(); i++) {
+            BannerBean b = listItems_banner.get(i);
+            final int type = b.getBanner_type();
+            final String link = b.getBanner_link();
+            final String banner_image = b.getBanner_image();
+
+            final ImageView image = new ImageView(getActivity());
             image.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
             //设置显示格式
             image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            image.setImageResource(imgs[i]);
+
+            // 使用线程工具类设置banner图片
+            ThreadUtil.runInThread(new Runnable() {
+                @Override
+                public void run() {
+                    int state = DownloadTools.downloadImg(banner_image);
+//                    Log.e("img", state + "");
+                    ThreadUtil.runInUIThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            ImageUitl.SimpleShowImage(banner_image, image);
+                        }
+                    });
+                }
+            });
             image.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     // TODO 点击banner后的事件
-                    Intent intent0 = new Intent(getActivity(), CourseIntroduceActivity.class);
-                    startActivity(intent0);
+                    if (type == 2) {
+                        // 课程广告
+                        Intent intent = new Intent(getActivity(), CourseIntroduceActivity.class);
+                        intent.putExtra("link", link);
+                        startActivity(intent);
+                    } else if (type == 1) {
+                        // 网页广告
+                        Intent intent = new Intent(getActivity(), CourseIntroduceActivity.class);
+                        intent.putExtra("link", link);
+                        startActivity(intent);
+                    } else if (type == 3) {
+                        // 资讯广告
+                        Intent intent = new Intent(getActivity(), CourseIntroduceActivity.class);
+                        intent.putExtra("link", link);
+                        startActivity(intent);
+                    }
                 }
             });
             viewList.add(image);
@@ -109,4 +175,104 @@ public class MainFragment extends Fragment {
         vp_banner.startLoop(true);
         vp_banner.setViewList(viewList);
     }
+
+    /*
+    * 获取平台资讯的数据
+    * 无参数
+    * 无返回
+    * */
+    private void getBanners() {
+        String url = Constant.BASE_DB_URL + "PlatformInformations?page=1";
+        OkhttpUtil.okHttpGet(url, new CallBackUtil.CallBackString() {
+            @Override
+            public void onFailure(Call call, Exception e) {
+                Log.e("fail", "okhttp请求失败");
+            }
+
+            @Override
+            public void onResponse(String response) {
+                Log.e("response", response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    int result_code = jsonObject.getInt("result_code");
+                    if (result_code == 0) {
+                        // 返回正确的情况
+                        JSONArray jsonArray = jsonObject.getJSONArray("return_data");
+                        ObjectMapper objectMapper = new ObjectMapper();
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            Log.e("informationsize",listItems_information.size()+","+i+","+jsonArray.length());
+                            JSONObject jobj = jsonArray.getJSONObject(i);
+                            InformationBean ib = objectMapper.readValue(jobj.toString(), InformationBean.class);
+//                            listItems_information.add(ib);
+                        }
+                        handler.sendMessage(handler.obtainMessage(1));
+                    } else {
+                        String message = jsonObject.getString("message");
+                        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    Log.e("Json", "创建Json对象失败");
+                    e.printStackTrace();
+                } catch (JsonParseException e) {
+                    Log.e("error","包装异常");
+                    e.printStackTrace();
+                } catch (JsonMappingException e) {
+                    e.printStackTrace();
+                    Log.e("error","Mapping异常");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Log.e("error","IO异常");
+                }
+            }
+        });
+    }
+
+    /*
+    * 获取banner的数据
+    * 无参数
+    * 无返回
+    * */
+    private void getInformations() {
+        String url = Constant.BASE_DB_URL + "Banners";
+        OkhttpUtil.okHttpGet(url, new CallBackUtil.CallBackString() {
+            @Override
+            public void onFailure(Call call, Exception e) {
+                Log.e("fail", "okhttp请求失败");
+            }
+
+            @Override
+            public void onResponse(String response) {
+                Log.e("response", response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    int result_code = jsonObject.getInt("result_code");
+                    if (result_code == 0) {
+                        // 返回正确的情况
+                        JSONArray jsonArray = jsonObject.getJSONArray("return_data");
+                        ObjectMapper objectMapper = new ObjectMapper();
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jobj = jsonArray.getJSONObject(i);
+                            BannerBean bannerBean = objectMapper.readValue(jobj.toString(), BannerBean.class);
+                            listItems_banner.add(bannerBean);
+                        }
+                        handler.sendMessage(handler.obtainMessage(0));
+                    } else {
+                        String message = jsonObject.getString("message");
+                        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    Log.e("Json", "创建Json对象失败");
+                    e.printStackTrace();
+                } catch (JsonParseException e) {
+                    Log.e("Json", "JSON包装成对象失败");
+                    e.printStackTrace();
+                } catch (JsonMappingException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
 }

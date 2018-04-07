@@ -2,38 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:paddingTop="15dp"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        android:paddingTop="15dp">
+
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/course"
             android:layout_gravity="center"
-            android:textSize="22sp"
+            android:text="@string/course"
             android:textColor="#FFFFFF"
-            />
+            android:textSize="22sp" />
     </FrameLayout>
 
     <EditText
         android:id="@+id/et_search"
-        android:background="#F0F0F0"
-        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:hint="@string/input_search_content"
-        android:textSize="12sp"
-        android:gravity="center"
-        android:editable="false"
-        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:background="#F0F0F0"
         android:backgroundTint="#F2F2F2"
-        android:clickable="true" />
+        android:clickable="true"
+        android:editable="false"
+        android:gravity="center"
+        android:hint="@string/input_search_content"
+        android:textSize="12sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -47,31 +48,33 @@
 
             <LinearLayout
                 android:id="@+id/ll_live"
-                android:paddingTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingTop="15dp">
 
                 <TextView
                     android:id="@+id/tv_live"
-                    android:textSize="18sp"
-                    android:textColor="#333333"
-                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/is_living" />
-                <View
-                    android:layout_margin="5dp"
                     android:layout_gravity="center"
+                    android:text="@string/is_living"
+                    android:textColor="#333333"
+                    android:textSize="18sp" />
+
+                <View
                     android:layout_width="20dp"
                     android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
                     android:background="#d6d6d6" />
 
                 <com.fstech.yzedusc.view.MyListView
                     android:id="@+id/lv_live"
-                    android:divider="#FFFFFF"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:divider="#FFFFFF" />
+
                 <RelativeLayout
                     android:id="@+id/re_more_live"
                     android:layout_width="match_parent"
@@ -81,10 +84,10 @@
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="20dp"
                         android:fontFamily="华文黑体"
-                        android:layout_centerHorizontal="true"
                         android:text="@string/showmore"
                         android:textColor="#666666" />
 
@@ -92,11 +95,12 @@
                         android:id="@+id/imageView2"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_toEndOf="@id/textView2"
                         android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/textView2"
                         android:alpha="0.2"
                         android:src="@mipmap/cd1" />
                 </RelativeLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
@@ -105,36 +109,40 @@
 
             <LinearLayout
                 android:id="@+id/ll_new"
-                android:layout_marginTop="20dp"
-                android:paddingTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:paddingTop="15dp">
 
                 <TextView
                     android:id="@+id/tv_new"
-                    android:textSize="18sp"
-                    android:textColor="#333333"
-                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/course_new" />
-                <View
-                    android:layout_margin="5dp"
                     android:layout_gravity="center"
+                    android:text="@string/course_new"
+                    android:textColor="#333333"
+                    android:textSize="18sp" />
+
+                <View
                     android:layout_width="20dp"
                     android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
                     android:background="#d6d6d6" />
 
-                <com.fstech.yzedusc.view.MyListView
-                    android:id="@+id/lv_new"
-                    android:divider="#FFFFFF"
+                <GridView
+                    android:id="@+id/gv_new"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:divider="#FFFFFF"
+                    android:numColumns="2" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
                     android:background="#d6d6d6" />
+
                 <RelativeLayout
                     android:id="@+id/re_more_new"
                     android:layout_width="match_parent"
@@ -144,10 +152,10 @@
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="20dp"
                         android:fontFamily="华文黑体"
-                        android:layout_centerHorizontal="true"
                         android:text="@string/showmore"
                         android:textColor="#666666" />
 
@@ -155,11 +163,12 @@
                         android:id="@+id/imageView3"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_toEndOf="@id/textView3"
                         android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/textView3"
                         android:alpha="0.2"
                         android:src="@mipmap/cd1" />
                 </RelativeLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
@@ -168,36 +177,40 @@
 
             <LinearLayout
                 android:id="@+id/ll_top"
-                android:paddingTop="15dp"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:paddingTop="15dp">
 
                 <TextView
                     android:id="@+id/tv_top"
-                    android:textSize="18sp"
-                    android:textColor="#333333"
-                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/course_top" />
-                <View
-                    android:layout_margin="5dp"
                     android:layout_gravity="center"
+                    android:text="@string/course_top"
+                    android:textColor="#333333"
+                    android:textSize="18sp" />
+
+                <View
                     android:layout_width="20dp"
                     android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
                     android:background="#d6d6d6" />
 
-                <com.fstech.yzedusc.view.MyListView
-                    android:id="@+id/lv_top"
-                    android:divider="#FFFFFF"
+                <GridView
+                    android:id="@+id/gv_top"
+                    android:numColumns="2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:divider="#FFFFFF" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"
                     android:background="#d6d6d6" />
+
                 <RelativeLayout
                     android:id="@+id/re_more_top"
                     android:layout_width="match_parent"
@@ -207,10 +220,10 @@
                         android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="20dp"
                         android:fontFamily="华文黑体"
-                        android:layout_centerHorizontal="true"
                         android:text="@string/showmore"
                         android:textColor="#666666" />
 
@@ -218,11 +231,12 @@
                         android:id="@+id/imageView4"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:layout_toEndOf="@id/textView4"
                         android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/textView4"
                         android:alpha="0.2"
                         android:src="@mipmap/cd1" />
                 </RelativeLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.1dp"

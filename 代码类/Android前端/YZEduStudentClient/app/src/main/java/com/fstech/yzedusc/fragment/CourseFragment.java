@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.SearchView;
 
@@ -24,11 +25,11 @@ import java.util.List;
  * 课程界面的Fragment
  */
 
-public class CourseFragment extends Fragment implements View.OnClickListener{
+public class CourseFragment extends Fragment implements View.OnClickListener {
     // 定义UI对象
     private MyListView lv_live;
-    private MyListView lv_new;
-    private MyListView lv_top;
+    private GridView gv_new;
+    private GridView gv_top;
     private List<LiveRoomBean> list_live;
     private LiveRoomListAdapter adapter_live;
     private EditText et_search;
@@ -51,20 +52,16 @@ public class CourseFragment extends Fragment implements View.OnClickListener{
     * 无参数
     * 无返回
     * */
-    private void initView(){
-        lv_live=(MyListView)getActivity().findViewById(R.id.lv_live);
-        lv_new=(MyListView)getActivity().findViewById(R.id.lv_new);
-        lv_top=(MyListView)getActivity().findViewById(R.id.lv_top);
-        et_search=(EditText)getActivity().findViewById(R.id.et_search);
+    private void initView() {
+        lv_live = (MyListView) getActivity().findViewById(R.id.lv_live);
+        gv_new = (GridView) getActivity().findViewById(R.id.gv_new);
+        gv_top = (GridView) getActivity().findViewById(R.id.gv_top);
+        et_search = (EditText) getActivity().findViewById(R.id.et_search);
         et_search.setOnClickListener(this);
-        list_live=new ArrayList<LiveRoomBean>();
-        adapter_live=new LiveRoomListAdapter(getActivity(),list_live);
+        list_live = new ArrayList<LiveRoomBean>();
+        adapter_live = new LiveRoomListAdapter(getActivity(), list_live);
         lv_live.setAdapter(adapter_live);
-        lv_new.setAdapter(adapter_live);
-        lv_top.setAdapter(adapter_live);
-        lv_live.measure(0,0);
-        lv_new.measure(0,0);
-        lv_top.measure(0,0);
+        lv_live.measure(0, 0);
     }
 
     /*
@@ -72,9 +69,9 @@ public class CourseFragment extends Fragment implements View.OnClickListener{
     * 无参数
     * 无返回
     * */
-    private void initData(){
-        for(int i=0;i<3;i++){
-            LiveRoomBean l=new LiveRoomBean();
+    private void initData() {
+        for (int i = 0; i < 3; i++) {
+            LiveRoomBean l = new LiveRoomBean();
             list_live.add(l);
         }
         adapter_live.notifyDataSetChanged();
@@ -82,7 +79,7 @@ public class CourseFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.et_search:
                 Intent intent0 = new Intent(getActivity(), CourseClassificationActivity.class);
                 startActivity(intent0);
