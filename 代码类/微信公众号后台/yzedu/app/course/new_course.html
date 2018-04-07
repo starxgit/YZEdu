@@ -46,7 +46,7 @@
       		if(data.return_data[i].course_cover!=null)
       			showImg="<img class='mui-card-header mui-card-media' style='width:100%;' src='http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile="+data.return_data[i].course_cover+"'>";
       		$("#new_course_main").append(
-      			"<div class='mui-card'>"+
+      			"<div class='mui-card' onclick='toDetail("+data.return_data[i].course_id+")'>"+
 			showImg+
 			"<div class='mui-card-content'>"+
 				"<p style='text-indent:2em;line-height: 15pt;margin-top: 5pt;padding: 0pt 5pt 0pt 5pt;'>"
@@ -60,6 +60,10 @@
      },
  })
  });
+
+		function toDetail(i){
+			window.location.href="course_detail.html?courseid="+i;	
+		}
 	</script>
 
 </html>
