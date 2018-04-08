@@ -32,7 +32,6 @@
             android:layout_width="160dp"
             android:layout_height="110dp"
             android:layout_margin="20dp"
-            android:src="@drawable/aixinbanmaxian"
             app:qmui_border_width="0dp"
             app:qmui_corner_radius="5dp"
             app:qmui_is_circle="false" />
@@ -85,6 +84,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tv_course_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -144,10 +144,19 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tv_course_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:gravity="center_vertical"
+                            android:text="课程代码：1020"
+                            android:textColor="@color/text_black6" />
+
+                        <TextView
                             android:id="@+id/tv_course_teacher"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
+                            android:layout_marginLeft="15dp"
                             android:gravity="center_vertical"
                             android:text="授课教师：张三"
                             android:textColor="@color/text_black6" />
@@ -156,8 +165,9 @@
                             android:id="@+id/tv_course_introduce"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginTop="15dp"
                             android:gravity="center_vertical"
                             android:text="这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍"
                             android:textColor="@color/text_black6" />
@@ -167,7 +177,6 @@
                         android:id="@+id/ll_course_catalog"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/grey9"
                         android:orientation="vertical"
                         android:padding="15dp">
 

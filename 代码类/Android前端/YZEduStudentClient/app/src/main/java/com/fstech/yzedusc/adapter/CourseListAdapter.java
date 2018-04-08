@@ -1,6 +1,7 @@
 package com.fstech.yzedusc.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,9 @@ import android.widget.TextView;
 import com.fstech.yzedusc.R;
 import com.fstech.yzedusc.bean.CourseBean;
 import com.fstech.yzedusc.bean.LiveRoomBean;
+import com.fstech.yzedusc.util.DownloadTools;
+import com.fstech.yzedusc.util.ImageUitl;
+import com.fstech.yzedusc.util.ThreadUtil;
 import com.qmuiteam.qmui.widget.QMUIRadiusImageView;
 
 import java.util.List;
@@ -76,7 +80,33 @@ public class CourseListAdapter extends BaseAdapter {
         }
 
         CourseBean cb = listItems.get(position);
-        // TODO 设置内容
+        String course_name = cb.getCourse_name();
+        String course_learn_student = cb.getCourse_learn_student() + " 人学习";
+        String course_sum_student = "容量: " + cb.getCourse_sum_student() + " 人";
+        if (cb.getCourse_sum_student() == -1) course_sum_student = "";
+        String course_sum = "共 " + cb.getCourse_sum() + " 课时";
+        String course_price = "免费";
+        if (cb.getCourse_price() > 0) course_price = "¥ " + cb.getCourse_price();
+        final String course_cover = cb.getCourse_cover();
+        vh.tv_course_name.setText(course_name);
+        vh.tv_learn_student.setText(course_learn_student);
+        vh.tv_sum_student.setText(course_sum_student);
+        vh.tv_course_sum.setText(course_sum);
+        vh.tv_course_price.setText(course_price);
+
+        final ViewHolder finalVh = vh;
+        ThreadUtil.runInThread(new Runnable() {
+            @Override
+            public void run() {
+                int state = DownloadTools.downloadImg(course_cover);
+                ThreadUtil.runInUIThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ImageUitl.SimpleShowImage(course_cover, finalVh.iv_course_image);
+                    }
+                });
+            }
+        });
 
         return convertView;
     }

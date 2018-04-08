@@ -72,14 +72,14 @@
                 android:id="@+id/fl_content"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="40dp"
                 android:layout_weight="1"
                 android:background="@color/Write"
                 android:gravity="left"
                 android:orientation="vertical"
                 android:paddingTop="15dp"
-                app:qmui_childHorizontalSpacing="20dp"
-                app:qmui_childVerticalSpacing="10dp">
+                app:qmui_childHorizontalSpacing="50dp"
+                app:qmui_childVerticalSpacing="20dp">
 
             </com.qmuiteam.qmui.widget.QMUIFloatLayout>
 

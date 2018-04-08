@@ -11,14 +11,15 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.fstech.yzedusc.R;
+import com.fstech.yzedusc.bean.ClassificationBean;
 
 public class TabAdapter extends BaseAdapter{
 	private Context context;
-	private List<Map<String,Object>> listItems;
+	private List<ClassificationBean> listItems;
 	private LayoutInflater listContainer;
 	public int mSelect = -1;   //选中项
 
-	public TabAdapter(Context context,List<Map<String,Object>> listItems) {
+	public TabAdapter(Context context,List<ClassificationBean> listItems) {
 		this.context = context;
 		listContainer = LayoutInflater.from(context);
 		this.listItems = listItems;
@@ -56,7 +57,7 @@ public class TabAdapter extends BaseAdapter{
 		}else{
 			lv = (ListItemView) convertView.getTag();
 		}
-		final String name=listItems.get(position).get("cfa_name").toString();
+		final String name=listItems.get(position).getClassification_name();
 		lv.cfa_name.setText(name);
 		if(mSelect==position){
 			lv.cfa_name.setTextColor(0xff1B88EE);
