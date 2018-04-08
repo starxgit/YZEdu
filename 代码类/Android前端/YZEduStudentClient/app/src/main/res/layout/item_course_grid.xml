@@ -9,8 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
         android:orientation="vertical">
 
         <com.qmuiteam.qmui.widget.QMUIRadiusImageView
@@ -27,8 +27,8 @@
             android:id="@+id/item_course_grid_tv_name"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:singleLine="true"
             android:layout_marginTop="10dp"
+            android:singleLine="true"
             android:text="课程名称" />
 
         <RelativeLayout
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="学习人数"
-                android:textColor="#666666"
+                android:textColor="@color/text_black6"
                 android:textSize="10sp" />
 
             <TextView
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:text="共n节课"
-                android:textColor="#34B8AD"
+                android:textColor="@color/color_green_like"
                 android:textSize="10sp" />
 
         </RelativeLayout>

@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="@color/colorPrimary">
+
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="30dp"
@@ -24,9 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:text="@string/practical_training"
             android:textColor="@color/qmui_config_color_white"
-            android:textSize="18sp"
-            android:text="@string/practical_training" />
+            android:textSize="18sp" />
     </RelativeLayout>
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout

@@ -11,4 +11,9 @@
     <color name="text_black3">#333333</color>
     <color name="text_black6">#666666</color>
     <color name="text_black9">#999999</color>
+    <color name="line_d2">#d2d2d2</color>
+    <color name="line_d6">#d6d6d6</color>
+    <color name="black_cover_alpha">#50000000</color>
+    <color name="color_green_like">#34B8AD</color>
+
 </resources>

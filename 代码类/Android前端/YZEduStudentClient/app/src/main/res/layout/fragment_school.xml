@@ -3,22 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:paddingTop="15dp"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPrimary"
+        android:paddingTop="15dp">
+
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/school"
             android:layout_gravity="center"
-            android:textSize="22sp"
-            android:textColor="#FFFFFF"
-            />
+            android:text="@string/school"
+            android:textColor="@color/Write"
+            android:textSize="22sp" />
     </FrameLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -38,9 +40,9 @@
                     android:id="@+id/iv_school_image"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
                     android:layout_above="@+id/tv_school_name"
                     android:layout_alignParentStart="true"
+                    android:layout_marginLeft="20dp"
                     app:qmui_border_width="0dp"
                     app:qmui_is_circle="true"
                     app:srcCompat="@drawable/newmsg01" />
@@ -48,17 +50,17 @@
                 <TextView
                     android:id="@+id/tv_school_name"
                     android:layout_width="match_parent"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingBottom="5dp"
-                    android:paddingTop="5dp"
-                    android:background="#50000000"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentEnd="true"
+                    android:background="@color/black_cover_alpha"
                     android:gravity="right"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
                     android:text="XX测试院校"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/Write"
                     android:textSize="20sp" />
 
             </RelativeLayout>
@@ -66,115 +68,119 @@
             <TabHost
                 android:id="@+id/main_school_tab"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <TabWidget
+                        android:id="@android:id/tabs"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@android:id/tabs"
-                        android:background="#FFFFFF"
-                        ></TabWidget>
+                        android:background="@color/Write"></TabWidget>
 
                     <FrameLayout
+                        android:id="@android:id/tabcontent"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:id="@android:id/tabcontent"
-                        >
+                        android:layout_weight="1">
+
                         <LinearLayout
+                            android:id="@+id/ll_school_information"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/ll_school_information"
-                            android:background="#F9F9F9"
+                            android:background="@color/grey9"
                             android:orientation="vertical">
 
                             <com.fstech.yzedusc.view.MyListView
                                 android:id="@+id/lv_school_information"
-                                android:divider="#FFFFFF"
-                                android:dividerHeight="0dp"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content" >
-                            </com.fstech.yzedusc.view.MyListView>
+                                android:layout_height="wrap_content"
+                                android:divider="@color/Write"
+                                android:dividerHeight="0dp"></com.fstech.yzedusc.view.MyListView>
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:gravity="center"
                                     android:layout_gravity="center"
-                                    android:textColor="#666666"
-                                    android:text="@string/show_more"/>
+                                    android:gravity="center"
+                                    android:text="@string/show_more"
+                                    android:textColor="@color/text_black6" />
                             </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/ll_school_announcement"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/ll_school_announcement"
-                            android:orientation="vertical"
-                            android:background="#F9F9F9">
+                            android:background="@color/grey9"
+                            android:orientation="vertical">
 
                             <com.fstech.yzedusc.view.MyListView
                                 android:id="@+id/lv_school_announcement"
                                 android:layout_width="match_parent"
-                                android:divider="#FFFFFF"
-                                android:dividerHeight="0dp"
-                                android:layout_height="match_parent" >
-                            </com.fstech.yzedusc.view.MyListView>
+                                android:layout_height="match_parent"
+                                android:divider="@color/Write"
+                                android:dividerHeight="0dp"></com.fstech.yzedusc.view.MyListView>
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp">
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:gravity="center"
                                     android:layout_gravity="center"
-                                    android:textColor="#666666"
-                                    android:text="@string/show_more"/>
+                                    android:gravity="center"
+                                    android:text="@string/show_more"
+                                    android:textColor="@color/text_black6" />
                             </LinearLayout>
 
                         </LinearLayout>
+
                         <LinearLayout
-                            android:padding="15dp"
+                            android:id="@+id/ll_school_circle"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/ll_school_circle"
+                            android:background="@color/grey9"
                             android:orientation="vertical"
-                            android:background="#F9F9F9">
+                            android:padding="15dp">
+
                             <com.fstech.yzedusc.view.MyListView
                                 android:id="@+id/lv_school_circle"
-                                android:divider="#FFFFFF"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
-                            </com.fstech.yzedusc.view.MyListView>
+                                android:layout_height="match_parent"
+                                android:divider="@color/Write"></com.fstech.yzedusc.view.MyListView>
+
                             <RelativeLayout
                                 android:id="@+id/re_more_top"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
-                                android:background="#F9F9F9">
+                                android:background="@color/grey9">
+
                                 <TextView
                                     android:id="@+id/textView4"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:layout_marginLeft="20dp"
                                     android:fontFamily="华文黑体"
-                                    android:layout_centerHorizontal="true"
                                     android:text="@string/showmore"
-                                    android:textColor="#666666" />
+                                    android:textColor="@color/text_black6" />
 
                                 <ImageView
                                     android:id="@+id/imageView4"
                                     android:layout_width="20dp"
                                     android:layout_height="20dp"
-                                    android:layout_toEndOf="@id/textView4"
                                     android:layout_centerVertical="true"
+                                    android:layout_toEndOf="@id/textView4"
                                     android:alpha="0.2"
                                     android:src="@mipmap/cd1" />
                             </RelativeLayout>

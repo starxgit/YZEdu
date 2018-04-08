@@ -40,7 +40,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F9F9F9">
+        android:background="@color/grey9">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/is_living"
-                    android:textColor="#333333"
+                    android:textColor="@color/text_black3"
                     android:textSize="18sp" />
 
                 <View
@@ -68,7 +68,7 @@
                     android:layout_height="2dp"
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
-                    android:background="#d6d6d6" />
+                    android:background="@color/line_d6" />
 
                 <com.fstech.yzedusc.view.MyListView
                     android:id="@+id/lv_live"
@@ -90,7 +90,7 @@
                         android:layout_marginLeft="20dp"
                         android:fontFamily="华文黑体"
                         android:text="@string/live_room"
-                        android:textColor="#666666" />
+                        android:textColor="@color/text_black6" />
 
                     <ImageView
                         android:id="@+id/imageView2"
@@ -128,7 +128,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/course_new"
-                        android:textColor="#333333"
+                        android:textColor="@color/text_black3"
                         android:textSize="18sp" />
 
                     <View
@@ -136,7 +136,7 @@
                         android:layout_height="2dp"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
-                        android:background="#d6d6d6" />
+                        android:background="@color/line_d6" />
 
                     <com.fstech.yzedusc.view.MyGridView
                         android:id="@+id/gv_new"
@@ -149,7 +149,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.1dp"
-                        android:background="#d6d6d6" />
+                        android:background="@color/line_d6" />
 
                     <RelativeLayout
                         android:id="@+id/re_more_new"
@@ -165,7 +165,7 @@
                             android:layout_marginLeft="20dp"
                             android:fontFamily="华文黑体"
                             android:text="@string/showmore"
-                            android:textColor="#666666" />
+                            android:textColor="@color/text_black6" />
 
                         <ImageView
                             android:id="@+id/imageView3"
@@ -180,7 +180,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.1dp"
-                        android:background="#d6d6d6" />
+                        android:background="@color/line_d6" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
@@ -208,7 +208,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/course_top"
-                        android:textColor="#333333"
+                        android:textColor="@color/text_black3"
                         android:textSize="18sp" />
 
                     <View
@@ -216,7 +216,7 @@
                         android:layout_height="2dp"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
-                        android:background="#d6d6d6" />
+                        android:background="@color/line_d6" />
 
                     <com.fstech.yzedusc.view.MyGridView
                         android:id="@+id/gv_top"
@@ -229,7 +229,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.1dp"
-                        android:background="#d6d6d6" />
+                        android:background="@color/line_d6" />
 
                     <RelativeLayout
                         android:id="@+id/re_more_top"
@@ -245,7 +245,7 @@
                             android:layout_marginLeft="20dp"
                             android:fontFamily="华文黑体"
                             android:text="@string/showmore"
-                            android:textColor="#666666" />
+                            android:textColor="@color/text_black6" />
 
                         <ImageView
                             android:id="@+id/imageView4"
@@ -260,7 +260,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.1dp"
-                        android:background="#d6d6d6" />
+                        android:background="@color/line_d6" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 

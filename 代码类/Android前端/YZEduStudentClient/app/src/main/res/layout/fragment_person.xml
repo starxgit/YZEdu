@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,9 +27,9 @@
             android:layout_below="@+id/iv_avatar"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:textSize="18sp"
-            android:textColor="#FFFFFF"
-            android:text="用户1" />
+            android:text="用户1"
+            android:textColor="@color/Write"
+            android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/iv_message"
@@ -45,25 +45,26 @@
             android:id="@+id/tv_message_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
             android:layout_marginTop="21dp"
-            android:textColor="#FFFFFF"
-            android:text="2" />
+            android:text="2"
+            android:textColor="@color/Write" />
     </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:layout_marginTop="20dp"
-        android:background="#d6d6d6" />
+        android:background="@color/line_d6" />
+
     <RelativeLayout
         android:id="@+id/re_wallet"
         android:layout_width="match_parent"
-        android:background="@drawable/btn_list_item_bg"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="@drawable/btn_list_item_bg">
 
         <ImageView
             android:id="@+id/ImageView01"
@@ -79,8 +80,8 @@
             android:id="@+id/imageView3"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="15dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
             android:src="@mipmap/left_setting_grey" />
 
         <TextView
@@ -93,15 +94,17 @@
             android:text="@string/wallet" />
 
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
-        android:background="#d6d6d6" />
+        android:background="@color/line_d6" />
+
     <RelativeLayout
         android:id="@+id/re_ability"
         android:layout_width="match_parent"
-        android:background="@drawable/btn_list_item_bg"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="@drawable/btn_list_item_bg">
 
         <ImageView
             android:id="@+id/ImageView05"
@@ -117,8 +120,8 @@
             android:id="@+id/imageView5"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="15dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
             android:src="@mipmap/left_setting_grey" />
 
         <TextView
@@ -131,21 +134,23 @@
             android:text="@string/ability" />
 
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
-        android:background="#d6d6d6" />
+        android:background="@color/line_d6" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:layout_marginTop="20dp"
-        android:background="#d6d6d6" />
+        android:background="@color/line_d6" />
+
     <RelativeLayout
         android:id="@+id/re_help"
         android:layout_width="match_parent"
-        android:background="@drawable/btn_list_item_bg"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="@drawable/btn_list_item_bg">
 
         <ImageView
             android:id="@+id/ImageView07"
@@ -161,8 +166,8 @@
             android:id="@+id/imageView7"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="15dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
             android:src="@mipmap/left_setting_grey" />
 
         <TextView
@@ -175,15 +180,17 @@
             android:text="@string/use_help" />
 
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
-        android:background="#d6d6d6" />
+        android:background="@color/line_d6" />
+
     <RelativeLayout
         android:id="@+id/re_advice"
         android:layout_width="match_parent"
-        android:background="@drawable/btn_list_item_bg"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="@drawable/btn_list_item_bg">
 
         <ImageView
             android:id="@+id/ImageView08"
@@ -199,8 +206,8 @@
             android:id="@+id/imageView8"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="15dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
             android:src="@mipmap/left_setting_grey" />
 
         <TextView
@@ -213,22 +220,24 @@
             android:text="@string/advice" />
 
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
-        android:background="#d6d6d6" />
+        android:background="@color/line_d6" />
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:layout_marginTop="20dp"
-        android:background="#d6d6d6" />
+        android:background="@color/line_d6" />
+
     <RelativeLayout
         android:id="@+id/re_setting"
         android:layout_width="match_parent"
-        android:background="@drawable/btn_list_item_bg"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="@drawable/btn_list_item_bg">
 
         <ImageView
             android:id="@+id/ImageView06"
@@ -244,8 +253,8 @@
             android:id="@+id/imageView6"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="15dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
             android:src="@mipmap/left_setting_grey" />
 
         <TextView
@@ -258,10 +267,11 @@
             android:text="@string/setting" />
 
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
-        android:background="#d6d6d6" />
+        android:background="@color/line_d6" />
 
 
 </LinearLayout>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/Write"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -63,7 +63,7 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="150 / 300人"
-                    android:textColor="#666666"
+                    android:textColor="@color/text_black6"
                     android:textSize="12sp" />
 
                 <TextView
@@ -73,7 +73,7 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="共14课时"
-                    android:textColor="#666666"
+                    android:textColor="@color/text_black6"
                     android:textSize="12sp" />
             </LinearLayout>
 
@@ -90,7 +90,7 @@
                     android:layout_gravity="center_vertical"
                     android:gravity="left"
                     android:text="免费"
-                    android:textColor="#666666" />
+                    android:textColor="@color/text_black6" />
 
                 <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                     android:id="@+id/bn_option"
@@ -100,7 +100,7 @@
                     android:alpha="0.8"
                     android:gravity="center"
                     android:text="报名选课"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/Write"
                     app:qmui_backgroundColor="@color/qmui_config_color_blue"
                     app:qmui_radius="@dimen/dimen_9dp" />
 
@@ -125,7 +125,7 @@
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"></TabWidget>
+                android:background="@color/Write"></TabWidget>
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -150,7 +150,7 @@
                             android:layout_margin="10dp"
                             android:gravity="center_vertical"
                             android:text="授课教师：张三"
-                            android:textColor="#666666" />
+                            android:textColor="@color/text_black6" />
 
                         <TextView
                             android:id="@+id/tv_course_introduce"
@@ -160,14 +160,14 @@
                             android:layout_marginRight="10dp"
                             android:gravity="center_vertical"
                             android:text="这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍这是课程介绍"
-                            android:textColor="#666666" />
+                            android:textColor="@color/text_black6" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/ll_course_catalog"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#F9F9F9"
+                        android:background="@color/grey9"
                         android:orientation="vertical"
                         android:padding="15dp">
 
@@ -175,7 +175,7 @@
                             android:id="@+id/lv_course_catalog"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:divider="#F0F0F0"></com.fstech.yzedusc.view.MyListView>
+                            android:divider="@color/grey0"></com.fstech.yzedusc.view.MyListView>
 
                     </LinearLayout>
 

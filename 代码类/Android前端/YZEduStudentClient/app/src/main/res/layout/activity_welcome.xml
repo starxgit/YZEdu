@@ -19,8 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView2"
         android:layout_centerHorizontal="true"
+        android:fontFamily="华文黑体"
         android:text="@string/welcome_word"
         android:textColor="@color/qmui_btn_blue_text"
-        android:fontFamily="华文黑体"
         android:textSize="24sp" />
 </RelativeLayout>
