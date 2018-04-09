@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -117,6 +118,15 @@ public class CourseSearchResultActivity extends AppCompatActivity implements Vie
                 reSearch();
             }
         });
+        lv_search_course.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String course_id = listItems_course.get(i).getCourse_id() + "";
+                Intent intent1 = new Intent(CourseSearchResultActivity.this, CourseIntroduceActivity.class);
+                intent1.putExtra("course_id", course_id);
+                startActivity(intent1);
+            }
+        });
     }
 
     /*
@@ -138,6 +148,7 @@ public class CourseSearchResultActivity extends AppCompatActivity implements Vie
     * 无返回
     * */
     private void initData() {
+        listItems_course.clear();
         String url = Constant.BASE_DB_URL + "SearchCourse";
         Map<String, String> map = new HashMap<String, String>();
         map.put("keyword", keyword);
@@ -213,8 +224,9 @@ public class CourseSearchResultActivity extends AppCompatActivity implements Vie
     * 重新搜索的方法
     * */
     private void reSearch() {
+        hideKeyBoard();
         keyword = et_search.getText().toString();
-        Log.e("key",keyword);
+        Log.e("key", keyword);
         initData();
     }
 

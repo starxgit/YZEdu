@@ -62,12 +62,6 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <com.fstech.yzedusc.view.MyListView
-                android:id="@+id/lv_classification_own"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:background="@color/grey2" />
-
             <com.qmuiteam.qmui.widget.QMUIFloatLayout
                 android:id="@+id/fl_content"
                 android:layout_width="wrap_content"
