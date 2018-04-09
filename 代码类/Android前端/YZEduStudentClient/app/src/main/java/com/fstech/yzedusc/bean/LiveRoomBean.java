@@ -7,24 +7,25 @@ import java.io.Serializable;
  * 存放直播间对象的类
  */
 
-public class LiveRoomBean implements Serializable{
-    private int live_room_id;
-    private int teacher_id;
-    private String live_room_name;
-    private String live_room_number;
-    private String live_room_image;
-    private String live_room_state;
+public class LiveRoomBean implements Serializable {
+    private int live_room_id;           // 直播间id
+    private String teacher_name;        // 教师姓名(通过teacher_id找到)
+    private String live_room_name;      // 直播间名
+    private String live_room_number;    // 直播间号码
+    private String live_room_image;     // 直播间封面图片路径
+    private int live_room_state;        // 直播间状态
 
-    public LiveRoomBean(int live_room_id, int teacher_id, String live_room_name, String live_room_number, String live_room_image, String live_room_state) {
+    public LiveRoomBean() {
+    }
+
+    public LiveRoomBean(int live_room_id, String teacher_name, String live_room_name,
+                        String live_room_number, String live_room_image, int live_room_state) {
         this.live_room_id = live_room_id;
-        this.teacher_id = teacher_id;
+        this.teacher_name = teacher_name;
         this.live_room_name = live_room_name;
         this.live_room_number = live_room_number;
         this.live_room_image = live_room_image;
         this.live_room_state = live_room_state;
-    }
-
-    public LiveRoomBean() {
     }
 
     public int getLive_room_id() {
@@ -35,12 +36,12 @@ public class LiveRoomBean implements Serializable{
         this.live_room_id = live_room_id;
     }
 
-    public int getTeacher_id() {
-        return teacher_id;
+    public String getTeacher_name() {
+        return teacher_name;
     }
 
-    public void setTeacher_id(int teacher_id) {
-        this.teacher_id = teacher_id;
+    public void setTeacher_name(String teacher_name) {
+        this.teacher_name = teacher_name;
     }
 
     public String getLive_room_name() {
@@ -67,11 +68,11 @@ public class LiveRoomBean implements Serializable{
         this.live_room_image = live_room_image;
     }
 
-    public String getLive_room_state() {
+    public int getLive_room_state() {
         return live_room_state;
     }
 
-    public void setLive_room_state(String live_room_state) {
+    public void setLive_room_state(int live_room_state) {
         this.live_room_state = live_room_state;
     }
 
@@ -79,11 +80,11 @@ public class LiveRoomBean implements Serializable{
     public String toString() {
         return "LiveRoomBean{" +
                 "live_room_id=" + live_room_id +
-                ", teacher_id=" + teacher_id +
+                ", teacher_name='" + teacher_name + '\'' +
                 ", live_room_name='" + live_room_name + '\'' +
                 ", live_room_number='" + live_room_number + '\'' +
                 ", live_room_image='" + live_room_image + '\'' +
-                ", live_room_state='" + live_room_state + '\'' +
+                ", live_room_state=" + live_room_state +
                 '}';
     }
 }

@@ -72,8 +72,8 @@ public class AnnouncementListAdapter extends BaseAdapter {
 
         AnnouncementBean ab = listItems.get(position);
 
-        String is_stick = ab.getAnnouncement_stick();
-        if (is_stick.equals("1")) {
+        int is_stick = ab.getAnnouncement_stick();
+        if (is_stick==1) {
             vh.tv_isstick.setVisibility(View.VISIBLE);
         } else {
             vh.tv_isstick.setVisibility(View.GONE);

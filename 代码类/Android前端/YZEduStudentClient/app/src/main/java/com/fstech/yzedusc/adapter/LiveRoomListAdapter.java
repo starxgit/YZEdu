@@ -72,11 +72,11 @@ public class LiveRoomListAdapter extends BaseAdapter {
         LiveRoomBean lb = listItems.get(position);
         vh.tv_title.setText(lb.getLive_room_name());
         vh.tv_room_num.setText(lb.getLive_room_number());
-        if (lb.getLive_room_state().equals(2)) {
+        if (lb.getLive_room_state() == 2) {
             vh.tv_state.setText("直播中");
-        } else if (lb.getLive_room_state().equals("1")) {
+        } else if (lb.getLive_room_state() == 1) {
             vh.tv_state.setText("已关闭");
-        } else if (lb.getLive_room_state().equals("3")) {
+        } else if (lb.getLive_room_state() == 3) {
             vh.tv_state.setText("已锁定");
         }
 

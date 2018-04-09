@@ -7,22 +7,25 @@ import java.io.Serializable;
  * 显示咨询列表的模型类
  */
 
-public class InformationBean implements Serializable{
-    private int information_id;
-    private String information_title;
-    private String information_content;
-    private String information_date;
-    private String information_image;
+public class InformationBean implements Serializable {
+    private int information_id;         // 资讯id
+    private String information_title;   // 资讯标题
+    private String information_content; // 资讯内容
+    private String information_date;    // 资讯日期(直接取字符串)
+    private String information_image;   // 资讯图片路径(如果没有设为null)
+    private String information_author;  // 资讯作者
 
     public InformationBean() {
     }
 
-    public InformationBean(int information_id, String information_title, String information_content, String information_date, String information_image) {
+    public InformationBean(int information_id, String information_title, String information_content,
+                           String information_date, String information_image, String information_author) {
         this.information_id = information_id;
         this.information_title = information_title;
         this.information_content = information_content;
         this.information_date = information_date;
         this.information_image = information_image;
+        this.information_author = information_author;
     }
 
     public int getInformation_id() {
@@ -65,6 +68,14 @@ public class InformationBean implements Serializable{
         this.information_image = information_image;
     }
 
+    public String getInformation_author() {
+        return information_author;
+    }
+
+    public void setInformation_author(String information_author) {
+        this.information_author = information_author;
+    }
+
     @Override
     public String toString() {
         return "InformationBean{" +
@@ -73,6 +84,7 @@ public class InformationBean implements Serializable{
                 ", information_content='" + information_content + '\'' +
                 ", information_date='" + information_date + '\'' +
                 ", information_image='" + information_image + '\'' +
+                ", information_author='" + information_author + '\'' +
                 '}';
     }
 }

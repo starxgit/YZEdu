@@ -7,18 +7,18 @@ import java.io.Serializable;
  */
 
 public class CourseBean implements Serializable {
-    private int course_id;
-    private String course_code;
-    private String course_name;
-    private String course_introduce;
-    private String course_teacher;
-    private int course_sum_student;
-    private int course_learn_student;
-    private String course_cover;
-    private int course_sum;
-    private int course_type;
-    private double course_price;
-    private int course_finish;
+    private int course_id;              // 课程id
+    private String course_code;         // 课程代码
+    private String course_name;         // 课程名称
+    private String course_introduce;    // 课程介绍
+    private String course_teacher;      // 课程教师(通过teacher_id找到这个教师的teacher_name)
+    private int course_sum_student;     // 课程容量人数
+    private int course_learn_student;   // 课程学习人数
+    private String course_cover;        // 课程封面途径
+    private int course_sum;             // 总课时
+    private int course_type;            // 课程类型
+    private double course_price;        // 课程价格
+    private int course_finish;          // 已完成课时
 
     public CourseBean() {
     }

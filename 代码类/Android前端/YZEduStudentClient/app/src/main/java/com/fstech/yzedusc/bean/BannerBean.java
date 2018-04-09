@@ -8,10 +8,10 @@ import java.io.Serializable;
  */
 
 public class BannerBean implements Serializable {
-    private int banner_id;
-    private String banner_image;
-    private int banner_type;
-    private String banner_link;
+    private int banner_id;          // banner_id
+    private String banner_image;    // banner图片路径
+    private int banner_type;        // banner广告类型
+    private String banner_link;     // banner连接内容
 
     public BannerBean() {
     }

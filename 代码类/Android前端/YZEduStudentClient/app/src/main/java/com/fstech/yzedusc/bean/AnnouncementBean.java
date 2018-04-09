@@ -8,17 +8,17 @@ import java.io.Serializable;
  */
 
 public class AnnouncementBean implements Serializable {
-    private int announcement_id;
-    private String announcement_title;
-    private String announcement_content;
-    private String announcement_stick;
-    private String announcement_date;
+    private int announcement_id;            // 公告id
+    private String announcement_title;      // 公告标题
+    private String announcement_content;    // 公告内容
+    private int announcement_stick;         // 是否置顶
+    private String announcement_date;       // 公告日期
 
     public AnnouncementBean() {
     }
 
     public AnnouncementBean(int announcement_id, String announcement_title, String announcement_content,
-                            String announcement_stick, String announcement_date) {
+                            int announcement_stick, String announcement_date) {
         this.announcement_id = announcement_id;
         this.announcement_title = announcement_title;
         this.announcement_content = announcement_content;
@@ -50,11 +50,11 @@ public class AnnouncementBean implements Serializable {
         this.announcement_content = announcement_content;
     }
 
-    public String getAnnouncement_stick() {
+    public int getAnnouncement_stick() {
         return announcement_stick;
     }
 
-    public void setAnnouncement_stick(String announcement_stick) {
+    public void setAnnouncement_stick(int announcement_stick) {
         this.announcement_stick = announcement_stick;
     }
 

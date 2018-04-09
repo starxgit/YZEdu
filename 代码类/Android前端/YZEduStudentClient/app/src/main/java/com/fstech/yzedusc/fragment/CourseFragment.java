@@ -154,7 +154,7 @@ public class CourseFragment extends Fragment implements View.OnClickListener {
             l.setLive_room_id(1);
             l.setLive_room_number("9600f69" + i);
             l.setLive_room_name("直播间" + i);
-            l.setLive_room_state("2");
+            l.setLive_room_state(2);
             list_live.add(l);
         }
 //        adapter_live.notifyDataSetChanged();

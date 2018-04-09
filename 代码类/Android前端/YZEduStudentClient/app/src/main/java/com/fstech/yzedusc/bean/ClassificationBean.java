@@ -8,9 +8,9 @@ import java.io.Serializable;
  */
 
 public class ClassificationBean implements Serializable {
-    private int classification_id;
-    private String classification_name;
-    private int classification_own;
+    private int classification_id;          // 分类id
+    private String classification_name;     // 分类名
+    private int classification_own;         // 所属分类
 
     public ClassificationBean() {
     }
