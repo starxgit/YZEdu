@@ -75,6 +75,9 @@ public class CourseSearchResultActivity extends AppCompatActivity implements Vie
                 switch (msg.what) {
                     // 课程列表数据加载完成
                     case 0:
+                        if(listItems_course.size()==0){
+                            Toast.makeText(CourseSearchResultActivity.this,R.string.search_another_course,Toast.LENGTH_SHORT).show();
+                        }
                         adapter_course.notifyDataSetChanged();
                         isLoading = false;
                         setLoading();
@@ -185,15 +188,19 @@ public class CourseSearchResultActivity extends AppCompatActivity implements Vie
                 } catch (JSONException e) {
                     Log.e("Json", e.getLocalizedMessage());
                     e.printStackTrace();
+                    handler.sendMessage(handler.obtainMessage(0));
                 } catch (JsonParseException e) {
                     Log.e("Json", "JSON包装成对象失败");
                     e.printStackTrace();
+                    handler.sendMessage(handler.obtainMessage(0));
                 } catch (JsonMappingException e) {
                     Log.e("error", "NewCourseMapping异常");
                     e.printStackTrace();
+                    handler.sendMessage(handler.obtainMessage(0));
                 } catch (IOException e) {
                     Log.e("error", "IO异常" + e.getLocalizedMessage());
                     e.printStackTrace();
+                    handler.sendMessage(handler.obtainMessage(0));
                 }
 
             }

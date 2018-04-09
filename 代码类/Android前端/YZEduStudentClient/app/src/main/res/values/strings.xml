@@ -29,5 +29,6 @@
     <string name="grade_query">成绩查询</string>
     <string name="live_room">直播间</string>
     <string name="server_response_error">服务器响应异常!</string>
+    <string name="search_another_course">没有找到相关课程,请换个关键字搜索</string>
 
 </resources>

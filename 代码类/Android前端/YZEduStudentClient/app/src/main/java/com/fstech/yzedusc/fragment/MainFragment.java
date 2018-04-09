@@ -207,7 +207,7 @@ public class MainFragment extends Fragment {
                             Log.e("informationsize", listItems_information.size() + "," + i + "," + jsonArray.length());
                             JSONObject jobj = jsonArray.getJSONObject(i);
                             InformationBean ib = objectMapper.readValue(jobj.toString(), InformationBean.class);
-//                            listItems_information.add(ib);
+                            listItems_information.add(ib);
                         }
                         handler.sendMessage(handler.obtainMessage(1));
                     } else {

@@ -94,9 +94,9 @@ public class SchoolFragment extends Fragment {
         for (int i = 1; i < 8; i++) {
             int a = (int) (Math.random() * 3);
             String img = null;
-            if (a > 1) img = "a";
+            if (a > 1) img = "springmvc.png";
             InformationBean ib = new InformationBean(i, "资讯标题" + i, "这是院校咨询内容这是咨询内容这是院校咨询内容这是咨询内容这是咨询内容" +
-                    "是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容", "2018-03-" + i, img, null);
+                    "是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容", "2018-04-0" + i, img, null);
             listItems_information.add(ib);
 
             AnnouncementBean ab = new AnnouncementBean(i, "公告标题" + i, "公告内容公告内容公告内容公告内容公告内容公告内容" + i, 0,

@@ -17,7 +17,6 @@ import com.fstech.yzedusc.util.ThreadUtil;
 import com.qmuiteam.qmui.widget.QMUIRadiusImageView;
 
 public class CourseGridAdapter extends BaseAdapter {
-
     private Context context;
     private List<CourseBean> listItems;
     private LayoutInflater listContainer;
