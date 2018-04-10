@@ -7,7 +7,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@mipmap/my_top_bar"
+        android:background="@mipmap/toubu"
         android:paddingTop="15dp">
 
         <TextView

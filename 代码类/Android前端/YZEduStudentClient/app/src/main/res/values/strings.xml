@@ -30,5 +30,30 @@
     <string name="live_room">直播间</string>
     <string name="server_response_error">服务器响应异常!</string>
     <string name="search_another_course">没有找到相关课程,请换个关键字搜索</string>
+    <string name="discover_course">发现课</string>
+    <string name="learn_like">学习偏好</string>
+    <string name="message">消息</string>
+    <string name="user_info">个人信息</string>
+    <string name="update">版本更新</string>
+    <string name="clearcache">清理缓存</string>
+    <string name="aboutus">关于我们</string>
+    <string name="finish">完成</string>
+    <string name="save_success">保存成功</string>
+    <string name="takepartin">参加课程</string>
+    <string-array name="jazzy_effects">
+        <item>Standard</item>
+        <item>Tablet</item>
+        <item>CubeIn</item>
+        <item>CubeOut</item>
+        <item>FlipVertical</item>
+        <item>FlipHorizontal</item>
+        <item>Stack</item>
+        <item>ZoomIn</item>
+        <item>ZoomOut</item>
+        <item>RotateUp</item>
+        <item>RotateDown</item>
+        <item>Accordion</item>
+    </string-array>
+
 
 </resources>

@@ -1,9 +1,7 @@
 package com.fstech.yzedusc.activity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,24 +15,16 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fstech.yzedusc.R;
 import com.fstech.yzedusc.bean.ClassificationBean;
-import com.fstech.yzedusc.bean.LessonBean;
 import com.fstech.yzedusc.util.CacheActivityUtil;
 import com.fstech.yzedusc.util.CallBackUtil;
 import com.fstech.yzedusc.util.Constant;
-import com.fstech.yzedusc.util.DownloadTools;
-import com.fstech.yzedusc.util.ImageUitl;
 import com.fstech.yzedusc.util.OkhttpUtil;
-import com.fstech.yzedusc.util.ThreadUtil;
 import com.fstech.yzedusc.view.ClearEditText;
-import com.fstech.yzedusc.view.MyListView;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.widget.QMUIFloatLayout;
 
@@ -64,7 +54,8 @@ public class CourseClassificationActivity extends AppCompatActivity implements V
     private List<ClassificationBean> listItems_cb;
     private QMUIFloatLayout fl_content;
     private Handler handler;
-    private int[] draws;
+    private final int draws[] = {R.drawable.round_btn_blue_bg, R.drawable.round_btn_pink_bg, R.drawable.round_btn_qing_bg,
+            R.drawable.round_btn_yellow_bg, R.drawable.round_btn_green_bg};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -99,9 +90,6 @@ public class CourseClassificationActivity extends AppCompatActivity implements V
         et_search = (ClearEditText) findViewById(R.id.et_search);
         fl_content = (QMUIFloatLayout) findViewById(R.id.fl_content);
         listItems_cb = new ArrayList<ClassificationBean>();
-        draws = new int[]{R.drawable.btn_blue_bg, R.drawable.btn_pink_bg, R.drawable.btn_qing_bg,
-                R.drawable.btn_yellow_bg, R.drawable.btn_green_bg};
-
     }
 
     /*

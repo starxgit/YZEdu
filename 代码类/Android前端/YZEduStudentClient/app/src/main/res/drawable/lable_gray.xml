@@ -3,7 +3,7 @@
       android:shape="rectangle" >  
    
      <!-- 填充的颜色 -->  
-    <solid android:color="#24B6E6" />  
+    <solid android:color="#00FFFFFF" />
     <!-- 设置矩形的四个角为弧形 -->  
     <!-- android:radius 弧形的半径 -->  
     <corners android:radius="5dip" />  

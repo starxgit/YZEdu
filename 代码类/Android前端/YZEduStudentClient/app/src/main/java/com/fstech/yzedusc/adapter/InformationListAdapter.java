@@ -82,7 +82,6 @@ public class InformationListAdapter extends BaseAdapter {
         String information_title = info.getInformation_title();
         String information_date = info.getInformation_date().substring(0, 10);
         String information_content = info.getInformation_content();
-
         vh.tv_infomation_title.setText(information_title);
         vh.getTv_infomation_date.setText(information_date);
         vh.getTv_infomation_content.setText(information_content);

@@ -39,4 +39,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation files('libs/jackson-all-1.9.2.jar')
+    implementation files('libs/aspectjrt-1.8.0.jar')
+    implementation files('libs/isoparser-1.0.5.jar')
+    implementation files('libs/nineoldandroids-2.4.0.jar')
 }

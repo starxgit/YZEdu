@@ -36,4 +36,6 @@ public class Constant {
     // GridView放视频的数量
     public static final int GRID_SIZE = 4;
 
+    public static final String TEMP_BASE_URL = "http://www.fstechnology.cn:8080/XiankeM/";
+
 }
