@@ -24,8 +24,7 @@
                 android:id="@+id/iv_information_image"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/aixinbanmaxian" />
+                android:scaleType="fitXY" />
 
             <TextView
                 android:id="@+id/tv_information_title"
