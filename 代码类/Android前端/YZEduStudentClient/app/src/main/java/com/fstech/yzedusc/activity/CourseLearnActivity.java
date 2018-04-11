@@ -96,9 +96,9 @@ public class CourseLearnActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 LessonBean lb = listItems.get(i);
-                Log.e("lb",lb.toString());
-                Intent intent = new Intent(CourseLearnActivity.this,LessonLearnActivity.class);
-                intent.putExtra("lb",lb);
+                Log.e("lb", lb.toString());
+                Intent intent = new Intent(CourseLearnActivity.this, LessonLearnActivity.class);
+                intent.putExtra("lb", lb);
                 startActivity(intent);
             }
         });
@@ -185,6 +185,9 @@ public class CourseLearnActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId()) {
             case R.id.ll_material:
                 Log.e("click", "material");
+                Intent intent = new Intent(CourseLearnActivity.this, MaterialActivity.class);
+                intent.putExtra("course_id", cb.getCourse_id() + "");
+                startActivity(intent);
                 break;
             case R.id.ll_misstake:
                 Log.e("click", "misstake");

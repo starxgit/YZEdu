@@ -24,7 +24,7 @@ public class Constant {
     public static final String BASE_FILE_URL=SERVER_IP+":"+SERVER_PORT+"/YZEduFileServer/download";
 
     // 基础视频请求路径
-    public static final String BASE_VIDEO_URL=SERVER_IP+":"+SERVER_PORT+"/YZEduFileServer/play";
+    public static final String BASE_VIDEO_URL=SERVER_IP+":"+SERVER_PORT+"/YZEduFileServer/play?myfile=";
 
     //几个代表页面的常量，代表第几个Fragment
     public static final int PAGE_ONE = 0;
