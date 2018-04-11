@@ -1,6 +1,8 @@
 package com.fstech.yzedusc.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -38,6 +40,7 @@ public class MyCourseActivity extends AppCompatActivity implements AdapterView.O
     private ArrayAdapter<String> adapter_state;
     private String[] array_course_state;
     private TextView tv_title;
+    private CourseBean cb, cb1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -78,7 +81,6 @@ public class MyCourseActivity extends AppCompatActivity implements AdapterView.O
 
         smart_refresh.setRefreshHeader(new ClassicsHeader(this));
         smart_refresh.setRefreshFooter(new ClassicsFooter(this));
-
     }
 
     /*
@@ -87,10 +89,10 @@ public class MyCourseActivity extends AppCompatActivity implements AdapterView.O
     * 无返回
     * */
     private void initData() {
-        for (int i = 0; i < 4; i++) {
-            CourseBean cb = new CourseBean();
-            listItems_course.add(cb);
-        }
+        cb = new CourseBean(3298, "891238907", "JAVA程序设计", null, null, 56, 120, "javachenxusheji.png", 6, 2, 0, 4);
+        cb1 = new CourseBean(922, "2844", "游戏测试入门", null, null, -1, 10, "598938e20001888e06000338-240-135.jpg", 16, 2, 0, 0);
+        listItems_course.add(cb);
+        listItems_course.add(cb1);
     }
 
     /*
@@ -102,14 +104,39 @@ public class MyCourseActivity extends AppCompatActivity implements AdapterView.O
             case 0:
                 tv_title.setText("我学习的课程");
                 // TODO 设置成全部我学习的课程列表
+                listItems_course.clear();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        listItems_course.add(cb);
+                        listItems_course.add(cb1);
+                        adapter_course.notifyDataSetChanged();
+                    }
+                }, 500);
                 break;
             case 1:
                 tv_title.setText("进行中的课程");
                 // TODO 设置成全部进行中的课程列表
+                listItems_course.clear();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        listItems_course.add(cb);
+                        adapter_course.notifyDataSetChanged();
+                    }
+                }, 500);
                 break;
             case 2:
                 tv_title.setText("已结束的课程");
                 // TODO 设置成全部已结束的课程列表
+                listItems_course.clear();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        listItems_course.add(cb1);
+                        adapter_course.notifyDataSetChanged();
+                    }
+                }, 500);
                 break;
 
             default:
@@ -128,5 +155,9 @@ public class MyCourseActivity extends AppCompatActivity implements AdapterView.O
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Log.e("item", i + "");
+        CourseBean cb = listItems_course.get(i);
+        Intent intent = new Intent(MyCourseActivity.this, CourseLearnActivity.class);
+        intent.putExtra("cb", cb);
+        startActivity(intent);
     }
 }

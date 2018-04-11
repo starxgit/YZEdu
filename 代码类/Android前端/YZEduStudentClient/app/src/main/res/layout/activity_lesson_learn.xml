@@ -25,16 +25,10 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/ability"
+            android:text=""
             android:textColor="@color/qmui_config_color_white"
             android:textSize="18sp" />
 
     </RelativeLayout>
-
-    <com.fstech.yzedusc.view.RadoView
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 </LinearLayout>

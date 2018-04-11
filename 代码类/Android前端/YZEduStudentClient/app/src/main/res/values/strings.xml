@@ -54,6 +54,12 @@
         <item>RotateDown</item>
         <item>Accordion</item>
     </string-array>
+    <string name="detail">详情</string>
+    <string name="misstake">错题</string>
+    <string name="exam">考试</string>
+    <string name="material">资料</string>
+    <string name="overview">总览</string>
+    <string name="quit_course">退选课程</string>
 
 
 </resources>

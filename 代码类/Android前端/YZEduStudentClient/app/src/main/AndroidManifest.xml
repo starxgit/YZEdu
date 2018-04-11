@@ -83,6 +83,15 @@
         <activity
             android:name=".activity.WebAboutActivity"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.CourseLearnActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.CourseOverViewActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.LessonLearnActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>
