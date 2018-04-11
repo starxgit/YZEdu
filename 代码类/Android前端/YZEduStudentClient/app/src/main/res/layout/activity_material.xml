@@ -25,19 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="@string/mycourse"
+            android:text="@string/material"
             android:textColor="@color/qmui_config_color_white"
             android:textSize="18sp" />
-
-        <Spinner
-            android:id="@+id/sp_course_state"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="15dp">
-
-        </Spinner>
 
     </RelativeLayout>
 
@@ -63,16 +53,9 @@
 
     </LinearLayout>
 
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
-        android:id="@+id/smart_refresh"
+    <ListView
+        android:id="@+id/lv_material"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ListView
-            android:id="@+id/lv_my_course"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

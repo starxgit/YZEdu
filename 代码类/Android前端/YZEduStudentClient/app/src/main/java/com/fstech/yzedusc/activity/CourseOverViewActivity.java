@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -15,7 +14,6 @@ import android.widget.Toast;
 import com.fstech.yzedusc.R;
 import com.fstech.yzedusc.adapter.LessonListAdapter;
 import com.fstech.yzedusc.bean.CourseBean;
-import com.fstech.yzedusc.bean.InformationBean;
 import com.fstech.yzedusc.bean.LessonBean;
 import com.fstech.yzedusc.util.CacheActivityUtil;
 import com.fstech.yzedusc.util.CallBackUtil;
@@ -45,10 +43,10 @@ import okhttp3.Call;
 
 /**
  * Created by shaoxin on 18-3-28.
- * 课程介绍页的主界面
+ * 课程总览页的主界面
  */
 
-public class CourseIntroduceActivity extends AppCompatActivity {
+public class CourseOverViewActivity extends AppCompatActivity {
     private QMUIRadiusImageView iv_course_image;
     private TextView tv_course_name;
     private TextView tv_learn_num;
@@ -85,7 +83,7 @@ public class CourseIntroduceActivity extends AppCompatActivity {
         course_id = intent.getStringExtra("course_id");
         Log.e("course_id", course_id);
         user_id = "1";
-        CacheActivityUtil.addActivity(CourseIntroduceActivity.this);
+        CacheActivityUtil.addActivity(CourseOverViewActivity.this);
         iv_course_image = (QMUIRadiusImageView) findViewById(R.id.iv_course_image);
         tv_course_name = (TextView) findViewById(R.id.tv_course_name);
         tv_learn_num = (TextView) findViewById(R.id.tv_learn_num);
@@ -105,8 +103,9 @@ public class CourseIntroduceActivity extends AppCompatActivity {
         tabhost.addTab(tabhost.newTabSpec("one").setIndicator("课程介绍").setContent(R.id.ll_course_introduce));
         tabhost.addTab(tabhost.newTabSpec("two").setIndicator("课程目录").setContent(R.id.ll_course_catalog));
         listItems = new ArrayList<LessonBean>();
-        adapter_lesson = new LessonListAdapter(CourseIntroduceActivity.this, listItems);
+        adapter_lesson = new LessonListAdapter(CourseOverViewActivity.this, listItems);
         lv_catalog.setAdapter(adapter_lesson);
+        bn_option.setText(R.string.quit_course);
 
     }
 
@@ -171,7 +170,7 @@ public class CourseIntroduceActivity extends AppCompatActivity {
                         lv_catalog.measure(0,0);
                     } else {
                         String message = jsonObject.getString("message");
-                        Toast.makeText(CourseIntroduceActivity.this, message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CourseOverViewActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     Log.e("json", e.getLocalizedMessage());
@@ -245,7 +244,7 @@ public class CourseIntroduceActivity extends AppCompatActivity {
 
                     } else {
                         String message = jsonObject.getString("message");
-                        Toast.makeText(CourseIntroduceActivity.this, message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CourseOverViewActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

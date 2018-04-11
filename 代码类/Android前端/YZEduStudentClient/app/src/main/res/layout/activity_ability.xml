@@ -31,4 +31,10 @@
 
     </RelativeLayout>
 
+    <com.fstech.yzedusc.view.RadoView
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>
