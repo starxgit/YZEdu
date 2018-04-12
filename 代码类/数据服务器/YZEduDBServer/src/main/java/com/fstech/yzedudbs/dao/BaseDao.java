@@ -16,7 +16,7 @@ public interface BaseDao<T> {
 	
 	public List<T> findAllByCondition(T t);
 	
-	//╡Бйт©исц
+	//О©╫О©╫О©╫т©О©╫О©╫О©╫
 	public List<T> findAllByToGether(T...t);
 	
 	
