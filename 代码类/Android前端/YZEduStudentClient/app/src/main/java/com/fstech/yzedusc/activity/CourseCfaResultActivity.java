@@ -61,6 +61,9 @@ public class CourseCfaResultActivity extends AppCompatActivity implements View.O
     private int cfa_id;
     private TabAdapter adapter_cfa;
     private Handler handler;
+    private String user_id;
+    private int page;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -76,7 +79,10 @@ public class CourseCfaResultActivity extends AppCompatActivity implements View.O
                     case 0:
                         initData();
                         break;
-
+                    // 课程列表加载完成
+                    case 1:
+                        adapter_course.notifyDataSetChanged();
+                        break;
                     default:
                         break;
                 }
@@ -91,9 +97,11 @@ public class CourseCfaResultActivity extends AppCompatActivity implements View.O
     * */
     private void initView() {
         CacheActivityUtil.addActivity(CourseCfaResultActivity.this);
-        Intent intent = getIntent();
+        user_id = "1";
+        page = 1;
+        final Intent intent = getIntent();
         cfa_id = Integer.parseInt(intent.getStringExtra("cfa_id"));
-//        Log.e("cfa_id",cfa_id+"");
+        Log.e("cfa_id", cfa_id + "");
         lv_cfa_course = (ListView) findViewById(R.id.lv_cfa_course);
         lv_cfa = (HorizontalListView) findViewById(R.id.lv_cfa);
         smartRefreshLayout = (SmartRefreshLayout) findViewById(R.id.smart_refresh);
@@ -104,6 +112,27 @@ public class CourseCfaResultActivity extends AppCompatActivity implements View.O
         adapter_course = new CourseListAdapter(CourseCfaResultActivity.this, listItems_course);
         lv_cfa_course.setAdapter(adapter_course);
         listItems_cb = new ArrayList<>();
+
+        lv_cfa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                getCourseList(listItems_cb.get(i).getClassification_id());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        lv_cfa_course.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                CourseBean course = listItems_course.get(i);
+                Intent intent1 = new Intent(CourseCfaResultActivity.this, CourseIntroduceActivity.class);
+                intent1.putExtra("course_id", course.getCourse_id() + "");
+                startActivity(intent1);
+            }
+        });
 
     }
 
@@ -121,6 +150,7 @@ public class CourseCfaResultActivity extends AppCompatActivity implements View.O
             @Override
             public void onFailure(Call call, Exception e) {
                 Log.e("fail", "okhttp请求失败");
+                Toast.makeText(CourseCfaResultActivity.this, R.string.server_response_error, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -174,11 +204,8 @@ public class CourseCfaResultActivity extends AppCompatActivity implements View.O
                 adapter_cfa.changeSelected(i);
             }
         });
-        for (int i = 0; i < 10; i++) {
-            CourseBean cb = new CourseBean();
-            listItems_course.add(cb);
-        }
-        adapter_course.notifyDataSetChanged();
+        if (listItems_cb.size() > 0)
+            getCourseList(listItems_cb.get(0).getClassification_id());
     }
 
     /*
@@ -202,6 +229,61 @@ public class CourseCfaResultActivity extends AppCompatActivity implements View.O
     * */
     private void reSearch() {
         // TODO 刷新列表搜索
+    }
+
+    /*
+    * 获取课程列表
+    * */
+    private void getCourseList(int cfa_own) {
+        listItems_course.clear();
+        String url = Constant.BASE_DB_URL + "ClassificationCourse";
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("classification_own", cfa_own + "");
+        map.put("user_id", user_id);
+        map.put("page", page + "");
+        OkhttpUtil.okHttpGet(url, map, new CallBackUtil.CallBackString() {
+            @Override
+            public void onFailure(Call call, Exception e) {
+                Log.e("fail", "okhttp请求失败");
+                Toast.makeText(CourseCfaResultActivity.this, R.string.server_response_error, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onResponse(String response) {
+                Log.e("response", response);
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    int result_code = jsonObject.getInt("result_code");
+                    if (result_code == 0) {
+                        JSONArray jsonArray = jsonObject.getJSONArray("return_data");
+                        ObjectMapper objectMapper = new ObjectMapper();
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jobj = jsonArray.getJSONObject(i);
+                            CourseBean cb = objectMapper.readValue(jobj.toString(), CourseBean.class);
+                            listItems_course.add(cb);
+                        }
+                        handler.sendMessage(handler.obtainMessage(1));
+                    } else {
+                        String message = jsonObject.getString("message");
+                        Toast.makeText(CourseCfaResultActivity.this, message, Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    Log.e("json", e.getLocalizedMessage());
+                    e.printStackTrace();
+                } catch (JsonParseException e) {
+                    Log.e("json", e.getLocalizedMessage());
+                    e.printStackTrace();
+                } catch (JsonMappingException e) {
+                    Log.e("Mapping", e.getLocalizedMessage());
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    Log.e("IO", e.getLocalizedMessage());
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
     }
 
 }

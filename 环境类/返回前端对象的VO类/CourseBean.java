@@ -1,12 +1,10 @@
 package com.fstech.yzedusc.bean;
 
-import java.io.Serializable;
-
 /**
  * Created by shaoxin on 18-3-29.
  */
 
-public class CourseBean implements Serializable {
+public class CourseBean{
     private int course_id;              // 课程id
     private String course_code;         // 课程代码
     private String course_name;         // 课程名称

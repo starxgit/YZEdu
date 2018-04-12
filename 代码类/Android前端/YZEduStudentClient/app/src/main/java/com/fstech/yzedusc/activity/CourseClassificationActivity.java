@@ -117,7 +117,7 @@ public class CourseClassificationActivity extends AppCompatActivity implements V
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    String cfa_id = listItems_cb.get(finalI).getClassification_own() + "";
+                    String cfa_id = listItems_cb.get(finalI).getClassification_id()+ "";
                     Intent intent = new Intent(CourseClassificationActivity.this, CourseCfaResultActivity.class);
                     intent.putExtra("cfa_id", cfa_id);
                     startActivity(intent);
