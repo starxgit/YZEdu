@@ -23,9 +23,6 @@ import java.util.List;
 
 public class MyTaskActivity extends AppCompatActivity {
     private TabHost tabhost;
-    private LinearLayout ll_doing;
-    private LinearLayout ll_all;
-    private LinearLayout ll_finish;
     private ListView lv_doing;
     private ListView lv_all;
     private ListView lv_finish;

@@ -28,7 +28,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
  * 一节课的学习页
  */
 
-public class LessonLearnActivity extends AppCompatActivity implements View.OnClickListener{
+public class LessonLearnActivity extends AppCompatActivity implements View.OnClickListener {
     private LessonBean lb;
     private TextView tv_title;
     private JCVideoPlayerStandard player;
@@ -72,9 +72,9 @@ public class LessonLearnActivity extends AppCompatActivity implements View.OnCli
         Intent intent = getIntent();
         lb = (LessonBean) intent.getSerializableExtra("lb");
         tv_title.setText(lb.getLesson_title());
-//        String url = Constant.BASE_VIDEO_URL + lb.getLesson_video_url();
+        String url = Constant.BASE_VIDEO_URL + lb.getLesson_video_url();
 //        Log.e("url", url);
-        String url = "rtmp://22280.livepush.myqcloud.com/live/22280_9600f698362d11e892905cb9018cf0d4?bizid=22280";
+//        String url = "rtmp://22280.livepush.myqcloud.com/live/22280_9600f698362d11e892905cb9018cf0d4?bizid=22280";
         player.setUp(url, JCVideoPlayer.SCREEN_LAYOUT_LIST, "");
 
         Map<String, String> map0 = new HashMap<>();
@@ -112,12 +112,12 @@ public class LessonLearnActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.ll_exercise:
-                Log.e("click","exercise");
+                Log.e("click", "exercise");
                 break;
             case R.id.ll_disscuss:
-                Log.e("click","disscuss");
+                Log.e("click", "disscuss");
                 break;
             default:
                 break;

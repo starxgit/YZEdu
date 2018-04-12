@@ -141,7 +141,7 @@ public class MainFragment extends Fragment {
                 @Override
                 public void run() {
                     int state = DownloadTools.downloadImg(banner_image);
-//                    Log.e("img", state + "");
+//                    Log.e("im3", state + "");
                     ThreadUtil.runInUIThread(new Runnable() {
                         @Override
                         public void run() {

@@ -10,12 +10,17 @@ import android.widget.TextView;
 
 import com.fstech.yzedusc.R;
 import com.fstech.yzedusc.bean.LiveRoomBean;
+import com.fstech.yzedusc.util.DownloadTools;
+import com.fstech.yzedusc.util.ImageUitl;
+import com.fstech.yzedusc.util.ThreadUtil;
+import com.fstech.yzedusc.view.RectangleView;
+import com.qmuiteam.qmui.widget.QMUIRadiusImageView;
 
 import java.util.List;
 
 /**
  * Created by shaoxin on 18-3-25.
- * 资讯列表的适配器
+ * 直播间列表的适配器
  */
 
 public class LiveRoomListAdapter extends BaseAdapter {
@@ -25,7 +30,7 @@ public class LiveRoomListAdapter extends BaseAdapter {
     private LayoutInflater listContainer;
 
     public final class ViewHolder {
-        public ImageView iv_image;
+        public RectangleView iv_image;
         public TextView tv_title;
         public TextView tv_state;
         public TextView tv_room_num;
@@ -59,7 +64,7 @@ public class LiveRoomListAdapter extends BaseAdapter {
             vh = new ViewHolder();
             convertView = listContainer.inflate(R.layout.item_live_room, null);
             //获得控件对象
-            vh.iv_image = (ImageView) convertView.findViewById(R.id.item_live_iv_image);
+            vh.iv_image = (RectangleView) convertView.findViewById(R.id.item_live_iv_image);
             vh.tv_title = (TextView) convertView.findViewById(R.id.item_live_tv_title);
             vh.tv_state = (TextView) convertView.findViewById(R.id.item_live_tv_state);
             vh.tv_room_num = (TextView) convertView.findViewById(R.id.item_live_tv_room_id);
@@ -79,8 +84,21 @@ public class LiveRoomListAdapter extends BaseAdapter {
         } else if (lb.getLive_room_state() == 3) {
             vh.tv_state.setText("已锁定");
         }
-
+        final String course_cover = lb.getLive_room_image();
         // 设置图片
+        final ViewHolder finalVh = vh;
+        ThreadUtil.runInThread(new Runnable() {
+            @Override
+            public void run() {
+                int state = DownloadTools.downloadImg(course_cover);
+                ThreadUtil.runInUIThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ImageUitl.SimpleShowImage(course_cover, finalVh.iv_image);
+                    }
+                });
+            }
+        });
 
         return convertView;
     }

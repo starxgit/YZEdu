@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.fstech.yzedusc.R;
 import com.fstech.yzedusc.activity.CourseClassificationActivity;
 import com.fstech.yzedusc.activity.CourseIntroduceActivity;
+import com.fstech.yzedusc.activity.LiveRoomActivity;
 import com.fstech.yzedusc.adapter.CourseGridAdapter;
 import com.fstech.yzedusc.adapter.LiveRoomListAdapter;
 import com.fstech.yzedusc.bean.BannerBean;
@@ -139,6 +140,15 @@ public class CourseFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
             }
         });
+
+        lv_live.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), LiveRoomActivity.class);
+                intent.putExtra("lb", list_live.get(i));
+                startActivity(intent);
+            }
+        });
     }
 
     /*
@@ -149,15 +159,10 @@ public class CourseFragment extends Fragment implements View.OnClickListener {
     private void initData() {
         getNewCourses();
         getTopCourses();
-        for (int i = 0; i < 2; i++) {
-            LiveRoomBean l = new LiveRoomBean();
-            l.setLive_room_id(1);
-            l.setLive_room_number("9600f69" + i);
-            l.setLive_room_name("直播间" + i);
-            l.setLive_room_state(2);
-            list_live.add(l);
-        }
-//        adapter_live.notifyDataSetChanged();
+        LiveRoomBean l = new LiveRoomBean(1, "张老师", "趣味计算机", "9600f698", "shujujiegou.png", 2);
+        LiveRoomBean l2 = new LiveRoomBean(1, "廖老师", "廖老师的直播间", "c4a3c846", "ppt2010.png", 2);
+        list_live.add(l);
+        list_live.add(l2);
     }
 
     @Override

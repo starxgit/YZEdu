@@ -62,6 +62,8 @@
     <string name="quit_course">退选课程</string>
     <string name="exercises">综合练习</string>
     <string name="course_disscuss">课程讨论</string>
+    <string name="send">发送</string>
+    <string name="clear">清空</string>
 
 
 </resources>
