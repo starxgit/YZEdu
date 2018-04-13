@@ -168,7 +168,7 @@ public class CourseIntroduceActivity extends AppCompatActivity {
                             listItems.add(lb);
                         }
                         adapter_lesson.notifyDataSetChanged();
-                        lv_catalog.measure(0,0);
+                        lv_catalog.measure(0, 0);
                     } else {
                         String message = jsonObject.getString("message");
                         Toast.makeText(CourseIntroduceActivity.this, message, Toast.LENGTH_SHORT).show();
@@ -218,12 +218,16 @@ public class CourseIntroduceActivity extends AppCompatActivity {
                         CourseBean courseBean = objectMapper.readValue(jobj.toString(), CourseBean.class);
                         tv_course_name.setText(courseBean.getCourse_name());
                         tv_course_introduce.setText(courseBean.getCourse_introduce());
-                        tv_course_teacher.setText("授课教师: " + courseBean.getCourse_teacher());
+                        // TODO 设置教师
+                        String teacher = Constant.ARR_TEACHER_NAME[Integer.parseInt(courseBean.getCourse_teacher()) % Constant.ARR_TEACHER_NAME.length];
+                        tv_course_teacher.setText("授课教师: " + teacher);
                         tv_course_code.setText("课程代码: " + courseBean.getCourse_code());
                         String sum_student = " / " + courseBean.getCourse_sum_student();
                         if (courseBean.getCourse_sum_student() == -1) sum_student = "";
                         tv_learn_num.setText(courseBean.getCourse_learn_student() + sum_student + " 人学习");
-                        tv_sumhour.setText("共 " + courseBean.getCourse_sum() + " 课时");
+                        // TODO 设置课时
+                        int sHour = Constant.ARR_COURSE_SUM_HOUR[Integer.parseInt(course_id) % Constant.ARR_COURSE_SUM_HOUR.length];
+                        tv_sumhour.setText("共 " + sHour + " 课时");
                         if (courseBean.getCourse_price() > 0) {
                             tv_course_price.setText("¥ " + courseBean.getCourse_price());
                         } else {

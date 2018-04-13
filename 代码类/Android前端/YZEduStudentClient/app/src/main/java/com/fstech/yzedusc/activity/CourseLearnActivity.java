@@ -2,6 +2,7 @@ package com.fstech.yzedusc.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -194,6 +195,12 @@ public class CourseLearnActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.ll_exam:
                 Log.e("click", "exam");
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(CourseLearnActivity.this, "当前课程暂无可用的考试！", Toast.LENGTH_SHORT).show();
+                    }
+                }, 1000);
                 break;
             case R.id.ll_detail:
                 Log.e("click", "overview");

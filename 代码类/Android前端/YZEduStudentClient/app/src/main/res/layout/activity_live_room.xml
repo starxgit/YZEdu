@@ -70,8 +70,14 @@
                         android:id="@+id/lv_chat"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_alignBottom="@id/bottom_chat"
-                        android:background="@color/Write"></ListView>
+                        android:layout_above="@+id/bottom_chat"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginBottom="0dp"
+                        android:background="@color/Write"
+                        android:stackFromBottom="true"
+                        android:transcriptMode="alwaysScroll"
+                        android:divider="@color/grey9"
+                        android:dividerHeight="0dp"></ListView>
 
                     <LinearLayout
                         android:id="@+id/bottom_chat"
@@ -81,6 +87,7 @@
                         android:background="@color/grey0">
 
                         <EditText
+                            android:id="@+id/et_content"
                             android:layout_width="wrap_content"
                             android:layout_height="34dp"
                             android:layout_gravity="center_vertical"
@@ -97,6 +104,8 @@
                             android:background="@color/qmui_config_color_50_blue"
                             android:textColor="@color/Write"
                             android:gravity="center"
+                            android:clickable="true"
+                            android:onClick="myDisscuss"
                             android:text="@string/send" />
                     </LinearLayout>
 

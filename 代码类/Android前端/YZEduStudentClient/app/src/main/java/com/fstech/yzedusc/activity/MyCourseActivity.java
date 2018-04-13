@@ -89,7 +89,7 @@ public class MyCourseActivity extends AppCompatActivity implements AdapterView.O
     * 无返回
     * */
     private void initData() {
-        cb = new CourseBean(3298, "891238907", "JAVA程序设计", null, null, 56, 120, "javachenxusheji.png", 6, 2, 0, 4);
+        cb = new CourseBean(3298, "891238907", "JAVA程序设计", null, null, 120, 56, "javachenxusheji.png", 6, 2, 0, 4);
         cb1 = new CourseBean(922, "2844", "游戏测试入门", null, null, -1, 10, "598938e20001888e06000338-240-135.jpg", 16, 2, 0, 0);
         listItems_course.add(cb);
         listItems_course.add(cb1);
