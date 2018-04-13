@@ -2,7 +2,6 @@ package com.fstech.yzedudbs.dao;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
 
 import com.fstech.yzedudbs.vo.Course;
 import com.fstech.yzedudbs.vo.CourseDetail;
@@ -12,29 +11,29 @@ import com.fstech.yzedudbs.vo.Lesson;
 
 public interface CourseDao extends BaseDao<Course>{
 	
-	//Í¨¹ýclassification_own,page,pageSize²éÑ¯¿Î±í
+	//Í¨ï¿½ï¿½classification_own,page,pageSizeï¿½ï¿½Ñ¯ï¿½Î±ï¿½
 	public List<Course> findByCondition(@Param("classification_own")Integer classification_own,
 			@Param("page") Integer page,@Param("pageSize")Integer pageSize);
 	
-	//Í¨¹ýkeyËÑË÷¿Î³Ì£¬²¢½øÐÐ·ÖÒ³´¦Àí
+	//Í¨ï¿½ï¿½keyï¿½ï¿½ï¿½ï¿½ï¿½Î³Ì£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½Ò³ï¿½ï¿½ï¿½ï¿½
 	public List<Course> findByKeyWord(@Param("keyword")String keyword,@Param("page") Integer page,@Param("pageSize")Integer pageSize);
 	
-	//Í¨¹ýÊ±¼äÅÅÐò£¬É¸Ñ¡³ö×îÐÂ¿Î³Ì±í
+	//Í¨ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¸Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½Â¿Î³Ì±ï¿½
 	public List<Course> findByTime(@Param("page") Integer page,@Param("pageSize")Integer pageSize);
 	
-	//Í¨¹ýÑ§Ï°ÈËÊýÅÅÐò
+	//Í¨ï¿½ï¿½Ñ§Ï°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public List<Course> findByLearnNum(@Param("page") Integer page,@Param("pageSize")Integer pageSize);
 	
-	//Í¨¹ýcourse_id²é¿´¿Î³ÌÐÅÏ¢ºÍÑ¡¿ÎÇé¿ö
+	//Í¨ï¿½ï¿½course_idï¿½é¿´ï¿½Î³ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½
 	public CourseDetail findByCourseId(@Param("course_id") Integer course_id);
 	
-	//Í¨¹ýcourse_id ²é¿´¿Î³ÌÄ¿Â¼
+	//Í¨ï¿½ï¿½course_id ï¿½é¿´ï¿½Î³ï¿½Ä¿Â¼
 	public List<Lesson> findLessonByCourseId(@Param("course_id") Integer course_id);
 	
-	//Í¨¹ýcourse_id ²é¿´¿Î³Ì×ÊÁÏÁÐ±í
+	//Í¨ï¿½ï¿½course_id ï¿½é¿´ï¿½Î³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
 	public List<CourseMaterial> findMaterialByCourseId(@Param("course_id") Integer course_id);
 	
-	//Í¨¹ýlesson_id ²é¿´¿Î³Ì×ÊÁÏÁÐ±í
+	//Í¨ï¿½ï¿½lesson_id ï¿½é¿´ï¿½Î³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
 	public List<Knowledge> findKnowledgesByLessonId(@Param("lesson_id") Integer lesson_id);
 
 }
