@@ -103,7 +103,10 @@
             android:name=".activity.LiveRoomActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustNothing"></activity>
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".activity.ExamActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

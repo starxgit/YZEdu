@@ -9,7 +9,7 @@ public class YZEduApplication extends Application implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
 
-	
+
+
 }
