@@ -64,6 +64,10 @@
     <string name="course_disscuss">课程讨论</string>
     <string name="send">发送</string>
     <string name="clear">清空</string>
+    <string name="delete">删除</string>
+    <string name="comment">评论</string>
+    <string name="submit">提交</string>
+    <string name="please_input_content">请输入内容</string>
 
 
 </resources>

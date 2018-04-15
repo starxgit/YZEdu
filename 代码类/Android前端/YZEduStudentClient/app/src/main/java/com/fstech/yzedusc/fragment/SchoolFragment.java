@@ -89,22 +89,31 @@ public class SchoolFragment extends Fragment {
     * 无返回
     * */
     private void initData() {
-        tv_school_name.setText("这是个测试院校");
+        tv_school_name.setText("高等院校01");
 
-        for (int i = 1; i < 8; i++) {
-            int a = (int) (Math.random() * 3);
-            String img = null;
-            if (a > 1) img = "springmvc.png";
-            InformationBean ib = new InformationBean(i, "资讯标题" + i, "这是院校咨询内容这是咨询内容这是院校咨询内容这是咨询内容这是咨询内容" +
-                    "是咨询内容这是咨询内容这是咨询内容这是咨询内容这是咨询内容", "2018-04-0" + i, img, null);
-            listItems_information.add(ib);
+        InformationBean ib = new InformationBean(1, "学院开设新的大数据课程",
+                "响应大数据的发展,我们院校将开设大数据的课程。", "2018-04-13", "570360ca00010eeb06000338-240-135.jpg", null);
+        InformationBean ib2 = new InformationBean(2, "阿里云助力弹性伸缩服务",
+                "阿里云助力弹性伸缩服务，同学们可以借此机会学习这类课程，深入了解一下弹性伸缩服务。", "2018-04-10", "57466be500018b8006000338-240-135.jpg", null);
+        InformationBean ib3 = new InformationBean(3, "关于评选先进团支部的通知",
+                "我们学院将组织评选2017年度的优秀团支部，希望各个团支部都踊跃报名。", "2018-04-09", null, null);
+        listItems_information.add(ib);
+        listItems_information.add(ib2);
+        listItems_information.add(ib3);
 
-            AnnouncementBean ab = new AnnouncementBean(i, "公告标题" + i, "公告内容公告内容公告内容公告内容公告内容公告内容" + i, 0,
-                    "2018-03-" + i);
-            listItems_announcement.add(ab);
-        }
-//        information_adapter.notifyDataSetChanged();
-//        announcement_adapter.notifyDataSetChanged();
+
+        AnnouncementBean ab = new AnnouncementBean(1, "大三学生体测通知", "教育部将与4月17号对我校的大三学生进行体质考察抽测，希望大家做好充分准备。", 1,
+                "2018-04-05");
+        AnnouncementBean ab1 = new AnnouncementBean(2, "停水通知", "由于学校所在路线的水管维修修。明天8点到20点停水，请同学们做好水源储备。", 0,
+                "2018-04-01");
+        AnnouncementBean ab2 = new AnnouncementBean(3, "开发选课平台通知", "第二轮选课将与3月29到4月1号开启，希望大家根据自己的学分情况进行选课。", 0,
+                "2018-03-29");
+        AnnouncementBean ab3 = new AnnouncementBean(4, "大学生CET4/CET6考试报名通知", "大学生英语CET4/CET6考试报名已经开设了，请要参加的同学尽快完成考试报名。", 0,
+                "2018-03-25");
+        listItems_announcement.add(ab);
+        listItems_announcement.add(ab1);
+        listItems_announcement.add(ab2);
+        listItems_announcement.add(ab3);
     }
 
 }
