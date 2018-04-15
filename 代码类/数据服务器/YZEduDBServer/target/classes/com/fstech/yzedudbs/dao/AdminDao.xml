@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.fstech.yzedudbs.dao.AdminDao">
+	<resultMap type="com.fstech.yzedudbs.po.Admin" id="AdminMap">
+		<id column="admin_id" jdbcType="BIGINT" property="admin_id"/>
+		<result column="admin_name" jdbcType="VARCHAR" property="admin_name"/>
+		<result column="admin_account" jdbcType="VARCHAR" property="admin_account" />
+		<result column="admin_password" jdbcType="VARCHAR" property="admin_password" />
+		<result column="admin_authority" jdbcType="VARCHAR" property="admin_authority" />
+		<result column="gmt_create" jdbcType="TIMESTAMP" property="gmt_create" />
+		<result column="gmt_modified" jdbcType="TIMESTAMP" property="gmt_modified" />
+	</resultMap>
+<select id="findAll" resultMap="AdminMap">
+SELECT * FROM admin
+</select>
+
+</mapper>
