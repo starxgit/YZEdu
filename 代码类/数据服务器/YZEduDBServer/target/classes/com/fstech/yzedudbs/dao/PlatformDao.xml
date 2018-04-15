@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fstech.yzedudbs.dao.PlatformDao">
+				<resultMap type="com.fstech.yzedudbs.vo.PlatformInformation" id="PlatformInformationMap">
+						<id column="platform_information_id" jdbcType="BIGINT" property="information_id"/>
+						<result column="platform_information_title" jdbcType="VARCHAR" property="information_title"/>
+						<result column="platform_information_content" jdbcType="VARCHAR" property="information_content"/>
+						<result column="platform_image_url" jdbcType="VARCHAR" property="information_cover"/>
+						<result column="information_image_count" jdbcType="BIGINT" property="information_image_count"/>
+						<result column="gmt_create" jdbcType="TIMESTAMP" property="information_date"/>
+				</resultMap>
+				<sql id="Base_Column_List">
+				p_info.platform_information_id,
+				p_info.platform_information_title,
+				p_info.information_image_count,
+				p_info.platform_information_content,
+				p_image.platform_image_url ,p_info.gmt_create
+				
+				</sql>
+				<select id="findPlatformInformations" resultMap="PlatformInformationMap" >
+				select <include refid="Base_Column_List"/>
+				FROM
+					platform_information AS p_info
+					LEFT JOIN platform_image AS p_image ON p_info.platform_information_id = p_image.platform_information_id
+					GROUP BY p_info.platform_information_id limit ${page},${pageSize}
+				</select>
+				<select id="findSchoolInformationById" resultType="com.fstech.yzedudbs.vo.SchoolInformation" parameterType="Integer">
+							SELECT
+							s_info.school_information_id,
+							s_info.school_information_title,
+							s_info.school_information_content,
+							s_image.school_image_url,
+							s_info.gmt_create
+							FROM
+							school_information AS s_info
+							LEFT JOIN school_image AS s_image ON
+							s_info.school_information_id=s_image.school_information_id
+							WHERE s_info.school_id=#{school_id}	GROUP BY s_image.school_information_id
+							LIMIT ${page},${pageSize}
+				</select>
+
+
+
+
+</mapper>

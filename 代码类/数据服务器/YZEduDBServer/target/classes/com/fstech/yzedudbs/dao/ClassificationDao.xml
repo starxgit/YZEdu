@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fstech.yzedudbs.dao.ClassificationDao">
+<resultMap type="com.fstech.yzedudbs.vo.Classification" id="ClassificationMap">
+	<id column="classification_id" jdbcType="BIGINT" property="classification_id"/>
+	<result column="classification_name" jdbcType="VARCHAR" property="classification_name"/>
+	<result column="classification_own" jdbcType="BIGINT" property="classification_own"/>
+	<result column="gmt_create" jdbcType="TIMESTAMP" property="gmt_create"/>
+	<result column="gmt_modified" jdbcType="TIMESTAMP" property="gmt_modified"/>
+</resultMap>
+<sql id="Base_Column_List">
+classification_id,classification_name,classification_own
+</sql>
+<select id="findAllByCondition" resultMap="ClassificationMap" parameterType="com.fstech.yzedudbs.po.Classification">
+SELECT <include refid="Base_Column_List"/> FROM classification WHERE classification_own=#{classification_own,jdbcType=BIGINT}
+
+</select>
+
+</mapper>

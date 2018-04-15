@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dao.FacultyMapper" >
+  <resultMap id="BaseResultMap" type="com.fstech.yzedudbs.po.Faculty" >
+    <id column="faculty_id" property="facultyId" jdbcType="INTEGER" />
+    <result column="school_id" property="schoolId" jdbcType="INTEGER" />
+    <result column="faculty_code" property="facultyCode" jdbcType="CHAR" />
+    <result column="faculty_name" property="facultyName" jdbcType="VARCHAR" />
+    <result column="faculty_introduce" property="facultyIntroduce" jdbcType="VARCHAR" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    faculty_id, school_id, faculty_code, faculty_name, faculty_introduce, gmt_create, 
+    gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from faculty
+    where faculty_id = #{facultyId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from faculty
+    where faculty_id = #{facultyId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.pojo.Faculty" >
+    insert into faculty (faculty_id, school_id, faculty_code, 
+      faculty_name, faculty_introduce, gmt_create, 
+      gmt_modified)
+    values (#{facultyId,jdbcType=INTEGER}, #{schoolId,jdbcType=INTEGER}, #{facultyCode,jdbcType=CHAR}, 
+      #{facultyName,jdbcType=VARCHAR}, #{facultyIntroduce,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.pojo.Faculty" >
+    insert into faculty
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="facultyId != null" >
+        faculty_id,
+      </if>
+      <if test="schoolId != null" >
+        school_id,
+      </if>
+      <if test="facultyCode != null" >
+        faculty_code,
+      </if>
+      <if test="facultyName != null" >
+        faculty_name,
+      </if>
+      <if test="facultyIntroduce != null" >
+        faculty_introduce,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="facultyId != null" >
+        #{facultyId,jdbcType=INTEGER},
+      </if>
+      <if test="schoolId != null" >
+        #{schoolId,jdbcType=INTEGER},
+      </if>
+      <if test="facultyCode != null" >
+        #{facultyCode,jdbcType=CHAR},
+      </if>
+      <if test="facultyName != null" >
+        #{facultyName,jdbcType=VARCHAR},
+      </if>
+      <if test="facultyIntroduce != null" >
+        #{facultyIntroduce,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.pojo.Faculty" >
+    update faculty
+    <set >
+      <if test="schoolId != null" >
+        school_id = #{schoolId,jdbcType=INTEGER},
+      </if>
+      <if test="facultyCode != null" >
+        faculty_code = #{facultyCode,jdbcType=CHAR},
+      </if>
+      <if test="facultyName != null" >
+        faculty_name = #{facultyName,jdbcType=VARCHAR},
+      </if>
+      <if test="facultyIntroduce != null" >
+        faculty_introduce = #{facultyIntroduce,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where faculty_id = #{facultyId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.pojo.Faculty" >
+    update faculty
+    set school_id = #{schoolId,jdbcType=INTEGER},
+      faculty_code = #{facultyCode,jdbcType=CHAR},
+      faculty_name = #{facultyName,jdbcType=VARCHAR},
+      faculty_introduce = #{facultyIntroduce,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where faculty_id = #{facultyId,jdbcType=INTEGER}
+  </update>
+</mapper>
