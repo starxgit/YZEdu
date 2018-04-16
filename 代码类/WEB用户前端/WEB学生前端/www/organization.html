@@ -9,9 +9,9 @@
 		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<style>
-			div{
+			/*div{
 				border:1px solid #000000;
-			}
+			}*/
 			#main_bottom{
 				display: flex;
 			}
@@ -78,70 +78,55 @@
 			<div id="main" style="width:80%;height:600px;margin-left:10%;margin-top:10px;">
 				<div id="mai_top" style="width:90%;height:50px;margin-left:5%;">
 					<span style="margin-top:10px;">选择单位：</span>
-					<input style="margin-top:10px;" type="text" />
+					<input style="margin-top:10px;" type="text" placeholder="填写相关单位" />
 					<a href="#" style="float:right;margin:10px;">自由人用户</a>
 				</div>
-				<div id="main_bottom" style="width:90%;margin-left:5%;margin-top:10px;">
-					<div id="main_left" style="width:25%;height:500px;">
+				<div id="main_bottom" style="width:90%;margin-left:5%;margin-top:30px;">
+					<div id="main_left" style="width:25%;height:500px;margin-top:30px;">
 						<span style="padding:35px;">选择所在的省份：</span>
-						<ul id="p_list" type="none" style="margin-left:35px;margin-top:10px;">
-							<li><a href="#">北京市</a></li>
-							<li><a href="#">天津市</a></li>
-							<li><a href="#">上海市</a></li>
-							<li><a href="#">重庆市</a></li>
-							<li><a href="#">河北省</a></li>
-							<li><a href="#">山西省</a></li>
-							<li><a href="#">辽宁省</a></li>
-							<li><a href="#">吉林省</a></li>
-							<li><a href="#">黑龙江省</a></li>
-							<li><a href="#">江苏省</a></li>
-							<li><a href="#">浙江省</a></li>
-							<li><a href="#">安徽省</a></li>
-							<li><a href="#">福建省</a></li>
-							<li><a href="#">江西省</a></li>
-							<li><a href="#">山东省</a></li>
-							<li><a href="#">河南省</a></li>
-							<li><a href="#">湖北省</a></li>
-							<li><a href="#">湖南省</a></li>
-							<li><a href="#">广东省</a></li>
-							<li><a href="#">海南省</a></li>
-							<li><a href="#">四川省</a></li>
-							<li><a href="#">贵州省</a></li>
-							<li><a href="#">云南省</a></li>
-							<li><a href="#">陕西省</a></li>
-							<li><a href="#">甘肃省</a></li>
-							<li><a href="#">青海省</a></li>
-							<li><a href="#">台湾省</a></li>
-							<li><a href="#">澳门特别行政区</a></li>
-							<li><a href="#">内蒙古自治区</a></li>
-							<li><a href="#">广西壮族自治区</a></li>
-							<li><a href="#">西藏自治区</a></li>
-							<li><a href="#">宁夏回族自治区</a></li>
-							<li><a href="#">新疆维吾尔自治区</a></li>
-							<li><a href="#">香港特别行政区</a></li>
+						<ul id="p_list" type="none" style="width:50%;float:left;margin-left:15px;margin-top:10px;">
+							<li><a href="#">北京</a></li>
+							<li><a href="#">天津</a></li>
+							<li><a href="#">上海</a></li>
+							<li><a href="#">重庆</a></li>
+							<li><a href="#">河北</a></li>
+							<li><a href="#">山西</a></li>
+							<li><a href="#">辽宁</a></li>
+							<li><a href="#">吉林</a></li>
+							<li><a href="#">黑龙江</a></li>
+							<li><a href="#">江苏</a></li>
+							<li><a href="#">浙江</a></li>
+							<li><a href="#">安徽</a></li>
+							<li><a href="#">福建</a></li>
+							<li><a href="#">江西</a></li>
+							<li><a href="#">山东</a></li>
+							<li><a href="#">河南</a></li>
+							<li><a href="#">湖北</a></li>
+						</ul>
+						<ul type="none" style="margin-left:35px;margin-top:15px;">
+							<li><a href="#">湖南</a></li>
+							<li><a href="#">广东</a></li>
+							<li><a href="#">海南</a></li>
+							<li><a href="#">四川</a></li>
+							<li><a href="#">贵州</a></li>
+							<li><a href="#">云南</a></li>
+							<li><a href="#">陕西</a></li>
+							<li><a href="#">甘肃</a></li>
+							<li><a href="#">青海</a></li>
+							<li><a href="#">台湾</a></li>
+							<li><a href="#">澳门</a></li>
+							<li><a href="#">内蒙古</a></li>
+							<li><a href="#">广西</a></li>
+							<li><a href="#">西藏</a></li>
+							<li><a href="#">宁夏</a></li>
+							<li><a href="#">新疆</a></li>
+							<li><a href="#">香港</a></li>
 						</ul>
 					</div>
-					<div id="main_right" style="width:60%;margin-left:8%;">
-						<div id="r_top" style="height:50px;">
-							<span><a href="#">全部</a>：</span>
-							<ul type="none">
-								<li><a href="#">A</a></li> <li><a href="#">B</a></li>
-								<li><a href="#">C</a></li> <li><a href="#">D</a></li>
-								<li><a href="#">E</a></li> <li><a href="#">F</a></li>
-								<li><a href="#">G</a></li> <li><a href="#">H</a></li>
-								<li><a href="#">I</a></li> <li><a href="#">J</a></li>
-								<li><a href="#">K</a></li> <li><a href="#">L</a></li>
-								<li><a href="#">M</a></li> <li><a href="#">N</a></li>
-								<li><a href="#">O</a></li> <li><a href="#">P</a></li>
-								<li><a href="#">Q</a></li> <li><a href="#">R</a></li>
-								<li><a href="#">S</a></li> <li><a href="#">T</a></li>
-								<li><a href="#">U</a></li> <li><a href="#">V</a></li>
-								<li><a href="#">W</a></li> <li><a href="#">X</a></li>
-								<li><a href="#">Y</a></li> <li><a href="#">Z</a></li>
-							</ul>
-						</div>
-						<div id="r_bottom">
-							<iframe src="school_list.html">
+					<div id="main_right" style="width:80%;margin-top:30px;">
+						<div style="height:500px;">
+						
+							<iframe style="width:100%;height:100%;" src="school_list.html">
 								
 							</iframe>
 						</div>
@@ -153,7 +138,7 @@
             	时间：2018-04-14
             	描述：底部
             -->
-			<div id="bottom" style="width:100%;height:200px;margin-top:180px;">
+			<div id="bottom" style="width:100%;height:200px;margin-top:100px;">
 				<hr style="height:1px;border:none;border-top:1px solid #555555;" />
 				<div id="bottom_top">
 					<div style="padding-top:20px;margin-left:5%;">
