@@ -68,6 +68,8 @@
     <string name="comment">评论</string>
     <string name="submit">提交</string>
     <string name="please_input_content">请输入内容</string>
+    <string name="upload">上传</string>
+    <string name="chose_file">选择文件</string>
 
 
 </resources>

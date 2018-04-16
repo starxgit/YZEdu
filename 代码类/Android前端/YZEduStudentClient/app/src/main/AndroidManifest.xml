@@ -53,7 +53,8 @@
             android:windowSoftInputMode="adjustNothing"></activity>
         <activity
             android:name=".activity.MyPracticalActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing"></activity>
         <activity
             android:name=".activity.MyTaskActivity"
             android:screenOrientation="portrait"></activity>
@@ -106,6 +107,12 @@
             android:windowSoftInputMode="stateHidden"></activity>
         <activity
             android:name=".activity.ExamActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.PracticalLearnActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.DoPracticalActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 
