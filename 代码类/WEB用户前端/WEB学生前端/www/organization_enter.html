@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
@@ -9,31 +10,38 @@
 		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<style>
-			/*div{
-				border:1px solid #000000;
-			}*/
-			#main_bottom{
+			
+			#list {
+				display: flex;
+				justify-content: center;
+			}
+			
+			#top {
 				display: flex;
 			}
+			
+			#video_l {
+				display: flex;
+			}
+			
 			#bottom_top,
 			#QR_Code {
 				display: flex;
 			}
-			#main_left{
-				overflow:auto;
+			
+			#information #infor1,
+			#infor2,
+			#infor3,
+			#infor4,
+			#infor5 {
+				display: flex;
 			}
-			#main_left ul li{
-				margin-top:5px;
-				
-			}
+			
 			#bottom img {
-				width: 120px;
-				height: 120px;
+				width: 100px;
+				height: 100px;
 			}
-			#r_top ul li{
-				float:left;
-				margin-left:10px;
-			}
+			
 			a:link {
 				text-decoration: none;
 				color: #000000;
@@ -52,6 +60,9 @@
 			a:active {
 				text-decoration: none;
 			}
+			div{
+				border:1px solid #000000;
+			}
 		</style>
 	</head>
 
@@ -59,7 +70,7 @@
 		<div>
 			<!--
             	作者：1571857770@qq.com
-            	时间：2018-04-14
+            	时间：2018-04-17
             	描述：头部
             -->
 			<div id="head" style="width:100%;height:50px;background-color:#000000;">
@@ -68,74 +79,31 @@
 					<span style="color:#FFFFFF;">云智教育</span>
 					<input type="text" placeholder="" style="border: 1px solid #DBDBDB;border-radius:5px;height:20px;" />
 					<input type="submit" style="border: 1px solid #DBDBDB;border-radius:1px;height:20px;" />
+					<img style="width:38px;margin-left:60%;" src="img/toux.png" />
+					<a href="index.html" style="color:#FFFFFF;float:right;margin-right:50px;">退出</a>
 				</div>
 			</div>
-			<!--
-            	作者：1571857770@qq.com
-            	时间：2018-04-16
-            	描述：主体部分
-            -->
-			<div id="main" style="width:80%;height:600px;margin-left:10%;margin-top:10px;">
-				<div id="mai_top" style="width:90%;height:50px;margin-left:5%;">
-					<span style="margin-top:10px;">选择单位：</span>
-					<input style="margin-top:10px;" type="text" placeholder="填写相关单位" />
-					<a href="#" style="float:right;margin:10px;">自由人用户</a>
-				</div>
-				<div id="main_bottom" style="width:90%;margin-left:5%;margin-top:30px;">
-					<div id="main_left" style="width:25%;height:500px;margin-top:30px;">
-						<span style="padding:35px;">选择所在的省份：</span>
-						<ul id="p_list" type="none" style="width:50%;float:left;margin-left:15px;margin-top:10px;">
-							<li><a href="#">北京</a></li>
-							<li><a href="#">天津</a></li>
-							<li><a href="#">上海</a></li>
-							<li><a href="#">重庆</a></li>
-							<li><a href="#">河北</a></li>
-							<li><a href="#">山西</a></li>
-							<li><a href="#">辽宁</a></li>
-							<li><a href="#">吉林</a></li>
-							<li><a href="#">黑龙江</a></li>
-							<li><a href="#">江苏</a></li>
-							<li><a href="#">浙江</a></li>
-							<li><a href="#">安徽</a></li>
-							<li><a href="#">福建</a></li>
-							<li><a href="#">江西</a></li>
-							<li><a href="#">山东</a></li>
-							<li><a href="#">河南</a></li>
-							<li><a href="#">湖北</a></li>
-						</ul>
-						<ul type="none" style="margin-left:35px;margin-top:15px;">
-							<li><a href="#">湖南</a></li>
-							<li><a href="#">广东</a></li>
-							<li><a href="#">海南</a></li>
-							<li><a href="#">四川</a></li>
-							<li><a href="#">贵州</a></li>
-							<li><a href="#">云南</a></li>
-							<li><a href="#">陕西</a></li>
-							<li><a href="#">甘肃</a></li>
-							<li><a href="#">青海</a></li>
-							<li><a href="#">台湾</a></li>
-							<li><a href="#">澳门</a></li>
-							<li><a href="#">内蒙古</a></li>
-							<li><a href="#">广西</a></li>
-							<li><a href="#">西藏</a></li>
-							<li><a href="#">宁夏</a></li>
-							<li><a href="#">新疆</a></li>
-							<li><a href="#">香港</a></li>
-						</ul>
+			<div id="main" style="width:100%;height:800px;">
+				<div id="main_top" style="width:100%;height:200px;margin-top:20px;">
+					<div id="agreement" style="width:90%;height:90%;margin-left:5%;margin-top:10px;">
+						 <span style="margin:10px;">协议说明：</span>
+						 <p>
+						 </p>
 					</div>
-					<div id="main_right" style="width:80%;margin-top:30px;">
-						<div style="height:500px;">
-						
-							<iframe style="width:100%;height:100%;" src="school_l/school_list.html">
-								
-							</iframe>
-						</div>
+				</div>
+				<div id="main_bottom" style="width:100%;height:580px;margin-top:20px;">
+					<div style="width:100%;text-align: center;">
+						<span>填写申请信息</span>
+					</div>
+					<div style="width:100%;">
+						<div></div>
+						<div></div>
 					</div>
 				</div>
 			</div>
 			<!--
             	作者：1571857770@qq.com
-            	时间：2018-04-14
+            	时间：2018-04-15
             	描述：底部
             -->
 			<div id="bottom" style="background-color:#000000;width:100%;height:200px;margin-top:180px;">
@@ -145,6 +113,7 @@
 						<a style="color:#FFFFFF;" href="#">关于我们</a>&nbsp;&nbsp;
 						<a style="color:#FFFFFF;" href="#">使用帮助</a>&nbsp;&nbsp;
 						<a style="color:#FFFFFF;" href="#">加入我们</a>&nbsp;&nbsp;
+						<a style="color:#FFFFFF;" href="#">管理登录</a>&nbsp;&nbsp;
 						<a style="color:#FFFFFF;" href="#">问题反馈</a>&nbsp;
 						<br />
 						<br />
@@ -169,6 +138,7 @@
 				</div>
 			</div>
 		</div>
+
 	</body>
 
 </html>
