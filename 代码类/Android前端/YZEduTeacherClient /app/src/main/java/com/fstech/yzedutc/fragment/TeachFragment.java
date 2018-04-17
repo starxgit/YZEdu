@@ -19,7 +19,7 @@ import com.fstech.yzedutc.activity.MyTaskActivity;
  * 学习界面的Fragment
  */
 
-public class LearnFragment extends Fragment implements View.OnClickListener {
+public class TeachFragment extends Fragment implements View.OnClickListener {
     // 定义UI对象
     private RelativeLayout re_mycourse;
     private RelativeLayout re_practical;
@@ -29,7 +29,7 @@ public class LearnFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_learn, container, false);
+        return inflater.inflate(R.layout.fragment_teach, container, false);
     }
 
     @Override

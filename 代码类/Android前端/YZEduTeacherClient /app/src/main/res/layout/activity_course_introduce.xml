@@ -92,18 +92,6 @@
                     android:text="免费"
                     android:textColor="@color/text_black6" />
 
-                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                    android:id="@+id/bn_option"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="20dp"
-                    android:alpha="0.8"
-                    android:gravity="center"
-                    android:text="报名选课"
-                    android:textColor="@color/Write"
-                    app:qmui_backgroundColor="@color/qmui_config_color_blue"
-                    app:qmui_radius="@dimen/dimen_9dp" />
-
             </LinearLayout>
 
         </LinearLayout>

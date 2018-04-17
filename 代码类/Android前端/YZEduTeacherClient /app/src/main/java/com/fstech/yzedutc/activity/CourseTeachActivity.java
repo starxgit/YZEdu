@@ -41,11 +41,11 @@ import java.util.Map;
 import okhttp3.Call;
 
 /**
- * Created by shaoxin on 18-4-11.
- * 课程学习主界面
+ * Created by shaoxin on 18-4-17.
+ * 课程教学主界面
  */
 
-public class CourseLearnActivity extends AppCompatActivity implements View.OnClickListener {
+public class CourseTeachActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tv_title;
     private ImageView iv_course_cover;
     private LinearLayout ll_material;
@@ -60,7 +60,7 @@ public class CourseLearnActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_learn);
+        setContentView(R.layout.activity_course_teach);
         initView();
         initData();
     }
@@ -85,7 +85,7 @@ public class CourseLearnActivity extends AppCompatActivity implements View.OnCli
         ll_detail = (LinearLayout) findViewById(R.id.ll_detail);
         lv_catalog = (ListView) findViewById(R.id.lv_catalog);
         listItems = new ArrayList<>();
-        adapter_lesson = new LessonListAdapter(CourseLearnActivity.this, listItems);
+        adapter_lesson = new LessonListAdapter(CourseTeachActivity.this, listItems);
         lv_catalog.setAdapter(adapter_lesson);
 
         ll_material.setOnClickListener(this);
@@ -98,7 +98,7 @@ public class CourseLearnActivity extends AppCompatActivity implements View.OnCli
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 LessonBean lb = listItems.get(i);
                 Log.e("lb", lb.toString());
-                Intent intent = new Intent(CourseLearnActivity.this, LessonLearnActivity.class);
+                Intent intent = new Intent(CourseTeachActivity.this, LessonLearnActivity.class);
                 intent.putExtra("lb", lb);
                 startActivity(intent);
             }
@@ -162,7 +162,7 @@ public class CourseLearnActivity extends AppCompatActivity implements View.OnCli
                         lv_catalog.measure(0, 0);
                     } else {
                         String message = jsonObject.getString("message");
-                        Toast.makeText(CourseLearnActivity.this, message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CourseTeachActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     Log.e("json", e.getLocalizedMessage());
@@ -186,7 +186,7 @@ public class CourseLearnActivity extends AppCompatActivity implements View.OnCli
         switch (view.getId()) {
             case R.id.ll_material:
                 Log.e("click", "material");
-                Intent intent = new Intent(CourseLearnActivity.this, MaterialActivity.class);
+                Intent intent = new Intent(CourseTeachActivity.this, MaterialActivity.class);
                 intent.putExtra("course_id", cb.getCourse_id() + "");
                 startActivity(intent);
                 break;
@@ -198,13 +198,13 @@ public class CourseLearnActivity extends AppCompatActivity implements View.OnCli
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(CourseLearnActivity.this, "当前课程暂无可用的考试！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CourseTeachActivity.this, "当前课程暂无可用的考试！", Toast.LENGTH_SHORT).show();
                     }
                 }, 1000);
                 break;
             case R.id.ll_detail:
                 Log.e("click", "overview");
-                Intent intent3 = new Intent(CourseLearnActivity.this, CourseOverViewActivity.class);
+                Intent intent3 = new Intent(CourseTeachActivity.this, CourseOverViewActivity.class);
                 intent3.putExtra("course_id", cb.getCourse_id() + "");
                 startActivity(intent3);
                 break;

@@ -22,13 +22,13 @@
             android:id="@+id/rb_course"
             style="@style/tab_menu_item"
             android:drawableTop="@drawable/menu_course"
-            android:text="@string/course" />
+            android:text="@string/live" />
 
         <RadioButton
             android:id="@+id/rb_learn"
             style="@style/tab_menu_item"
             android:drawableTop="@drawable/menu_school"
-            android:text="@string/learn" />
+            android:text="@string/teach" />
 
         <RadioButton
             android:id="@+id/rb_school"

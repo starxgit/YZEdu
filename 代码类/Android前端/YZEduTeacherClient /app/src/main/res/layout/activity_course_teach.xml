@@ -30,6 +30,16 @@
             android:textColor="@color/qmui_config_color_white"
             android:textSize="18sp" />
 
+        <TextView
+            android:id="@+id/textView13"
+            android:textColor="@color/Write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:text="@string/edit" />
+
     </RelativeLayout>
 
     <ImageView
@@ -38,10 +48,12 @@
         android:layout_height="220dp"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/aixinbanmaxian" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:background="@color/line_d6" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -63,24 +75,6 @@
                 android:background="@drawable/round_btn_blue_bg"
                 android:gravity="center"
                 android:text="@string/material"
-                android:textColor="@color/Write" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_misstake"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/round_btn_yellow_bg"
-                android:gravity="center"
-                android:text="@string/misstake"
                 android:textColor="@color/Write" />
         </LinearLayout>
 
@@ -120,7 +114,27 @@
                 android:textColor="@color/Write" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/ll_misstake"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_btn_yellow_bg"
+                android:gravity="center"
+                android:text="+"
+                android:textSize="32sp"
+                android:textColor="@color/Write" />
+        </LinearLayout>
+
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
@@ -128,10 +142,10 @@
 
     <ListView
         android:id="@+id/lv_catalog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:divider="@color/Write"
-        android:dividerHeight="0dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:dividerHeight="0dp" />
 
 </LinearLayout>

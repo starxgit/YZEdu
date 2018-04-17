@@ -87,7 +87,7 @@
             android:name=".activity.WebAboutActivity"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".activity.CourseLearnActivity"
+            android:name=".activity.CourseTeachActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".activity.CourseOverViewActivity"

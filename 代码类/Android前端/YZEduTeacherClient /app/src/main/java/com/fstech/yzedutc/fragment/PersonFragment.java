@@ -62,6 +62,10 @@ public class PersonFragment extends Fragment implements View.OnClickListener {
         iv_message = (ImageView) getActivity().findViewById(R.id.iv_message);
         tv_name = (TextView) getActivity().findViewById(R.id.tv_name);
 
+        re_learn_like.setVisibility(View.GONE);
+        re_discover.setVisibility(View.GONE);
+        re_ability.setVisibility(View.GONE);
+
         re_wallet.setOnClickListener(this);
         re_ability.setOnClickListener(this);
         re_setting.setOnClickListener(this);

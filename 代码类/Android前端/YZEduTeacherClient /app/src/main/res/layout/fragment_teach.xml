@@ -225,7 +225,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="80dp"
-                        android:text="@string/grade_query"
+                        android:text="@string/my_correct"
                         android:textSize="13dp" />
                 </RelativeLayout>
 

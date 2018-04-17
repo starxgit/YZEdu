@@ -39,7 +39,7 @@ public class MyCourseActivity extends AppCompatActivity implements AdapterView.O
     private ArrayAdapter<String> adapter_state;
     private String[] array_course_state;
     private TextView tv_title;
-    private CourseBean cb, cb1;
+    private CourseBean cb;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -89,9 +89,7 @@ public class MyCourseActivity extends AppCompatActivity implements AdapterView.O
     * */
     private void initData() {
         cb = new CourseBean(3298, "891238907", "JAVA程序设计", null, null, 120, 56, "javachenxusheji.png", 6, 2, 0, 4);
-        cb1 = new CourseBean(922, "2844", "游戏测试入门", null, null, -1, 10, "598938e20001888e06000338-240-135.jpg", 16, 2, 0, 0);
         listItems_course.add(cb);
-        listItems_course.add(cb1);
     }
 
     /*
@@ -101,14 +99,13 @@ public class MyCourseActivity extends AppCompatActivity implements AdapterView.O
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         switch (i) {
             case 0:
-                tv_title.setText("我学习的课程");
+                tv_title.setText("我负责的课程");
                 // TODO 设置成全部我学习的课程列表
                 listItems_course.clear();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         listItems_course.add(cb);
-                        listItems_course.add(cb1);
                         adapter_course.notifyDataSetChanged();
                     }
                 }, 500);
@@ -132,7 +129,6 @@ public class MyCourseActivity extends AppCompatActivity implements AdapterView.O
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        listItems_course.add(cb1);
                         adapter_course.notifyDataSetChanged();
                     }
                 }, 500);
@@ -155,7 +151,7 @@ public class MyCourseActivity extends AppCompatActivity implements AdapterView.O
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Log.e("item", i + "");
         CourseBean cb = listItems_course.get(i);
-        Intent intent = new Intent(MyCourseActivity.this, CourseLearnActivity.class);
+        Intent intent = new Intent(MyCourseActivity.this, CourseTeachActivity.class);
         intent.putExtra("cb", cb);
         startActivity(intent);
     }

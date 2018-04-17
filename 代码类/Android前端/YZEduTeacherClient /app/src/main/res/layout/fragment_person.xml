@@ -18,7 +18,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             app:qmui_is_circle="true"
-            app:srcCompat="@drawable/header_01" />
+            app:srcCompat="@drawable/header_03" />
 
         <TextView
             android:id="@+id/tv_name"
@@ -27,7 +27,7 @@
             android:layout_below="@+id/iv_avatar"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="荀况"
+            android:text="孔赋"
             android:textColor="@color/Write"
             android:textSize="18sp" />
 
@@ -58,6 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
         android:layout_marginTop="20dp"
+        android:visibility="gone"
         android:background="@color/line_d6" />
 
     <RelativeLayout
@@ -138,6 +139,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
+        android:visibility="gone"
         android:background="@color/line_d6" />
 
     <View

@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">云智教育</string>
+    <string name="app_name">云智教育教师端</string>
     <string name="welcome_word">云享资源&#160;&#160;&#160;&#160;智慧教学</string>
     <string name="index">首页</string>
     <string name="course">课程</string>
     <string name="learn">学习</string>
+    <string name="teach">教学</string>
+    <string name="live">直播</string>
     <string name="person">个人</string>
     <string name="click2quit">再按一次退出程序</string>
     <string name="show_more">查看更多</string>
@@ -70,7 +72,9 @@
     <string name="please_input_content">请输入内容</string>
     <string name="upload">上传</string>
     <string name="chose_file">选择文件</string>
+    <string name="my_correct">我的批改</string>
     <string name="new_disscuss">新话题</string>
+    <string name="edit">编辑</string>
 
 
 </resources>

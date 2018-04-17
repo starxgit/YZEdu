@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.fstech.yzedusc"
+        applicationId 'com.fstech.yzedutc'
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
@@ -15,6 +15,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    productFlavors {
     }
 }
 
@@ -40,7 +42,6 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     //    九宫格布局
     compile 'com.w4lle.library:NineLayout:1.0.0'
-
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

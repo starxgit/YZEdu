@@ -53,7 +53,6 @@ public class CourseIntroduceActivity extends AppCompatActivity {
     private TextView tv_sumhour;
     private TextView tv_course_code;
     private TextView tv_course_price;
-    private QMUIRoundButton bn_option;
     private TabHost tabhost;
     private LinearLayout ll_introduce;
     private LinearLayout ll_catalog;
@@ -90,7 +89,6 @@ public class CourseIntroduceActivity extends AppCompatActivity {
         tv_sumhour = (TextView) findViewById(R.id.tv_sum_hour);
         tv_course_price = (TextView) findViewById(R.id.tv_course_price);
         tv_course_code = (TextView) findViewById(R.id.tv_course_code);
-        bn_option = (QMUIRoundButton) findViewById(R.id.bn_option);
         tabhost = (TabHost) findViewById(R.id.tab_course_introduce);
         ll_introduce = (LinearLayout) findViewById(R.id.ll_course_introduce);
         ll_catalog = (LinearLayout) findViewById(R.id.ll_course_catalog);
