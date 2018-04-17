@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta />
+		<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			
+			.img2 {
+				width: 50px;
+				height: 50px;
+			}
+			
+			.img1 {
+				display: flex;
+				
+			}
+			
+			#list {
+				display: flex;
+				justify-content: center;
+			}
+			
+			#top {
+				display: flex;
+			}
+			
+			#video_l {
+				display: flex;
+			}
+			
+			#bottom_top,
+			#QR_Code {
+				display: flex;
+			}
+			
+			#information #infor1,
+			#infor2,
+			#infor3,
+			#infor4,
+			#infor5 {
+				display: flex;
+			}
+			
+			#bottom img {
+				width: 100px;
+				height: 100px;
+			}
+			
+			a:link {
+				text-decoration: none;
+				color: #000000;
+			}
+			
+			a:visited {
+				text-decoration: none;
+				color: #000000;
+			}
+			
+			a:hover {
+				text-decoration: none;
+				color: #007AFF;
+			}
+			
+			a:active {
+				text-decoration: none;
+			}
+			
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			#tabfirst li {
+				float: left;
+				background-color: #D5D5D5;
+				color: black;
+				padding: 5px;
+				margin-right: 2px;
+				border: 1px solid white;
+			}
+			
+			#tabfirst li.tabin {
+				background-color: #FFF9EC;
+				border: 1px solid #FFF9EC;
+			}
+			
+			div.contentfirst {
+				clear: left;
+				background-color: #FFF9EC;
+				color: black;
+				width: 200px;
+				height: 490px;
+				padding: 10px;
+				display: none;
+			}
+			
+			div.contentin {
+				display: block;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function showdiv(s) {
+				if(s == "1") {
+					document.getElementById("content1").className = "contentin contentfirst"; //显示标题1的内容 下面代码类似不在添加注释
+					document.getElementById("content2").className = "contentfirst"; //隐藏标题2的内容 下面代码类似不在添加注释
+					/*document.getElementById("content3").className = "contentfirst";*/ //隐藏标题3的内容 下面代码类似不在添加注释
+
+					document.getElementById("li2").className = null; //使标题2与正文内容相离  下面代码类似 不在添加注释
+					document.getElementById("li1").className = "tabin"; //使标题一与正文内容相连接  下面代码类似 不在添加注释
+					/*document.getElementById("li3").className = null;*/ //使标题3与正文内容相离  下面代码类似 不在添加注释
+
+				} else if(s == "2") {
+					document.getElementById("content1").className = "contentfirst";
+					document.getElementById("content2").className = "contentin contentfirst";
+					/*document.getElementById("content3").className = "contentfirst";*/
+
+					document.getElementById("li1").className = null;
+					document.getElementById("li2").className = "tabin";
+					/*document.getElementById("li3").className = null;*/
+				} else {
+					document.getElementById("content1").className = "contentfirst";
+					/*document.getElementById("content3").className = "contentin contentfirst";*/
+					document.getElementById("content2").className = "contentfirst";
+
+					document.getElementById("li1").className = null
+					/*document.getElementById("li3").className = "tabin";*/
+					document.getElementById("li2").className = null
+				}
+			}
+		</script>
+		<script type="text/javascript" src="../js/live_talk.js"></script>
+	</head>
+
+	<body>
+		<div id="main">
+			<div id="head" style="width:100%;height:50px;background-color:#000000;">
+				<div id="logo" style="padding-top:10px;padding-left:30px;width:1200px;">
+					<img style="" src="../img/logo.png" />
+					<span style="color:#FFFFFF;">云智教育</span>
+					<input type="text" placeholder="" style="border: 1px solid #DBDBDB;border-radius:5px;height:20px;" />
+					<input type="submit" style="border: 1px solid #DBDBDB;border-radius:1px;height:20px;" />
+					<img style="width:38px;margin-left:60%;" src="../img/toux.png" />
+					<a href="index.html" style="color:#FFFFFF;float:right;margin-right:70px;">退出</a>
+				</div>
+			</div>
+			<div id="top" style="width:67%;">
+				<div id="top_left" style="margin-left:200px;">
+					<img style="width:60px;height:60px;margin-bottom:15px;margin-top:30px;" src="../img/toux.png" />
+				</div>
+				<div id="top_center">
+					<div id="center_up" style="width:200px;margin-left:30px;margin-top:30px;">
+						<h5><big><b>廖老师的直播间</b></big></h5>
+						<h6>授课老师：廖老师</h6>
+					</div>
+				</div>
+			</div>
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-15
+            	描述：视频
+            -->
+			<div id="video_l">
+				<div style="width:700px;margin-left:200px;">
+					<div id="id_video_container_10905947996256364135" style="width:100%;height:1px;"></div>
+				</div>
+				<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-16
+            	描述：公告区
+            -->
+				<div id="left" style="height:480px;float:right;">
+					<ul id="tabfirst">
+						<li class='tabin' id="li1">
+							<a href="#" onMouseOver="showdiv('1')"> <span>公告栏</span> </a>
+						</li>
+						<li id="li2">
+							<a href="#" onMouseOver="showdiv('2')"> <span>讨论区</span> </a>
+						</li>
+						<!--<li id="li3">
+				<a href="#" onMouseOver="showdiv('3')"> <span>03</span> </a>
+			</li>-->
+					</ul>
+					<div class="contentin contentfirst" style="width:260px;overflow:auto;text-align:center;" id="content1">
+						<h5>1/16&nbsp;12:30</h5>
+						<h5>今天下午将举行第一次测试.</h5>
+					</div>
+					<div class="contentfirst" style="width:260px;overflow:auto;" id="content2">
+						<div id="chartCon" ></div>
+					</div>
+					<!--<div class="contentfirst" id="content3">
+			我是第三个内容
+		</div>-->
+				</div>
+			</div>
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-15
+            	描述：底部
+            -->
+			<div id="bottom" style="width:100%;height:200px;margin-top:180px;">
+				<hr style="height:1px;border:none;border-top:1px solid #555555;" />
+				<div id="bottom_top">
+					<div style="padding-top:20px;margin-left:5%;">
+						<a href="#">关于我们</a>&nbsp;|&nbsp;
+						<a href="#">使用帮助</a>&nbsp;|&nbsp;
+						<a href="#">加入我们</a>&nbsp;|&nbsp;
+						<a href="#">问题反馈</a>&nbsp;
+						<br />
+						<br />
+						<br />
+						<h6>Copyright &copy;云智教育2018</h6>
+						<h6>浙ICP备17047611号-1</h6>
+					</div>
+					<div id="QR_Code" style="margin-left:36%;">
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="img/APP_Student.png" />
+							<h5><b>学生APP</b></h5>
+						</div>
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="img/APP_Teacher.png" />
+							<h5><b>教师APP</b></h5>
+						</div>
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="img/WeCha.jpeg" />
+							<h5><b>微信公众号</b></h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="//imgcache.qq.com/open/qcloud/video/live/h5/live_connect.js" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function() {
+				var option = {
+					"channel_id": "10905947996256364135",
+					"app_id": "1253192888",
+					"width": "1024",
+					"height": "768"
+				};
+				new qcVideo.Player(
+					/*代码中的id_video_container将会作为播放器放置的容器使用,可自行替换*/
+					"id_video_container_10905947996256364135",
+					option
+				);
+			})()
+		</script>
+
+	</body>
+
+</html>

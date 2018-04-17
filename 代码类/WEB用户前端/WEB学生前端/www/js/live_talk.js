@@ -33,7 +33,7 @@ $(function() {
 					{
 						headImg: "img/toux.png",
 						name: "小朋友：",
-						content: "<img class='img2' src='img/toux.png'/>"
+						content: "<img class='img2' src='../img/toux.png'/>"
 					},
 					{
 						headImg: "img/toux.png",
@@ -69,39 +69,39 @@ $(function() {
 				function massageShow() {
 					switch(i) {
 						case 0:
-							$("#chartCon").append("<div class='img1'><img class='img2' src='" + array[i].headImg + "'/><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
+							$("#chartCon").append("<div class='img1'><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
 							i++;
 							break;
 						case 1:
-							$("#chartCon").append("<div class='img1'><img class='img2' src='" + array[i].headImg + "'/><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
+							$("#chartCon").append("<div class='img1'><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
 							i++;
 							break;
 						case 2:
-							$("#chartCon").append("<div class='img1'><img class='img2' src='" + array[i].headImg + "'/><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
+							$("#chartCon").append("<div class='img1'><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
 							i++;
 							break;
 						case 3:
-							$("#chartCon").append("<div class='img1'><img class='img2' src='" + array[i].headImg + "'/><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
+							$("#chartCon").append("<div class='img1'><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
 							i++;
 							break;
 						case 4:
-							$("#chartCon").append("<div class='img1'><img class='img2' src='" + array[i].headImg + "'/><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
+							$("#chartCon").append("<div class='img1'><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
 							i++;
 							break;
 						case 5:
-							$("#chartCon").append("<div class='img1'><img class='img2' src='" + array[i].headImg + "'/><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
+							$("#chartCon").append("<div class='img1'><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
 							i++;
 							break;
 						case 6:
-							$("#chartCon").append("<div class='img1'><img class='img2' src='" + array[i].headImg + "'/><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
+							$("#chartCon").append("<div class='img1'><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
 							i++;
 							break;
 						case 7:
-							$("#chartCon").append("<div class='img1'><img class='img2' src='" + array[i].headImg + "'/><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
+							$("#chartCon").append("<div class='img1'><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
 							i++;
 							break;
 						case 8:
-							$("#chartCon").append("<div class='img1'><img class='img2' src='" + array[i].headImg + "'/><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
+							$("#chartCon").append("<div class='img1'><div style='margin-left:20px;'>" + array[i].name + "</div><div>" + array[i].content + "</div></div><br/>");
 							i++;
 							break;
 						case 9:

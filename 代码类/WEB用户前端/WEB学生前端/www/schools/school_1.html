@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta />
+		<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			#bottom_top,
+			#QR_Code {
+				display: flex;
+			}
+			
+			#top {
+				display: flex;
+			}
+			
+			#bottom img {
+				width: 100px;
+				height: 100px;
+			}
+			/*
+			div {
+				border: 1px solid #000000;
+			}*/
+			
+			a:link {
+				text-decoration: none;
+				color: #000000;
+			}
+			
+			a:visited {
+				text-decoration: none;
+				color: #000000;
+			}
+			
+			a:hover {
+				text-decoration: none;
+				color: #007AFF;
+			}
+			
+			a:active {
+				text-decoration: none;
+			}
+			
+			.img2 {
+				width: 50px;
+				height: 50px;
+			}
+			
+			.img1 {
+				display: flex;
+			}
+			
+			#notice_top ul li {
+				margin-top: 15px;
+			}
+			
+			ul,
+			li {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			#tabfirst li {
+				float: left;
+				background-color: #D5D5D5;
+				color: black;
+				padding: 5px;
+				margin-right: 2px;
+				border: 1px solid white;
+			}
+			
+			#tabfirst li.tabin {
+				background-color: #FFF9EC;
+				border: 1px solid #FFF9EC;
+			}
+			
+			div.contentfirst {
+				clear: left;
+				background-color: #FFF9EC;
+				color: black;
+				height: 390px;
+				padding: 10px;
+				display: none;
+			}
+			
+			div.contentin {
+				display: block;
+			}
+		</style>
+
+		<script type="text/javascript">
+			function showdiv(s) {
+				if(s == "1") {
+					document.getElementById("content1").className = "contentin contentfirst"; //显示标题1的内容 下面代码类似不在添加注释
+					document.getElementById("content2").className = "contentfirst"; //隐藏标题2的内容 下面代码类似不在添加注释
+					/*document.getElementById("content3").className = "contentfirst";*/ //隐藏标题3的内容 下面代码类似不在添加注释
+
+					document.getElementById("li2").className = null; //使标题2与正文内容相离  下面代码类似 不在添加注释
+					document.getElementById("li1").className = "tabin"; //使标题一与正文内容相连接  下面代码类似 不在添加注释
+					/*document.getElementById("li3").className = null;*/ //使标题3与正文内容相离  下面代码类似 不在添加注释
+
+				} else if(s == "2") {
+					document.getElementById("content1").className = "contentfirst";
+					document.getElementById("content2").className = "contentin contentfirst";
+					/*document.getElementById("content3").className = "contentfirst";*/
+
+					document.getElementById("li1").className = null;
+					document.getElementById("li2").className = "tabin";
+					/*document.getElementById("li3").className = null;*/
+				} else {
+					document.getElementById("content1").className = "contentfirst";
+					/*document.getElementById("content3").className = "contentin contentfirst";*/
+					document.getElementById("content2").className = "contentfirst";
+
+					document.getElementById("li1").className = null
+					/*document.getElementById("li3").className = "tabin";*/
+					document.getElementById("li2").className = null
+				}
+			}
+		</script>
+		<script type="text/javascript" src="../js/live_talk.js"></script>
+	</head>
+
+	<body>
+		<div style="background-color:#F9F9F9;">
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-14
+            	描述：头部
+            -->
+			<div id="head" style="width:100%;height:50px;background-color:#000000;">
+				<div id="logo" style="padding-top:10px;padding-left:30px;width:1200px;">
+					<img style="" src="../img/logo.png" />
+					<span style="color:#FFFFFF;">云智教育</span>
+					<input type="text" placeholder="" style="border: 1px solid #DBDBDB;border-radius:5px;height:20px;" />
+					<input type="submit" style="border: 1px solid #DBDBDB;border-radius:1px;height:20px;" />
+
+				</div>
+			</div>
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-17
+            	描述：学校简介
+            -->
+			<div id="top" style="width:100%;height:200px;margin-top:20px;float:left;">
+				<img style="margin:35px;margin-left:50px;width:10%;" src="../img/toux.png" />
+				<div style="float:left;width:50%;margin-left:80px;margin-top:25px;">
+					<div style="margin-top:20px;">
+						<h3>杭州测试学院</h3>
+					</div>
+					<div style="margin-top:30px;height:100px;">
+						<h5>杭州测试学院在软硬件方面为莘莘学子创造良好条件。
+							为适应社会经济发展的需要，培养基层技术应用型人才，
+							学校坚持学生基本素质的培养。注重学生在知识、能力、实践等各方面的发展，
+							强调基础学科知识的理解与掌握。
+						</h5>
+					</div>
+				</div>
+			</div>
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-14
+            	描述：轮播图
+            -->
+			<div id="banner" style="width:100%;height:425px;margin-top:250px;">
+				<iframe src="../banner1.html" style="width:100%;height:100%;"></iframe>
+			</div>
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-17
+            	描述：公告，学友圈，资讯，登录
+            -->
+			<div id="main" style="width:100%;height:700px;margin-top:10px;">
+				<div id="circle" style="float:left;width:60%;height:90%;margin-left:30px;margin-top:20px;">
+					<ul id="tabfirst">
+						<li class='tabin' id="li1">
+							<a href="#" onMouseOver="showdiv('1')"> <span>&nbsp;资讯&nbsp;</span> </a>
+						</li>
+						<li id="li2">
+							<a href="#" onMouseOver="showdiv('2')"> <span>&nbsp;学友圈&nbsp;</span> </a>
+						</li>
+					</ul>
+					<div class="contentin contentfirst" style="width:100%;height:94%;overflow:auto;" id="content1">
+						<iframe style="width:100%;height:30%;" src="../banner.html"></iframe>
+						<div id="infor_title" style="width:100%;height:65%;margin-top:20px;">
+							<ul>
+								<li>
+									<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2018年4月1日，国际比赛日后五大联赛相继回归，红彩众专家也已经就周末的比赛做出了分析。
+								昨日已经结束的比赛中，有的比分令人信服，有的场次令人费解，足球很奇妙，看完比分真是几家欢喜几家愁。
+								昨天晚上意甲结束一场争夺，尤文图斯主场3-1击败AC米兰，巩固了自己的榜首位置，
+								网易红彩推出的人工智能-澳彩五星指数单选准确命中本场比赛，昨日的澳彩五星指数已经完成了10场连中。
+								</h6>
+								</li>
+								<li>
+									<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									GNOME Shell 被发现存在内存泄露的问题，现在官方开发团队已确认导致这个问题的原因 —— 忘记进行垃圾回收……
+									GNOME 称目前正在修复该问题。“触发垃圾回收能够将 GNOME Shell 使用的内存量减少到正常水平”
+									GNOME 开发者花了大约一周的时间来定位问题的根源，不过谢天谢地，内存泄漏的原因（看起来）已经确定。
+								</h6>
+								</li>
+								<li>
+									<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									本课程是《Linux权限管理之基本权限》的后续篇，为小伙伴们带来了Linux中常用的一些特殊权限命令，
+									包括ACL权限、sudo权限、文件特殊权限和不可改变位权限。通过@Tony老师的精彩讲解，
+									一定会让你对Linux中的权限有更深刻的认识。
+								</h6>
+								</li>
+								<li>
+									<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									如何在 Linux 上安装应用程序?因为有许多操作系统，这个问题不止有一个答案。
+									应用程序可以可以来自许多来源 —— 几乎不可能数的清，并且每个开发团队都可以以他们认为最好的方式提供软件。
+									知道如何安装你所得到的软件是成为操作系统高级用户的一部分。
+								</h6>
+								</li>
+								<li>
+									<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									据了解，Mondly AR是一款关于语言的教育类应用程序，它通过AR技术替代了传统学习所需要的课本。
+									并通过与谷歌的合作，这款应用中的AI角色能够通过各种有趣的视觉效果和3D模型，引导用户学习多达33种不同的语言基础。
+									据悉，应用中的AI教师还会向学习者提出问题，学习者需要口头回答该问题的答案，这样不仅可以增加用户理解该语言的能力，
+									还能够锻炼用户的口语。值得一提的是，如果用户回答错误，这款应用程序并不只是简单的纠正错误，
+									而会通过一种视觉效果让用户认识到自己的错误从而纠正它。
+								</h6>
+								</li>
+								<li>
+									<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									贵阳市交管局发布清明出行预测及交通安全提示。
+									大数据分析预测今年清明节期间，贵阳市周边公墓车都将迎来较大车流，
+									花溪公园、湿地公园、森林公园、黔灵山公园、青岩古镇等近郊旅游景区将会成为旅游热点，
+									提醒广大市民部分公墓和景区存在停车位不足，请错峰出行或选择公交出行、步行等绿色方式文明出游。
+								</h6>
+								</li>
+								<li>
+									<a href="#">更多资讯>></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="contentfirst" style="width:100%;height:88%;overflow:auto;" id="content2">
+						<div id="chartCon1" style="margin-top:30px;width:90%;margin-left:5%;">
+							<ul>
+								<li>
+									<span>李同学：</span>
+									<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贵阳市交管局发布清明出行预测及交通安全提示。
+									大数据分析预测今年清明节期间，贵阳市周边公墓车都将迎来较大车流，
+									花溪公园、湿地公园、森林公园、黔灵山公园、青岩古镇等近郊旅游景区将会成为旅游热点，
+									提醒广大市民部分公墓和景区存在停车位不足，请错峰出行或选择公交出行、步行等绿色方式文明出游。
+									</h5>
+								</li>
+								<li>
+									<span>刘同学：</span>
+									<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									据了解，Mondly AR是一款关于语言的教育类应用程序，它通过AR技术替代了传统学习所需要的课本。
+									并通过与谷歌的合作，这款应用中的AI角色能够通过各种有趣的视觉效果和3D模型，引导用户学习多达33种不同的语言基础。
+									据悉，应用中的AI教师还会向学习者提出问题，学习者需要口头回答该问题的答案，这样不仅可以增加用户理解该语言的能力，
+									还能够锻炼用户的口语。值得一提的是，如果用户回答错误，这款应用程序并不只是简单的纠正错误，
+									而会通过一种视觉效果让用户认识到自己的错误从而纠正它。
+									</h5>
+								</li>
+								<li>
+									<span>马同学：</span>
+									<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									如何在 Linux 上安装应用程序?因为有许多操作系统，这个问题不止有一个答案。
+									应用程序可以可以来自许多来源 —— 几乎不可能数的清，并且每个开发团队都可以以他们认为最好的方式提供软件。
+									知道如何安装你所得到的软件是成为操作系统高级用户的一部分。
+									</h5>
+								</li>
+								<li>
+									<span>牛同学：</span>
+									<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									本课程是《Linux权限管理之基本权限》的后续篇，为小伙伴们带来了Linux中常用的一些特殊权限命令，
+									包括ACL权限、sudo权限、文件特殊权限和不可改变位权限。通过@Tony老师的精彩讲解，
+									一定会让你对Linux中的权限有更深刻的认识。
+									</h5>
+								</li>
+								<li>
+									<span>郝同学：</span>
+									<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									GNOME Shell 被发现存在内存泄露的问题，现在官方开发团队已确认导致这个问题的原因 —— 忘记进行垃圾回收……
+									GNOME 称目前正在修复该问题。“触发垃圾回收能够将 GNOME Shell 使用的内存量减少到正常水平”
+									GNOME 开发者花了大约一周的时间来定位问题的根源，不过谢天谢地，内存泄漏的原因（看起来）已经确定。
+									</h5>
+								</li>
+								<li>
+									<a href="#">更多内容>></a>
+								</li>
+							</ul>
+							
+						</div>
+					</div>
+				</div>
+				<div id="notice" style="float:right;width:30%;height:90%;margin-right:50px;margin-top:20px;">
+					<div id="notice_top" style="background-color:#FFFFFF;width:100%;height:60%;text-align:center;">
+						<span style="float:left;margin-left:50px;"><h4>公告:</h4></span>
+						<ul type="circle" style="float:left;margin-left:30px;margin-top:50px;">
+							<li>
+								<h4>下午进行体测</h4></li>
+							<li>
+								<h4>下午要做实验</h4></li>
+							<li>
+								<h4>下周周二考试</h4></li>
+							<li>
+								<h4>今天要突击检查</h4></li>
+							<li>
+								<h4>明天实训开始</h4></li>
+							<li>
+								<h4>周末举行新课讲座</h4></li>
+							<li>
+								<h4>下周停课一周</h4></li>
+						</ul>
+						<span style="float:right;margin-top:300px;margin-right:20px;"><a href="#">更多内容>></a></span>
+					</div>
+					<div id="notice_bottom" style="background-color:#FFFFFF;width:100%;height:35%;margin-top:20px;text-align: center;">
+						<span style="padding-top:1%;">登录窗口</span><br /><br />
+						<form>
+							<span>账号：</span><input type="text" style="border:1px solid #666666;border-radius:3px;" placeholder="请输入账号" /><br /><br />
+							<span>密码：</span><input type="password" style="border:1px solid #666666;border-radius:3px;" placeholder="请输入密码" /><br /><br />
+							<input type="radio" name="role" checked="true" />学生
+							<input type="radio" name="role" />老师<br/><br/>
+							<input type="submit" value="登录" />
+						</form>
+					</div>
+				</div>
+			</div>
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-14
+            	描述：底部
+            -->
+			<div id="bottom" style="width:100%;height:200px;margin-top:30px;">
+
+				<div id="bottom_top">
+					<div style="padding-top:20px;margin-left:5%;">
+						<a href="#">关于我们</a>&nbsp;|&nbsp;
+						<a href="#">使用帮助</a>&nbsp;|&nbsp;
+						<a href="#">加入我们</a>&nbsp;|&nbsp;
+						<a href="#">问题反馈</a>&nbsp;
+						<br />
+						<br />
+						<br />
+						<h6>Copyright &copy;云智教育2018</h6>
+						<h6>浙ICP备17047611号-1</h6>
+					</div>
+					<div id="QR_Code" style="margin-left:36%;">
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="../img/APP_Student.png" />
+							<h5><b>学生APP</b></h5>
+						</div>
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="../img/APP_Teacher.png" />
+							<h5><b>教师APP</b></h5>
+						</div>
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="../img/WeCha.jpeg" />
+							<h5><b>微信公众号</b></h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
