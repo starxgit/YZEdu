@@ -260,7 +260,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical"
                                         android:layout_marginRight="15dp"
-                                        android:text="@string/comment"
+                                        android:text="5"
                                         android:textColor="@color/grey_blue" />
 
                                     <ImageView
@@ -378,7 +378,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical"
                                         android:layout_marginRight="15dp"
-                                        android:text="@string/comment"
+                                        android:text="2"
                                         android:textColor="@color/grey_blue" />
 
                                     <ImageView
@@ -485,7 +485,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center_vertical"
                                         android:layout_marginRight="15dp"
-                                        android:text="@string/comment"
+                                        android:text="3"
                                         android:textColor="@color/grey_blue" />
 
                                     <ImageView

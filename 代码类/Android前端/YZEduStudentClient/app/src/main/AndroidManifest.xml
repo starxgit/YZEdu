@@ -114,6 +114,9 @@
         <activity
             android:name=".activity.DoPracticalActivity"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.CourseDisscussActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

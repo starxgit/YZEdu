@@ -120,6 +120,8 @@ public class LessonLearnActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.ll_disscuss:
                 Log.e("click", "disscuss");
+                Intent intent1 = new Intent(LessonLearnActivity.this, CourseDisscussActivity.class);
+                startActivity(intent1);
                 break;
             default:
                 break;
