@@ -56,6 +56,7 @@ public class CourseTeachActivity extends AppCompatActivity implements View.OnCli
     private CourseBean cb;
     private List<LessonBean> listItems;
     private LessonListAdapter adapter_lesson;
+    private TextView tv_edit;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -87,11 +88,13 @@ public class CourseTeachActivity extends AppCompatActivity implements View.OnCli
         listItems = new ArrayList<>();
         adapter_lesson = new LessonListAdapter(CourseTeachActivity.this, listItems);
         lv_catalog.setAdapter(adapter_lesson);
+        tv_edit = (TextView) findViewById(R.id.tv_edit);
 
         ll_material.setOnClickListener(this);
         ll_misstake.setOnClickListener(this);
         ll_exam.setOnClickListener(this);
         ll_detail.setOnClickListener(this);
+        tv_edit.setOnClickListener(this);
 
         lv_catalog.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -207,6 +210,11 @@ public class CourseTeachActivity extends AppCompatActivity implements View.OnCli
                 Intent intent3 = new Intent(CourseTeachActivity.this, CourseOverViewActivity.class);
                 intent3.putExtra("course_id", cb.getCourse_id() + "");
                 startActivity(intent3);
+                break;
+            case R.id.tv_edit:
+                Intent intent4 = new Intent(CourseTeachActivity.this, CourseEditActivity.class);
+                intent4.putExtra("course_id", cb.getCourse_id() + "");
+                startActivity(intent4);
                 break;
             default:
                 break;

@@ -13,7 +13,6 @@ import com.fstech.yzedusc.bean.LiveRoomBean;
 import com.fstech.yzedusc.util.DownloadTools;
 import com.fstech.yzedusc.util.ImageUitl;
 import com.fstech.yzedusc.util.ThreadUtil;
-import com.fstech.yzedusc.view.RectangleView;
 import com.qmuiteam.qmui.widget.QMUIRadiusImageView;
 
 import java.util.List;
@@ -30,7 +29,7 @@ public class LiveRoomListAdapter extends BaseAdapter {
     private LayoutInflater listContainer;
 
     public final class ViewHolder {
-        public RectangleView iv_image;
+        public QMUIRadiusImageView iv_image;
         public TextView tv_title;
         public TextView tv_state;
         public TextView tv_room_num;
@@ -64,7 +63,7 @@ public class LiveRoomListAdapter extends BaseAdapter {
             vh = new ViewHolder();
             convertView = listContainer.inflate(R.layout.item_live_room, null);
             //获得控件对象
-            vh.iv_image = (RectangleView) convertView.findViewById(R.id.item_live_iv_image);
+            vh.iv_image = (QMUIRadiusImageView) convertView.findViewById(R.id.item_live_iv_image);
             vh.tv_title = (TextView) convertView.findViewById(R.id.item_live_tv_title);
             vh.tv_state = (TextView) convertView.findViewById(R.id.item_live_tv_state);
             vh.tv_room_num = (TextView) convertView.findViewById(R.id.item_live_tv_room_id);

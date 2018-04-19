@@ -53,7 +53,6 @@ public class CourseOverViewActivity extends AppCompatActivity {
     private TextView tv_sumhour;
     private TextView tv_course_code;
     private TextView tv_course_price;
-    private QMUIRoundButton bn_option;
     private TabHost tabhost;
     private LinearLayout ll_introduce;
     private LinearLayout ll_catalog;
@@ -104,7 +103,6 @@ public class CourseOverViewActivity extends AppCompatActivity {
         listItems = new ArrayList<LessonBean>();
         adapter_lesson = new LessonListAdapter(CourseOverViewActivity.this, listItems);
         lv_catalog.setAdapter(adapter_lesson);
-        bn_option.setText(R.string.quit_course);
 
     }
 

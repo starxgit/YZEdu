@@ -29,7 +29,7 @@
             android:layout_marginRight="20dp"
             android:textColor="@color/Write"
             android:onClick="submit"
-            android:text="@string/submit" />
+            android:text="@string/add" />
 
     </RelativeLayout>
 

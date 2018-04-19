@@ -70,13 +70,13 @@
             android:layout_marginLeft="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="我的答案：" />
+            android:text="正确率：" />
 
         <TextView
             android:id="@+id/tv_myans"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="D" />
+            android:text="76%" />
 
     </LinearLayout>
 

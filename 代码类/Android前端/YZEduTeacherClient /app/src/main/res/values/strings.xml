@@ -75,6 +75,11 @@
     <string name="my_correct">我的批改</string>
     <string name="new_disscuss">新话题</string>
     <string name="edit">编辑</string>
+    <string name="course_name">课程名：</string>
+    <string name="course_introduce">课程介绍：</string>
+    <string name="sum_hour">总课时：</string>
+    <string name="sum_student">总人数：</string>
+    <string name="add">新增</string>
 
 
 </resources>
