@@ -140,9 +140,7 @@ public class ExamActivity extends Activity {
             @Override
             public void onFailure(Call call, Exception e) {
                 Toast.makeText(ExamActivity.this, R.string.server_response_error, Toast.LENGTH_SHORT).show();
-
             }
-
             @Override
             public void onResponse(String response) {
             }
