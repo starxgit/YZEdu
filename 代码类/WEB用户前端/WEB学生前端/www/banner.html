@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+		<style type="text/css">
+			body {
+				background-color: #ffffff
+			}
+			.bannerBox {
+				width: 100%;
+				height:150px;
+				position: relative;
+				/*margin: 50px auto 0px;*/
+				cursor: pointer;
+			}
+			
+			.bannerBox:hover .left {
+				display: block;
+			}
+			
+			.bannerBox:hover .right {
+				display: block;
+			}
+			
+			#swiper1,
+			#swiper2 {
+				/*width: 662px;
+	height: 280px;	*/
+			}
+			
+			#swiper1 {
+				filter: alpha(opacity=95);
+				-moz-opacity: 0.95;
+				opacity: 0.95;
+			}
+			
+			#swiper1 .swiper-slide,
+			#swiper1 img {
+				width: 100%;
+				height: 150px;
+				font-size: 100px;
+				line-height:150px;
+				text-align: center;
+				object-fit: cover;
+			}
+			
+			.direction img {
+				margin-top:20px;
+			}
+			
+			.left {
+				position: absolute;
+				top: 40px;
+				width: 26px;
+				height: 65px;
+				background-color: rgba(64, 64, 64, 0.6);
+				text-align: center;
+				line-height: 65px;
+				border-bottom-right-radius: 4px;
+				border-top-right-radius: 4px;
+				z-index: 2;
+				display: none;
+			}
+			
+			.left img {
+				width: 15px;
+				height: 28px;
+				margin-top: 18px;
+				margin-right: 3px;
+			}
+			
+			.right {
+				position: absolute;
+				top:40px;
+				right: 0;
+				width: 26px;
+				height: 65px;
+				background-color: rgba(64, 64, 64, 0.6);
+				border-bottom-left-radius: 4px;
+				border-top-left-radius: 4px;
+				z-index: 2;
+				display: none;
+			}
+			
+			.right img {
+				width: 15px;
+				height: 28px;
+				margin-top: 18px;
+				margin-left: 6px;
+			}
+			/*css3动画*/
+		</style>
+
+	</head>
+
+	<body>
+		<div class="bannerBox" style="width:100%;">
+			<div class="swiper-container" id="swiper1">
+				<div class="swiper-wrapper swiper-no-swiping">
+					<div class="swiper-slide color-red">
+						<img src="http://www.fstechnology.cn:8080/
+					YZEduFileServer/showImg?myfile=springmvc.png">
+					</div>
+					<div class="swiper-slide color-blue">
+						<img src="http://www.fstechnology.cn:8080/
+					YZEduFileServer/showImg?myfile=androidkaifa.png">
+					</div>
+					<div class="swiper-slide color-yellow">
+						<img src="http://www.fstechnology.cn:8080/
+					YZEduFileServer/showImg?myfile=javachenxusheji.png">
+					</div><!--
+					<div class="swiper-slide color-green">
+						<img src="http://www.fstechnology.cn:8080/
+					YZEduFileServer/showImg?myfile=554b17ee0001e87206000338-240-135.jpg">
+					</div>
+					<div class="swiper-slide color-pink">
+						<img src="http://www.fstechnology.cn:8080/
+					YZEduFileServer/showImg?myfile=57035f730001af5706000338-240-135.jpg">
+					</div>-->
+				</div>
+			</div>
+
+			<div class="left"><img src="img/bannerL.png"></div>
+			<div class="right"><img src="img/bannerR.png"></div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//最里层轮播
+			var mySwiper1 = new Swiper('#swiper1', {
+				loop: true,
+				autoplay: 2500,
+				speed: 600,
+				autoplayDisableOnInteraction: false
+			});
+
+			//前进后退按钮
+			$(".left").click(function() {
+				mySwiper1.slidePrev();
+
+			})
+			$(".right").click(function() {
+				mySwiper1.slideNext();
+
+			})
+		</script>
+
+	</body>
+
+</html>

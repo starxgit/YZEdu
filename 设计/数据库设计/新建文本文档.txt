@@ -1,0 +1,132 @@
+3.1用户模块
+3.1.1	表用户（user）
+表名	user
+描述	用户表，用于储存用户信息个人信息
+字段名称	字段类型	是否为主键	可否为空	长度	是否必须字段	备注
+id	unsigned bigint	是	否		是	自增，步长为1
+userid						
+user_name	varchar		否	20	是	用户名
+password	varchar		否	40	是	密码
+gmt _ create	Datetime					主动创建
+gmt _ modified	Datetime					被动更新
+说明：存储用户相关的信息。
+3.2项目模块
+3.2.1表项目（project）
+表名	project
+描述	项目表，用于储存创项目
+字段名称	字段类型	是否为主键	可否为空	长度	是否必须字段	备注
+project_id	int	主键，自增	not null	11	是	项目id
+project_name	varchar		not null	50	是	项目名
+project_describe	varchar		null	200	否	项目描述
+project_state	varchar		not null	10	是	项目状态
+project_creater	varchar		not null	10	是	创建者
+project_date	date		not noll		是	创建日期
+project_del	int		not null,
+default 0	1	是	删除位
+说明：项目表用于储存项目的信息，状态，时间。
+3.2.2表任务（tasks）
+表名	tasks
+描述	任务表，用于储存发布任务
+字段名称	字段类型	是否为主键	可否为空	长度	是否必须字段	备注
+task_id	int	主键，自增	not null	11	是	任务号
+task_title	varchar		not null	50	是	任务标题
+task_explain	varchar		not null	400	是	任务说明
+task_date	date		not null		是	发布时间
+task_user	varchar		not null	10	是	指派用户
+expect_date	date		not null		是	期望完成日期
+project_belong	int		not noll	11	是	所属项目
+task_state	varchar		not null	10	是	任务状态
+task_ext	varchar		null	100	否	任务提交附件
+task_del	int		not null	1	是	删除位
+说明：用于管理存放任务。
+
+3.2.3表bug和问题（bugs）
+表名	project
+描述	bug表，用于储存bug
+字段名称	字段类型	是否为主键	可否为空	长度	是否必须字段	备注
+bug_id	int	主键，自增	not null	11	是	bug号
+bug_user	varchar		not null	10	是	找bug的人
+bug_date	date		not null		是	发现时间
+bug_title	varchar		not null	50	是	bug标题
+bug_explain	varchar		not null	400	是	bug说明
+bug_state	varchar		not null	10	是	bug状态
+project_belong	int		not noll	11	是	所属项目
+bug_ext	varchar		null	100	否	修复bug的附件
+bug_del	int		not null	1	是	删除位
+说明：用于管理存放出现的Bug或问题。
+
+3.3消息模块
+3.3.1表消息（msgs）
+表名	msgs
+描述	消息表
+字段名称	字段类型	是否为主键	可否为空	长度	是否必须字段	备注
+msg_id	int	主键,自增	not null	11	是	消息id
+receiver	varchar		not null	10	是	接受者
+project_belong	int		not null	11	是	所属项目
+msg_text	varchar		not null	100	是	消息内容
+msg_date	date		not null		是	发布时间
+msg_del	int		not null	1	是	删除位
+msg_id	int		not null	11	是	消息id
+说明：消息表用于储存用户的消息
+
+
+
+3.3.2表请求（requests）
+表名	requests
+描述	用户表，用于储存用户信息个人信息
+字段名称	字段类型	是否为主键	可否为空	长度	是否必须字段	备注
+request_id	int	主键，自增	not null	11	是	请求id
+receiver	varchar		not null	10	是	接受者
+project_belong	int		not null	11	是	所属项目
+sender	varchar		not null	10	是	发送者
+request_date	date		not null		是	请求日期
+request_deal	int		not null	1	是	处理位
+说明：用于储存分布的消息
+
+3.3.3表通知（notice）
+表名	notice
+描述	通知表
+字段名称	字段类型	是否为主键	可否为空	长度	是否必须字段	备注
+request_id	int	主键，自增	not null	11	是	请求id
+receiver	varchar		not null	10	是	接受者
+project_belong	int		not null	11	是	所属项目
+sender	varchar		not null	10	是	发送者
+request_date	date		not null		是	请求日期
+request_deal	int		not null	1	是	处理位
+3.4资料模块
+3.4.1表资料（material）
+表名	material
+描述	资料表，用于储存文档代码
+字段名称	字段类型	是否为主键	可否为空	长度	是否必须字段	备注
+material_id	int	主键，自增	not null	11	是	资料号
+material_name	varchar		not null	50	是	资料名
+material_url	varchar		not null	200	是	资料地址
+material_user	varchar		not null	10	是	上传者
+material_date	date		not null		是	上传时间
+project_belong	int		not null	11	是	所属项目
+material_del	int		not null	1	是	删除位
+3.5成员模块
+3.5.1表成员（member）
+表名	member
+描述	成员表，用于储存成员的信息
+字段名称	字段类型	是否为主键	可否为空	长度	是否必须字段	备注
+member_id	int	主键，自增	not null	11	是	成员号
+member_user	varchar		not null	10	是	用户id
+member_role	varchar		not null	20	是	成员角色
+project_belong	int		not null	11	是	所属项目
+member_del	int		not null	1	是	删除位
+说明：成员表主要是用于储存一个项目的成员，可以删除定位成员。
+
+3.6讨论模块
+3.6.1表一（disscuss）
+表名	disscuss
+描述	讨论表，用于成员之间的交流
+字段名称	字段类型	是否为主键	可否为空	长度	是否必须字段	备注
+disscuss_id	int	主键，自增	not null	11	是	讨论号
+disscuss_author	varchar		not null	10	是	发言用户id
+disscuss_time	datetime		not null		是	发言时间
+disscuss_own	int		not null,
+default(-1)		是	所属讨论
+disscuss_content	varchar(400)		not null		是	讨论内容
+project_belong	int		not nulll	11	是	所属项目
+disscuss_del	int		not null	1	是	删除位

@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Index</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-card">
+			<div class="mui-card-footer">
+				<p>index</p>
+				<button style="" type="button" class="mui-btn mui-btn-primary" onclick="testmain()">测试页面</button>
+			</div>
+		</div>
+		<div class="mui-card">
+			<div class="mui-card-footer">
+				<p>index</p>
+				<button style="" type="button" class="mui-btn mui-btn-primary" onclick="platform_info()">平台资讯</button>
+			</div>
+		</div>
+		<div class="mui-card">
+			<div class="mui-card-footer">
+				<p>index</p>
+				<button style="" type="button" class="mui-btn mui-btn-primary" onclick="company_info()">企业资讯</button>
+			</div>
+		</div>
+		<div class="mui-card">
+			<div class="mui-card-footer">
+				<p>index</p>
+				<button style="" type="button" class="mui-btn mui-btn-primary" onclick="new_course()">最新课程</button>
+			</div>
+		</div>
+		<div class="mui-card">
+			<div class="mui-card-footer">
+				<p>index</p>
+				<button style="" type="button" class="mui-btn mui-btn-primary" onclick="hot_course()">热门课程</button>
+			</div>
+		</div>
+		<div class="mui-card">
+			<div class="mui-card-footer">
+				<p>index</p>
+				<button style="" type="button" class="mui-btn mui-btn-primary" onclick="public_course()">公开课程</button>
+			</div>
+		</div>
+		<div class="mui-card">
+			<div class="mui-card-footer">
+				<p>index</p>
+				<button style="" type="button" class="mui-btn mui-btn-primary" onclick="live_course()">在线直播</button>
+			</div>
+		</div>
+		<div class="mui-card">
+			<div class="mui-card-footer">
+				<p>index</p>
+				<button style="" type="button" class="mui-btn mui-btn-primary" onclick="feedback()">问题反馈</button>
+			</div>
+		</div>
+		<div class="mui-card">
+			<div class="mui-card-footer">
+				<p>index</p>
+				<button style="" type="button" class="mui-btn mui-btn-primary" onclick="quit()">退出应用</button>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+
+			function platform_info() {
+				window.location.href = "app/infomation/platform_info.html";
+			}
+
+			function company_info() {
+				window.location.href = "app/infomation/company_info.html";
+			}
+
+			function new_course() {
+				window.location.href = "app/course/new_course.html";
+			}
+
+			function hot_course() {
+				window.location.href = "app/course/hot_course.html";
+			}
+
+			function public_course() {
+				window.location.href = "app/course/public_course.html";
+			}
+
+			function live_course() {
+				window.location.href = "app/course/live_course.html";
+			}
+
+			function feedback() {
+				window.location.href = "feedback.html";
+			}
+
+			function testmain() {
+				//window.location.href = "app/course/live_course.html";
+				window.location.href = "app/infomation/company_info.html";
+			}
+
+			function quit() {
+
+				var btn = ["确定", "取消"];
+				mui.confirm('确认关闭当前窗口？', '退出应用', btn, function(e) {
+					if(e.index == 0) {
+						mui.currentWebview.close();
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>
