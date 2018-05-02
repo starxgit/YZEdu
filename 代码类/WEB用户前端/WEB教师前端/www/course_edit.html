@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta />
+		<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			#bottom_top,
+			#QR_Code {
+				display: flex;
+			}
+			
+			#information #infor1,
+			#infor2,
+			#infor3,
+			#infor4,
+			#infor5 {
+				display: flex;
+			}
+			
+			#bottom img {
+				width: 100px;
+				height: 100px;
+			}
+			
+			a:link {
+				text-decoration: none;
+				color: #333333;
+			}
+			
+			a:visited {
+				text-decoration: none;
+				color: #333333;
+			}
+			
+			a:hover {
+				text-decoration: none;
+				color: #007AFF;
+			}
+			
+			a:active {
+				text-decoration: none;
+			}
+			/*div{
+				border:1px solid #000000;
+			}*/
+		</style>
+
+	</head>
+
+	<body>
+		<div>
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-14
+            	描述：头部
+            -->
+			<div id="head" style="width:100%;height:50px;background-color:#333333;">
+				<div id="logo" style="padding-left:30px;width:100%;padding-right:30px;">
+					<img style="width:50px;height:35px;" src="img/logo.png" />
+					<span style="color:#FFFFFF;line-height:50px;margin-left:20px;font-size:16px;">云智教育</span>
+					<a href="organization.html" style="float:right;color:#FFFFFF;line-height:50px;">登录</a>
+					<a href="#" style="color:#FFFFFF;float: right;line-height:50px;margin-right:20px;">注册</a>
+				</div>
+			</div>
+			<div id="main" style="width:100%;height:500px;">
+				<div style="width:100%;text-align: center;">
+					<span><h3>课程编辑</h3></span>
+				</div>
+				<div id="e_list" style="width:100%;height:100%;margin-top:20px;">
+					<ul type="none" style="margin-left:200px;">
+						<li>
+							<span style="margin-right:100px;">课程名称：</span>
+							<input style="width:60%;border-radius:3px ;border:1px solid #C6C6C6" type="text" placeholder="请输入名称" />
+						</li>
+
+						<li style="margin-top:15px;">
+							<span>课程介绍介绍：</span>
+							<textarea style="float:right;margin-right:270px;width:60%;border-radius:3px ;border:1px solid #C6C6C6" cols="35" rows="5"></textarea>
+						</li>
+
+						<li style="margin-top:120px;">
+							<span style="margin-right:86px;">课程容量：</span>
+							<input type="text" style="width:60%;border-radius:3px;margin-left:15px;border:1px solid #C6C6C6" placeholder="请输入课程最多容纳人数" />
+						</li>
+						<li style="margin-top:15px;">
+							<span style="margin-right:114px;">总课时：</span>
+							<input type="text" style="width:60%;border-radius:3px;border:1px solid #C6C6C6" placeholder="请输入申请人姓名" />
+						</li>
+						<li style="margin-top:15px;">
+							<span style="margin-right:86px;">课程封面：</span>
+							<img id="course_icon" src="" style="margin-left:15px;height:70px;" />
+							<input type="file" id="imgFile" /><br /><br />
+							<script>
+								document.getElementById('imgFile').onchange = function() {
+									var preview = document.querySelector("#course_icon");
+									var file = document.querySelector("input[type=file]").files[0];
+									var reader = new FileReader();
+									if(file) {
+										reader.readAsDataURL(file);
+									} else {
+										preview.src = '';
+									}
+
+									reader.onloadend = function() {
+										preview.src = reader.result;
+									}
+								}
+							</script>
+						</li>
+
+						<li style="margin-top:50px;margin-left:200px;">
+							<button class="btn btn-info">保存修改</button>
+							<button class="btn btn-danger" style="margin-left:100px;">放弃修改</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-14
+            	描述：底部
+            -->
+			<div id="bottom" style="background-color:#333333;width:100%;height:200px;margin-top:180px;">
+
+				<div id="bottom_top">
+					<div style="padding-top:20px;margin-left:5%;">
+						<a style="color:#FFFFFF;margin-right:15px;" href="#">关于我们</a>
+						<a style="color:#FFFFFF;margin-right:15px;" href="#">使用帮助</a>
+						<a style="color:#FFFFFF;margin-right:15px;" href="#">加入我们</a>
+						<a style="color:#FFFFFF;margin-right:15px;" href="#">问题反馈</a>
+						<br />
+						<br />
+						<br />
+						<h6 style="color:#FFFFFF;">客服电话：400-888-8888</h6>
+						<h6 style="color:#FFFFFF;">网站：www.fstechnology.cn</h6>
+						<h6 style="color:#FFFFFF;">Copyright &copy;&nbsp;2018&nbsp;云智教育APP平台系统</h6>
+						<h6 style="color:#FFFFFF;">浙ICP备17047611号-1</h6>
+					</div>
+					<div id="QR_Code" style="margin-left:36%;margin-top:20px;">
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="img/APP_Student.png" />
+							<h5 style="color:#FFFFFF;"><b>学生端APP下载</b></h5>
+						</div>
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="img/APP_Teacher.png" />
+							<h5 style="color:#FFFFFF;"><b>教师端APP下载</b></h5>
+						</div>
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="img/WeCha.jpeg" />
+							<h5 style="color:#FFFFFF;"><b>微信公众号</b></h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
