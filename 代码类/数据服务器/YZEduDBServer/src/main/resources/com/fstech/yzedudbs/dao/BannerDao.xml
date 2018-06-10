@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fstech.yzedudbs.dao.BannerDao">
+				<resultMap type="com.fstech.yzedudbs.vo.Banner" id="BannerMap">
+						<id column="banner_id" jdbcType="BIGINT" property="banner_id"/>
+						<result column="banner_image" jdbcType="VARCHAR" property="banner_image"/>
+						<result column="banner_type" jdbcType="BIGINT" property="banner_type"/>
+						<result column="banner_link" jdbcType="VARCHAR" property="banner_link"/>
+						
+				</resultMap>
+				
+				
+				<select id="findAll" resultMap="BannerMap">
+					SELECT banner_id,banner_image,banner_type,banner_link FROM banner
+				</select>
+				
+				
+</mapper>

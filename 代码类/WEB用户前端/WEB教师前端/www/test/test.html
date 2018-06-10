@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>不同标题切换不同内容</title>
+
+		<style type="text/css">
+
+		</style>
+		<script type="text/javascript">
+			window.onload.function() {
+				//群聊头像、名字、内容 start  
+				var array = [{
+						content: "2016年10月" //群聊时间  
+					},
+					{
+						content: "zhl_cafe_noir加入群聊" //进群提示  
+					},
+					{
+						headImg: "images/老三.png", //头像  
+						name: "老三", //昵称  
+						content: "你们啥时候建了个群啊？" //聊天内容  
+					},
+					{
+						headImg: "images/老二.png",
+						name: "老二",
+						content: "在你不知道的时候，哈哈哈"
+					}
+				];
+				//群聊头像、名字、内容 end  
+				//每隔0.5秒有序显示一条群聊信息 start  
+				var i = 0;
+
+				function massageShow() {
+					switch(i) {
+						case 0:
+							$("#chartCon").append("<div><span>" + array[i].content + "</span></div>");
+							i++;
+							break;
+						case 1:
+							$("#chartCon").append("<div><span>" + array[i].content + "</span></div>");
+							i++;
+							break;
+						case 2:
+							$("#chartCon").append("<div><img src='" + array[i].headImg + "'/><div>" + array[i].name + "</div><div>" + array[i].content + "</div></div>");
+							i++;
+							break;
+						case 3:
+							$("#chartCon").append("<div><img src='" + array[i].headImg + "'/><div>" + array[i].name + "</div><div>" + array[i].content + "</div></div>");
+							i++;
+							break;
+						case 4:
+							$("#chartCon").append("<div><img src='" + array[i].headImg + "'/><div>" + array[i].name + "</div><div>" + array[i].content + "</div></div>");
+							i++;
+							var c = window.document.body.scrollHeight;
+							window.scroll(0, c);
+							clearInterval(t); //清除定时器  
+							break;
+					}
+				}
+				var t = setInterval(massageShow(), 500);
+				//每隔0.5秒有序显示一条群聊信息 end  
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="chartCon" id="chartCon"></div>
+	</body>
+
+</html>

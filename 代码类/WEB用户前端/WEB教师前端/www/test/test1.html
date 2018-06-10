@@ -1,0 +1,119 @@
+<!doctype html>
+<!--只做一个模板，样式就不做了-->
+<html lang='zh-cn'>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+        *{margin: 0;padding: 0;}
+       
+        #btn{
+            float: left;
+            width: 30px;
+            height:90px;
+        }
+        #tab{
+            float: right;
+            margin-right:200px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .tab_btn{
+            display: block;
+            width: 90px;
+            height: 30px;
+            background: white;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid darkgray;
+            text-decoration: none;
+            color: black;
+        }
+ 
+        .tab_btn:hover{
+            background: darkgray;
+            color: white;
+        }
+ 
+        .tab_div{
+        	width:1000px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+        }
+ 
+        .curr_btn{
+            background: darkgray !important;
+            color: white;
+        }
+        .curr_div{
+            display: block !important;
+        }
+    </style>
+    <script>
+      function getClass(className) { //className指class的值
+       
+                var tagname = document.getElementsByTagName('*');  //获取指定元素
+                var tagnameAll = [];     //这个数组用于存储所有符合条件的元素
+                for (var i = 0; i < tagname.length; i++) {     //遍历获得的元素
+                    if (tagname[i].className.indexOf(className)>=0){     //如果获得的元素中的class的值等于指定的类名，就赋值给tagnameAll
+                        tagnameAll[tagnameAll.length] = tagname[i];
+                    }
+                }
+                return tagnameAll;
+             
+        }
+ 
+ 
+ 
+        window.onload=function(){//载入事件
+            var btn=getClass('tab_btn');//获取按钮数组
+            var div=getClass('tab_div');//获取div数组
+            for(i=0;i<btn.length;i++){
+                btn[i].onclick=function(){//按钮点击事件
+                    var index=(this.getAttribute('index')-0);//获取是第几个按钮按下
+                    if(btn[index].className.indexOf('curr_btn')>=0) return;//如果按下的按钮为当前选中的按钮则无反应
+                    for(i=0;i<btn.length;i++){
+                        if(index==i){
+                            btn[i].className='tab_btn curr_btn';
+                            div[i].className='tab_div curr_div';
+                        }else{
+                            btn[i].className='tab_btn';
+                            div[i].className='tab_div';
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+ 
+ 
+<body>
+ 
+    <div id="container">
+        <div id='btn'style="margin-top:100px;display:flex;">
+            <a href='javascript:void(0)' index='0' class='tab_btn curr_btn'>1</a>
+            <a href='javascript:void(0)' index='1' class='tab_btn'>2</a>
+            <a href='javascript:void(0)' index='2' class='tab_btn'>3</a>
+        </div>
+        <div style="margin-left:500px;">
+        <div id='tab'>
+            <div class='tab_div curr_div'>
+                
+            </div>
+            <div class='tab_div'>
+                div2
+            </div>
+            <div class='tab_div'>
+                div3
+            </div>
+        </div>
+        </div>
+    </div>
+ 
+</body>
+ 
+</html>

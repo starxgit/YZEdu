@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta />
+		<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			#bottom_top,
+			#QR_Code {
+				display: flex;
+			}
+			
+			#information #infor1,
+			#infor2,
+			#infor3,
+			#infor4,
+			#infor5 {
+				display: flex;
+			}
+			
+			#bottom img {
+				width: 100px;
+				height: 100px;
+			}
+			
+			a:link {
+				text-decoration: none;
+				color: #333333;
+			}
+			
+			a:visited {
+				text-decoration: none;
+				color: #333333;
+			}
+			
+			a:hover {
+				text-decoration: none;
+				color: #FFFFFF;
+			}
+			
+			a:active {
+				text-decoration: none;
+			}
+			
+			/*div {
+				border: 1px solid #000000;
+			}*/
+			
+			#btn {
+				float: left;
+				width: 100%;
+				height: 375px;
+			}
+			
+			#tab {
+				float:left;
+				width: 75%;
+				height: 700px;
+				margin-top: 10px;
+				border: 0px solid #D6D6D6;
+				position: relative;
+			}
+			
+			.tab_btn {
+				display: block;
+				width: 100%;
+				height: 75px;
+				background:white;
+				line-height: 70px;
+				text-align: center;
+				border: 1px solid #D6D6D6;
+				text-decoration: none;
+				color: black;
+			}
+			
+			.tab_btn:hover {
+				background: #D6D6D6;
+				text-decoration: none;
+				color: black;
+			}
+			
+			.tab_div {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0px;
+				top: 0px;
+				display: none;
+			}
+			
+			.curr_btn {
+				background: #D6D6D6 !important;
+				color: #FFFFFF;
+			}
+			
+			.curr_div {
+				display: block !important;
+			}
+			
+			#ls1{
+				background-color:#F0F0F0;
+				float:left;width:300px;height:200px;
+				margin-top:50px;margin-left:100px;
+				border-top-left-radius:5px;border-top-right-radius:5px;
+				border-bottom-left-radius:5px;border-bottom-right-radius:5px;
+			}
+			
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/H-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/H-ui.admin.css" />
+		<link rel="stylesheet" type="text/css" href="css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/skin.css" />
+		<script type="text/javascript" src="js/H-ui.admin.js"></script>
+		<script type="text/javascript" src="js/H-ui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.contextmenu.r2.js"></script>
+		<script type="text/javascript" src="js/layer.js"></script>
+		<script>
+			function getClass(className) { //className指class的值
+
+				var tagname = document.getElementsByTagName('*'); //获取指定元素
+				var tagnameAll = []; //这个数组用于存储所有符合条件的元素
+				for(var i = 0; i < tagname.length; i++) { //遍历获得的元素
+					if(tagname[i].className.indexOf(className) >= 0) { //如果获得的元素中的class的值等于指定的类名，就赋值给tagnameAll
+						tagnameAll[tagnameAll.length] = tagname[i];
+					}
+				}
+				return tagnameAll;
+
+			}
+
+			window.onload = function() { //载入事件
+				var btn = getClass('tab_btn'); //获取按钮数组
+				var div = getClass('tab_div'); //获取div数组
+				for(i = 0; i < btn.length; i++) {
+					btn[i].onclick = function() { //按钮点击事件
+						var index = (this.getAttribute('index') - 0); //获取是第几个按钮按下
+						if(btn[index].className.indexOf('curr_btn') >= 0) return; //如果按下的按钮为当前选中的按钮则无反应
+						for(i = 0; i < btn.length; i++) {
+							if(index == i) {
+								btn[i].className = 'tab_btn curr_btn';
+								div[i].className = 'tab_div curr_div';
+							} else {
+								btn[i].className = 'tab_btn';
+								div[i].className = 'tab_div';
+							}
+						}
+					}
+				}
+			};
+		</script>
+	</head>
+
+	<body>
+		<div>
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-14
+            	描述：头部
+            -->
+			<div id="head" style="width:100%;height:50px;background-color:#333333;">
+				<div id="logo" style="padding-left:30px;width:100%;padding-right:30px;">
+					<img style="width:50px;height:35px;" src="img/logo.png" />
+					<span style="color:#FFFFFF;line-height:50px;margin-left:20px;font-size:16px;">云智教育</span>
+					<img src="img/toux.png" style="float:right;width:40px;margin-right:50px;" />
+					<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+						<ul class="cl">
+							<li class="dropDown dropDown_hover">
+								<a href="#" class="dropDown_A">廖老师</a>
+								<ul class="dropDown-menu menu radius box-shadow">
+									<li>
+										<a href="login.html">退出</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-18
+            	描述：主体部分
+            -->
+			<div id="main" style="width:100%;height:800px;">
+				<div id="main_left" style="border-right:1px solid #D6D6D6;float:left;width:20%;height:100%;">
+					<div id="T_icon" style="width:100%;height:200px;text-align:center;">
+						<img style="margin-top:30px;" src="img/toux.png" /><br /><br />
+						<span>廖老师</span>
+					</div>
+					<div id="container">
+						<div id='btn'>
+							<a href='javascript:void(0)' index='0' class='tab_btn curr_btn'>我负责的课程</a>
+							<a href='live_room/live_room1.html' class='tab_btn'>我的直播间</a>
+							<a href='javascript:void(0)' index='2' class='tab_btn'>我负责的实训</a>
+							<a href='javascript:void(0)' index='3' class='tab_btn'>任务管理</a>
+							<a href='javascript:void(0)' index='4' class='tab_btn'>我的批改</a>
+						</div>
+					</div>
+
+				</div>
+				<div>
+					<div id='tab'>
+						<div class='tab_div curr_div'>
+							<div style="margin-top:10px;border-bottom:1px solid #D6D6D6;height:30px;">
+								<a href="#" style="margin-left:20px;text-decoration:none;margin-bottom:10px;">全部</a>
+								<a href="#" style="margin-left:20px;text-decoration:none;margin-bottom:10px;">进行中</a>
+								<a href="#" style="margin-left:20px;text-decoration:none;margin-bottom:10px;">已完成</a>
+								
+							</div>
+							<div id="ls1_1" style="float:left;width:300px;height:200px;margin-top:50px;margin-left:100px;">
+								<a href="#">
+									<img style="width:100%;height:75%;border-top-left-radius: 10px;border-top-right-radius: 10px;" src="http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile=53fed63700018a9306000338-240-135.jpg" />
+								</a>
+								<span style="background-color:#f0f0f0;width:100%;height:25%;float:left;text-align:center;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+										<a href="#">Linux Guide for Developers</a>
+										<h5 style="color:#999999;">2所高校&nbsp;185人学习</h5>
+									</span>
+							</div>
+							<div id="ls1_2" style="float:right;width:300px;height:200px;margin-top:50px;margin-right:100px;">
+								<a href="#">
+									<img style="width:100%;height:75%;border-top-left-radius: 10px;border-top-right-radius: 10px;" src="http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile=544f0d9500017d6306000338-240-135.jpg" />
+								</a>
+								<span style="background-color:#f0f0f0;width:100%;height:25%;float:left;text-align:center;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+										<a href="#">Linux中的计划任务之Crontab</a>
+										<h5 style="color:#999999;">2所高校&nbsp;185人学习</h5>
+									</span>
+							</div>
+
+							<div id="ls1_1" style="float:left;width:300px;height:200px;margin-top:50px;margin-left:100px;">
+								<a href="#">
+									<img style="width:100%;height:75%;border-top-left-radius: 10px;border-top-right-radius: 10px;" src="http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile=5460558c0001f92506000338-240-135.jpg" />
+								</a>
+								<span style="background-color:#f0f0f0;width:100%;height:25%;float:left;text-align:center;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+								<a href="#">云安全的架构设计与实践之旅</a>
+								<h5 style="color:#999999;">2所高校&nbsp;185人学习</h5>
+							</span>
+							</div>
+							<div id="ls1_2" style="float:right;width:300px;height:200px;margin-top:50px;margin-right:100px;">
+								<a href="#"><img style="width:100%;height:75%;border-top-left-radius: 10px;border-top-right-radius: 10px;" src="http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile=5704cf8c00012c9006000338-240-135.jpg" />
+								</a>
+								<span style="background-color:#f0f0f0;width:100%;height:25%;float:left;text-align:center;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+								<a href="#">Linux网络管理</a>
+								<h5 style="color:#999999;">2所高校&nbsp;185人学习</h5>
+							</span>
+							</div>
+
+						</div>
+						<div class='tab_div'>
+							2
+						</div>
+						<div class='tab_div'>
+							<div style="margin-top:10px;border-bottom:1px solid #D6D6D6;height:30px;">
+								<a href="#" style="margin-left:20px;text-decoration:none;">全部</a>
+								<a href="#" style="margin-left:20px;text-decoration:none;">进行中</a>
+								<a href="#" style="margin-left:20px;text-decoration:none;">已完成</a>
+
+							</div>
+							<div id="ls1_1" style="float:left;width:300px;height:200px;margin-top:50px;margin-left:100px;">
+								<a href="#">
+									<img style="width:100%;height:75%;border-top-left-radius: 10px;border-top-right-radius: 10px;" src="http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile=570779200001fde006000338-240-135.jpg" />
+								</a>
+								<span style="background-color:#f0f0f0;width:100%;height:25%;float:left;text-align:center;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+										<a href="#">在线分布式数据库原理与实践</a>
+										<h5 style="color:#999999;">2所高校&nbsp;185人学习</h5>
+									</span>
+							</div>
+							<div id="ls1_2" style="float:right;width:300px;height:200px;margin-top:50px;margin-right:100px;">
+								<a href="#">
+									<img style="width:100%;height:75%;border-top-left-radius: 10px;border-top-right-radius: 10px;" src="http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile=54b5e5af00010ec406000338-240-135.jpg" />
+								</a>
+								<span style="background-color:#f0f0f0;width:100%;height:25%;float:left;text-align:center;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+										<a href="#">云计算 - 引领阿里生态的技术发展之路</a>
+										<h5 style="color:#999999;">2所高校&nbsp;185人学习</h5>
+									</span>
+							</div>
+
+							<div id="ls1_1" style="float:left;width:300px;height:200px;margin-top:50px;margin-left:100px;">
+								<a href="#">
+									<img style="width:100%;height:75%;border-top-left-radius: 10px;border-top-right-radius: 10px;" src="http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile=54b619d70001294906000338-240-135.jpg" />
+								</a>
+								<span style="background-color:#f0f0f0;width:100%;height:25%;float:left;text-align:center;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+								<a href="#">openstack最新技术解析</a>
+								<h5 style="color:#999999;">2所高校&nbsp;185人学习</h5>
+							</span>
+							</div>
+							<div id="ls1_2" style="float:right;width:300px;height:200px;margin-top:50px;margin-right:100px;">
+								<a href="#"><img style="width:100%;height:75%;border-top-left-radius: 10px;border-top-right-radius: 10px;" src="http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile=57466be500018b8006000338-240-135.jpg" />
+								</a>
+								<span style="background-color:#f0f0f0;width:100%;height:25%;float:left;text-align:center;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;">
+								<a href="#">阿里云助力弹性伸缩服务</a>
+								<h5 style="color:#999999;">2所高校&nbsp;185人学习</h5>
+							</span>
+							</div>
+
+						</div>
+						<div class='tab_div'>
+							<div style="margin-top:10px;border-bottom:1px solid #D6D6D6;height:30px;">
+								<a href="#" style="margin-left:20px;text-decoration:none;">全部</a>
+								<a href="#" style="margin-left:20px;text-decoration:none;">进行中</a>
+								<a href="#" style="margin-left:20px;text-decoration:none;">已完成</a>
+								<a href="#" style="float:right;margin-right:20px;text-decoration:none;">新建任务</a>
+							</div>
+							<div id="ls1" style="">
+								<div id="status_1" style="width:100%;height:20%;margin-top:3%;">
+									<button class="btn btn-danger">练习任务</button>
+									<span style="float:right;margin-right:10px;">进行中</span>
+								</div>
+								<div style="width:100%;height:50%;margin-top:3%;text-align: center;">
+									<span>完成第一节课后练习</span>
+									<h5 style="margin-top:30px;">8:30----15:50</h5>
+								</div>
+								<div style="width:100%;height:20%;margin-top:3%;">
+									<span style="float:right;margin-right:10px;">
+										发布时间：2018/4/10
+									</span>
+								</div>
+							</div>
+							<div id="ls1" style="">
+								<div id="status_1" style="width:100%;height:20%;margin-top:3%;">
+									<button class="btn btn-danger">练习任务</button>
+									<span style="float:right;margin-right:10px;">进行中</span>
+								</div>
+								<div style="width:100%;height:50%;margin-top:3%;text-align: center;">
+									<span>完成第二节课后练习</span>
+									<h5 style="margin-top:30px;">8:30----15:50</h5>
+								</div>
+								<div style="width:100%;height:20%;margin-top:3%;">
+									<span style="float:right;margin-right:10px;">
+										发布时间：2018/4/11
+									</span>
+								</div>
+							</div>
+
+							<div id="ls1" style="">
+								<div id="status_1" style="width:100%;height:20%;margin-top:3%;">
+									<button class="btn btn-danger">练习任务</button>
+									<span style="float:right;margin-right:10px;">进行中</span>
+								</div>
+								<div style="width:100%;height:50%;margin-top:3%;text-align: center;">
+									<span>完成第三节课后练习</span>
+									<h5 style="margin-top:30px;">8:30----15:50</h5>
+								</div>
+								<div style="width:100%;height:20%;margin-top:3%;">
+									<span style="float:right;margin-right:10px;">
+										发布时间：2018/4/12
+									</span>
+								</div>
+							</div>
+							<div id="ls1" style="">
+								<div id="status_1" style="width:100%;height:20%;margin-top:3%;">
+									<button class="btn btn-danger">练习任务</button>
+									<span style="float:right;margin-right:10px;">进行中</span>
+								</div>
+								<div style="width:100%;height:50%;margin-top:3%;text-align: center;">
+									<span>完成第四节课后练习</span>
+									<h5 style="margin-top:30px;">8:30----15:50</h5>
+								</div>
+								<div style="width:100%;height:20%;margin-top:3%;">
+									<span style="float:right;margin-right:10px;">
+										发布时间：2018/4/13
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class='tab_div'>
+							<div style="margin-top:10px;border-bottom:1px solid #D6D6D6;height:30px;">
+								<a href="#" style="margin-left:10px;">考试题目</a>
+								<a href="#" style="margin-left:10px;">练习题目</a>
+
+							</div>
+
+							<span style="background-color:#F0F0F0;width:96%;height:50px;float:left;margin-top:20px;margin-left:2%;">
+									<h4 style="line-height:50px;float:left;margin-left:10px;">1.1认识JAVA的课后习题</h4>
+									<a href="#" style="text-decoration:none;float:right;line-height:50px;margin-right:10px;">批改</a>
+							</span>
+
+							<span style="background-color:#F0F0F0;width:96%;height:50px;float:left;margin-top:20px;margin-left:2%;">
+									<h4 style="line-height:50px;float:left;margin-left:10px;">1.2认识JAVA的课后习题</h4>
+									<a href="#" style="text-decoration:none;float:right;line-height:50px;margin-right:10px;">批改</a>
+							</span>
+
+							<span style="background-color:#F0F0F0;width:96%;height:50px;float:left;margin-top:20px;margin-left:2%;">
+									<h4 style="line-height:50px;float:left;margin-left:10px;">1.3认识JAVA的课后习题</h4>
+									<a href="#" style="text-decoration:none;float:right;line-height:50px;margin-right:10px;">批改</a>
+							</span>
+
+							<span style="background-color:#F0F0F0;width:96%;height:50px;float:left;margin-top:20px;margin-left:2%;">
+									<h4 style="line-height:50px;float:left;margin-left:10px;">1.4认识JAVA的课后习题</h4>
+									<a href="#" style="text-decoration:none;float:right;line-height:50px;margin-right:10px;">批改</a>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--
+            	作者：1571857770@qq.com
+            	时间：2018-04-14
+            	描述：底部
+            -->
+			<div id="bottom" style="background-color:#333333;width:100%;height:200px;margin-top:50px;">
+
+				<div id="bottom_top">
+					<div style="padding-top:20px;margin-left:5%;">
+						<a style="color:#FFFFFF;margin-right:15px;" href="#">关于我们</a>
+						<a style="color:#FFFFFF;margin-right:15px;" href="#">使用帮助</a>
+						<a style="color:#FFFFFF;margin-right:15px;" href="#">加入我们</a>
+						<a style="color:#FFFFFF;margin-right:15px;" href="#">问题反馈</a>
+						<br />
+						<br />
+						<br />
+						<h6 style="color:#FFFFFF;">客服电话：400-888-8888</h6>
+						<h6 style="color:#FFFFFF;">网站：www.fstechnology.cn</h6>
+						<h6 style="color:#FFFFFF;">Copyright &copy;&nbsp;2018&nbsp;云智教育APP平台系统</h6>
+						<h6 style="color:#FFFFFF;">浙ICP备17047611号-1</h6>
+					</div>
+					<div id="QR_Code" style="margin-left:36%;margin-top:20px;">
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="img/APP_Student.png" />
+							<h5 style="color:#FFFFFF;"><b>学生端APP下载</b></h5>
+						</div>
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="img/APP_Teacher.png" />
+							<h5 style="color:#FFFFFF;"><b>教师端APP下载</b></h5>
+						</div>
+						<div style="text-align:center;margin-right:10px;">
+							<img style="width:120px;height:120px;" src="img/WeCha.jpeg" />
+							<h5 style="color:#FFFFFF;"><b>微信公众号</b></h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,359 @@
+@charset "utf-8";
+/*CSS reset for mobile*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+html,
+body,
+form,
+fieldset,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  -webkit-text-size-adjust: none;
+  font-family: inherit;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+html {
+  font-size: 14px;
+}
+body {
+  font-family: Microsoft YaHei, "Droid Sans", "Droid Sans Fallback", "Heiti SC", Helvetica, sans-self;
+  color: #1f1f1f;
+}
+ol,
+ul,
+li {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+textarea {
+  width: 100%;
+  vertical-align: middle;
+}
+ins {
+  text-decoration: none;
+}
+del {
+  text-decoration: line-through;
+}
+table {
+  border-collapse: collapse;
+  border: 0;
+}
+body * {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: rgba(0, 0, 0, 0);
+}
+i {
+  vertical-align: middle;
+}
+button {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  line-height: 1;
+}
+a {
+  text-decoration: none;
+}
+input,
+textarea,
+select,
+option {
+  outline: none;
+  font-family: inherit;
+}
+a {
+  color: #1f1f1f;
+}
+button{cursor: pointer;}
+/* 公用*/
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  zoom: 1;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/*header---------------------------------------------------*/
+.clickToApply
+    {
+      display: inline-block;
+      width:100px;height:30px;
+      line-height: 30px;text-align: center;
+      vertical-align: middle;
+      cursor:pointer;font-size: 18px;
+      color:#000;
+      border:1px solid #999;
+    }
+    /* 公用*/
+    .clearfix:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+    .clearfix {
+      zoom: 1;
+    }
+    div,p,input{margin:0;padding:0;}
+    ul,li{list-style:none;margin:0;padding:0;}
+    .layui-layer-page
+    {
+      border-radius: 10px;overflow: hidden;
+      border:1px solid #51c3b7;
+    }
+    .user-login
+    {
+      width:540;margin-bottom: 30px;
+    }
+    .user-operation
+    {
+      width:350px;margin:0 auto;
+    }
+    .user-operation p
+    {
+      height:28px;line-height: 28px;margin-top: 12px;color:#ec1923;
+      font-size: 12px;
+    }
+     .user-operation p span
+    {
+      width:9px;height:9px;float:left;margin:10px 10px 0 5px;
+      background: url(/Static/img/login/wrong.png);
+    }
+    .user-input,.user-submit
+    {
+      width:100%;position: relative;height:38px;
+    }
+    .user-input:after
+    {
+      position: absolute;content: "";width:1px;height:18px;border:none;top:10px;left:32px;
+      background: #808080;
+    }
+    .user-input input
+    {
+      position: absolute;top:0px;left:0px;
+      width:306px;border-radius: 5px;
+      border:2px solid #e5e5e5;height:34px;
+      padding-left: 40px;
+      font-size: 18px;
+      color:#e5e5e5;
+    }
+    .user-input input.tipsCode
+    {
+      width:164px;
+    }
+    .user-input .code-btn
+    {
+      position: absolute;width:128px;height:38px;line-height: 38px;text-align: center;
+      right:0px;top:0px;background: #51c3b7;color:#fff;font-size: 16px;border:none;
+      border-radius: 5px;
+    }
+    .user-input .pictureVef
+    {
+       position: absolute;width:128px;height:38px;
+      right:0px;top:0px;border:none;
+
+    }
+    .user-input .pictureVef img
+    {
+       position: absolute;width:60px;height:30px;
+      right:34px;top:4px;border:none;
+
+    }
+    .user-input span
+    {
+      position: absolute;width:60px;height:38px;line-height: 38px;color:#51c3b7;
+      right:-60px;top:0px;border:none;text-align: center;cursor: pointer;
+
+    }
+    .user-submit{margin-top: 26px;height:48px;}
+    .user-submit button
+    {
+      display: inline-block;width:350px;height:48px;line-height: 48px;vertical-align: middle;
+      font-size: 20px;color:#fff;background-color:#51c3b7;border:none;border-radius: 5px;
+      font-family: "Microsoft YaHei";
+
+    }
+    .phone-ico
+    {
+      position: absolute;top:13px;left:12px;
+    }
+    .psd-ico
+    {
+      position: absolute;top:14px;left:10px;
+    }
+    .verify-ico
+    {
+      position: absolute;top:12px;left:11px;
+    }
+    .findPsdAndReg
+    {
+      color:#bebebe;height:50px;line-height: 50px;text-align: right;font-size: 16px;
+    }
+    .findPsdAndReg .autoLoginIcon
+    {
+      background: url(/Static/img/login/autoLogin-1.png);cursor: pointer;
+      float: left;width:17px;height:17px;margin:16px 16px 0 0 ;
+    }
+    .autoLogin
+    {
+      background: url(/Static/img/login/autoLogin-2.png);cursor: pointer;
+      float: left;width:17px;height:17px;margin:16px 16px 0 0 ;
+    }
+    .findPsdAndReg .autoLoginTxt
+    {
+      float: left;cursor: pointer;color:#51c3b7;
+    }
+    .findPsdAndReg input{display: none;}
+    .findPsdAndReg a
+    {
+      float:right;color:#51c3b7;text-decoration: none;
+    }
+    .other-login
+    {
+      width:492px;margin:0 auto;
+    }
+    .other-login>div
+    {
+      width:492px;height: 1px;position: relative;margin:18px 0 ;background: #bebebe;
+    }
+    .other-login>div span
+    {
+      width:96px;height:37px;line-height: 36px;position: absolute;background: #fff;
+      top:-17px;left:50%;margin-left:-48px;font-size: 16px;color:#a0a0a0;text-align: center;
+    }
+    .other-login>p
+    {
+      width:434px;text-align: center;margin:28px auto 0 auto ;
+    }
+    .other-login>p a
+    {
+      display: inline-block;width:60px;height:80px;text-align: center;margin:0 40px;
+    }
+    .other-login>p a i
+    {
+      display: block;width:100%;height:40px;text-align: center;line-height: 48px;
+      vertical-align: middle;margin-bottom: 6px;
+    }
+    .other-login>p a em
+    {
+      font-style: normal;font-size: 14px;color:#333;font-family: "微软雅黑";
+    }
+    .user-tixing
+    {
+      font-size:16px;color:#51c3b7;cursor:pointer;height:30px;line-height: 30px;margin-top:10px;
+    }

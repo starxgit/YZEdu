@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>课程详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="mean">
+			<div id="top" style="height:250px;">
+					<div id="top1">
+						<img id="img_course_cover" class='mui-card-header mui-card-media' style='width:100%;' 
+						src="http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile=springmvc.png">
+					</div>
+					<div id="top2"  style="height:35pt;text-align:center;margin-left:5%;margin-right:5%;">
+						<span id="sp_course_name">课名</span>
+					</div>
+					<div id="top3" style="height:35pt;text-align:center;margin-left:5%;margin-right:5%;">
+						<span id="sp_course_teacher">教师姓名</span>
+					</div>
+					<div id="top4" style="text-align:center;width: 100%;height:35pt;">
+						<div id="sp_course_sum" style="float:left;margin-left:5%;">总课时</div>
+						<div id="sp_course_learn" style="float:right;margin-right:5%;">学习人数</div>
+					</div>
+					<div id="sp_course_introduce"  style="width:90%;margin:auto;">
+						课程介绍
+					</div>
+				
+			</div>
+		</div>
+
+
+
+
+
+		<script src="../../js/mui.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script>
+			var loc = location.href;
+  			var n1 = loc.length;//地址的总长度
+  			var n2 = loc.indexOf("=");//取得=号的位置
+  			var courseid = decodeURI(loc.substr(n2+1, n1-n2));//从=号后面的内容
+		</script>
+		<script type="text/javascript">
+			mui.init()
+			$(document).ready(function() {
+	      $.ajax({
+      url:"http://www.fstechnology.cn:8080/YZEduDBServer/CourseDetail?user_id=1&course_id="+courseid,//请求地址
+      dataType:"json",//数据格式 
+      type:"get",//请求方式
+      async : false,//是否异步请求
+      success : function(data) {   //如何发送成功
+      if(data.result_code!=0){
+      	alert(data.message);
+      }else{
+      	// alert(data.return_data);
+      	$("#sp_course_name").text(data.return_data.course_name);
+      	$("#sp_course_teacher").text(data.return_data.course_teacher);
+      	$("#sp_course_sum").text("共28课时");
+      	$("#sp_course_introduce").text(data.return_data.course_introduce);
+      	var sum_student =" / " + data.return_data.course_sum_student;
+      	if (data.return_data.course_sum_student == -1) {
+      		sum_student = "";
+      	}
+      	$("#sp_course_learn").text(data.return_data.course_learn_student+sum_student +
+      	 " 人学习");
+      	var course_img = "http://www.fstechnology.cn:8080/YZEduFileServer/showImg?myfile=" + data.return_data.course_cover;
+      	$("#img_course_cover").attr("src",course_img);
+
+      }
+     },
+ })
+ });
+		</script>
+	</body>
+
+</html>
